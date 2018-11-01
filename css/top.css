@@ -1,0 +1,149 @@
+			.top_in{
+				width: 1200px;
+				margin: 0 auto;
+			}
+			.top_in_one{
+				float: left;
+				position: relative;
+				line-height: 33px;
+			}
+			.top_in_two{
+				float: left;
+				position: relative;
+			}
+			.top_in_two:hover .city_title b{
+				/*整体旋转180度*/
+				-webkit-transform: rotate(180deg);
+			}
+			.city_title{
+				float: left;
+				width: 50px;
+				height: 20px;
+				border: 1px solid #DCDCDC;
+				margin-top: 6px;
+				/*line-height: 34px;*/
+				text-align: center;
+			}
+			.city_title span{
+				display: block;
+				width: 30px;
+				height: 20px;
+				line-height: 20px;
+			}
+			.city_title b{
+				background: url(../index_img/header.png) no-repeat -86px -130px;
+				width: 8px;
+				height: 4px;
+				position: absolute;
+				top: 15px;
+				right: 5px;
+			}
+			
+			/*弹出小的城市选择框*/
+			.city_chosing{
+				position: absolute;
+				border: 1px solid #DCDCDC;
+				top: 28px;
+				left: 0px;
+				width: 438px;
+				background-color: #fff;
+				display: none;
+			}
+			.city_chosing.active{
+				display: block;
+			}
+			.city_chosing_head{
+				position: relative;
+
+				overflow: hidden;
+				margin: 5px 10px 5px 10px;
+				border-bottom: 1px solid #DCDCDC;
+			}
+			.city_chosing_head span{
+				line-height: 30px;
+				height: 30px;
+				float: left;
+    			color: #969696;
+			}
+			.city_chosing_head b{
+				position: absolute;
+				right: 0;
+				top: -2;
+				/*float: right;*/
+				background: url(../index_img/index_icon_new.png) -245px -33px no-repeat;
+				width: 19px;
+				height: 19px;
+				margin-top: 5px;
+				cursor: pointer;
+			}
+			.city_chosing_middle{
+				padding-left: 10px;
+			}
+			.city_chosing_middle ul li{
+				font-size: 12px;
+				float: left;
+				width: 38px;
+				color: #0099FF;
+				height: 34px;
+				line-height: 34px;
+				cursor: pointer;
+			}
+			
+			.city_chosing_bottom{
+				padding-left: 10px;
+			}
+			.city_chosing_bottom .more_city{
+				line-height: 30px;
+				height: 30px;
+				float: left;
+    			color: #969696;
+			}
+			.city_chosing_bottom .chosing_quyu{
+				clear: left;
+				float: left;
+				height: 25px;
+				line-height: 25px;
+				color: #969696;
+			}
+			.city_chosing_bottom ul{
+				height: 25px;
+				float: left;  /*出现了阶梯效果给父元素加浮动*/
+			}
+			.city_chosing_bottom ul li{
+				width: 40px;
+				height: 25px;
+				float: left;
+				line-height: 25px;
+				text-align: center;
+				cursor: pointer;
+				display: block;
+			}
+			.city_chosing_bottom ul li.active{
+				background: url(../index_img/city_bg.png) center bottom no-repeat;
+				color: #fff;
+				margin-top: 1px;
+			}
+			.chosing_citys{
+				
+			}
+			.chosing_citys dl{
+				border-top: 1px solid #69af05;
+				background-color: #f9f9f9;
+				clear: both;
+				display: none;
+			}
+			.chosing_citys dl.active{
+				display: block;
+			}
+			.chosing_citys dl dt span{
+				display: block;
+				cursor: pointer;
+				padding-left: 10px;
+				width: 50px;
+				line-height: 25px;
+				height: 25px;
+				float: left;
+				text-align: center;
+				overflow: hidden;
+				color: #333333;
+			}

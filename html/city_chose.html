@@ -30,7 +30,7 @@
 				console.log(decodeURI(this.innerHTML));
 				$(".city_mask").css("display","none");
 				$(".city_chose").css("display","none");
-				$("#city").css("display","none");'>上海</li>
+				$("#city").css("display","none");$(".city_title span").html(decodeURI(getCookie("city")));'>上海</li>
 					<li >浙江</li>
 					<li>江苏</li>
 					<li>安徽</li>
@@ -193,12 +193,12 @@
 				console.log(decodeURI(this.innerHTML));
 				$(".city_mask").css("display","none");
 				$(".city_chose").css("display","none");
-				$("#city").css("display","none");'>北京</li>
+				$("#city").css("display","none");$(".city_title span").html(decodeURI(getCookie("city")));'>北京</li>
 					<li onclick='setCookie("city",""+encodeURI(this.innerHTML)+"");//将城市汉字转化为编码加入到cookie中
 				console.log(decodeURI(this.innerHTML));
 				$(".city_mask").css("display","none");
 				$(".city_chose").css("display","none");
-				$("#city").css("display","none");'>天津</li>
+				$("#city").css("display","none");$(".city_title span").html(decodeURI(getCookie("city")));'>天津</li>
 					<li>河北</li>
 					<li>山东</li>
 					<li>山西</li>
@@ -437,7 +437,7 @@
 				console.log(decodeURI(this.innerHTML));
 				$(".city_mask").css("display","none");
 				$(".city_chose").css("display","none");
-				$("#city").css("display","none");'>重庆</li>
+				$("#city").css("display","none");$(".city_title span").html(decodeURI(getCookie("city")));'>重庆</li>
 					<li >四川</li>
 					<li>云南</li>
 					<li>贵州</li>

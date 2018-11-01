@@ -55,13 +55,11 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page"],function($,Swiper,
 				});
 			},1000);
 			
-			//城市选择遮罩处理开始
-//			if(!getCookie("city")){
-//				setCookie("city","")
-//			}
+			
+		//城市选择遮罩处理开始
 			if(!getCookie("city")){//打开页面时，检测城市cookie是否存在若不存在，显示遮罩层
 				
-				$("#city").load('city_chose.html',function(){//加载外部的html代码模块,所有的关于城市选择的js代码都要在其中
+				$("#city").load('html/city_chose.html',function(){//加载外部的html代码模块,所有的关于城市选择的js代码都要在其中
 					$(".city_chose").center();//城市选择居中
 					$(".city_mask").css("display","block");
 					$(".city_chose").css("display","block");
@@ -92,12 +90,57 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page"],function($,Swiper,
 				$("#city").css("display","none");
 			}
 			
-			//定义点击城市改变cookie和各种相应的方法
+		//定义点击城市改变cookie和各种相应的方法
 			function click_city(){
 				setCookie("city",""+encodeURI(this.innerHTML)+"");//将城市汉字转化为编码加入到cookie中
 				console.log(decodeURI(this.innerHTML));
 				$(".city_mask").css("display","none");
 				$(".city_chose").css("display","none");
 				$("#city").css("display","none");
+				$(".city_title span").html(decodeURI(getCookie("city")));
 			}
+			function clicking_city(){
+				setCookie("city",""+encodeURI(this.innerHTML)+"");//将城市汉字转化为编码加入到cookie中
+				console.log(decodeURI(this.innerHTML));
+				$(".city_chosing").removeClass("active");
+				$(".city_title span").html(decodeURI(getCookie("city")));
+			}
+		//城市选择遮罩处理结束
+		
+		
+		//通用top处的处理开始
+			
+		//通用top处的处理结束
+		
+		
+		//通用top城市选择处理
+			$("#top").load('html/top.html',function(){
+				$(".city_title span").html(decodeURI(getCookie("city")));
+				$(".chosing_citys dl dt span").click(clicking_city);
+				$(".city_chosing_middle ul li").click(clicking_city);
+				$(".city_chosing_head b").click(function(){//给叉号添加点击事件
+					$(".city_chosing").removeClass("active");
+				});
+				$(".top_in_two").hover(function(){
+					$(".city_chosing").addClass("active");
+				},function(){
+					$(".city_chosing").removeClass("active");
+				})
+				$(".city_chosing_bottom ul li").click(
+						function(){
+//							$(".citys dl").removeClass("active");
+//							$(".city_chose_bottom ul li").removeClass("active");
+							
+							$(this).toggleClass("active").siblings().removeClass("active");//按钮本身的变化
+							
+							$(this).parent().next().children().eq($(this).index()).toggleClass("active").siblings().removeClass("active");//下方城市列表的变化
+							
+							$(this).parent().next().siblings(".chosing_citys").children().removeClass("active");//清除除了这个城市之外的所有列表
+							
+							$(this).parent().siblings("ul").children().removeClass("active");//清除除了本行按钮之外的所有按钮的活动样式
+						}
+					)
+			});
+		//通用top城市选择处理
+			
 });
