@@ -120,11 +120,15 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page"],function($,Swiper,
 				$(".city_chosing_middle ul li").click(clicking_city);
 				$(".city_chosing_head b").click(function(){//给叉号添加点击事件
 					$(".city_chosing").removeClass("active");
+					$(".city_chosing_bottom ul li").removeClass("active");
+					$(".chosing_citys dl").removeClass("active");
 				});
 				$(".top_in_two").hover(function(){
 					$(".city_chosing").addClass("active");
 				},function(){
 					$(".city_chosing").removeClass("active");
+					$(".city_chosing_bottom ul li").removeClass("active");
+					$(".chosing_citys dl").removeClass("active");
 				})
 				$(".city_chosing_bottom ul li").click(
 						function(){

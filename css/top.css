@@ -147,3 +147,308 @@
 				overflow: hidden;
 				color: #333333;
 			}
+			
+			
+			.top_in_three{
+				float: right;
+				color: #999999;
+				padding: 0 10px;
+				line-height: 33px;
+				
+			}
+			.top_in_three li{
+				float: left;
+				position: relative;
+				line-height: 33px;
+			}
+			.top_in_three li a{
+				color:#969696;
+			}
+			.top_in_three li a:hover{
+				color: #76ac25;
+			}
+			.login>*{
+				float: left;
+			}
+			.ding_dan{
+				padding: 0 10px;
+			}
+			.new_vip{
+				position: absolute;
+				top: 32px;
+				left: 102px;;
+			}
+			.new_vip span{
+				display: inline-block;
+				width: 11px;
+				height: 7px;
+				background: url(../index_img/regicon-top.png) left top;
+				position: absolute;
+				top: -7px;
+				left: 88px;
+			}
+			.new_vip_in{
+				color: #fff;
+				font-size: 12px;
+				height: 22px;
+				/*float: left;*/
+				padding: 0 8px;
+				min-width: 166px;
+				text-align: left;
+				overflow: hidden;
+				background: #f14431;
+				border-radius: 10px;
+				line-height: 22px;
+			}
+			.my_best b{
+				position: absolute;
+				right: 11px;
+    			top: 14px;
+				background: url(../index_img/header.png) no-repeat -86px -130px;
+				width: 8px;
+				height: 4px;
+				transition: transform .2s ease-in 0s;
+				-webkit-transition: -webkit-transform .2s ease-in 0s;
+				overflow: hidden;
+			}
+			.my_best:hover b{
+				-webkit-transform: rotate(180deg);
+			}
+			.my_best:hover .my_best_up{
+				box-shadow: 0 0 5px #dadada;
+				background-color: #fff;
+			}
+			.my_best:hover .my_best_in{
+				display: block;
+			}
+			.my_best_up{
+				margin-top: 6px;
+				height: 22px;
+				padding: 0px 10px;
+				/*border: 1px solid #DADADA;*/
+				
+				text-align: center;
+				text-indent: -1em;
+			}
+			.my_best_up a{
+				display: block;
+				width: 60px;
+				line-height: 20px;
+			}
+			.my_best_in{
+				position: absolute;
+				top: 30px;
+				left: 0;
+				width: 78px;
+				line-height: 22px;
+				background-color: #fff;
+				box-shadow: 0 0 5px #dadada;
+				text-align: center;
+				/*border: 1px solid #DADADA;*/
+				display: none;
+			}
+			.phone_app{
+				position: relative;
+				padding-left: 12px;
+				cursor: pointer;
+				margin-left: 5px;
+			}
+			.phone_app b{
+				background: url(../index_img/header.png) no-repeat -73px -122px;
+				width: 10px;
+				left: -3px;
+				
+				/*动态效果*/
+				transition: all 0.2s ease 0s;
+				height: 16px;
+				position: absolute;
+				top: 9px;
+				quotes: none;
+			}
+			.phone_app:hover b{
+				background: url(../index_img/header.png) no-repeat -73px -138px;
+			}
+			.phone_app_in{
+				position: absolute;
+				top: 34px;
+   			    left: -82px;
+				background-color: #fff;
+				width: 230px;
+				padding: 15px 0 0 15px;
+				margin-left: 5px;
+				border: 1px solid #dadada;
+				display: none;
+			}
+			.phone_app:hover .phone_app_in{
+				display: block;
+			}
+			.phone_app_in>*{
+				float: left;
+			}
+			.phone_app_in_erwei{
+				width: 73px;
+				height: 74px;
+				background: url(../index_img/header.png) no-repeat 0 -93px;
+				display: block;
+			}
+			.phone_app_in_jt{
+				/*position: absolute;*/
+				width: 50px;
+				height: 29px;
+				/*left: 80px;*/
+				/*top: 5px;*/
+				background: url(../index_img/header.png) no-repeat -73px -93px;
+				display: block;
+			}
+			.phone_app_in_wz{
+				margin-left: 23px;
+			}
+			.phone_app_in_wz *{
+				line-height: 20px;
+				display: block;
+			}
+			.phone_app_in_wz p{
+				color: #76ac25;
+				font-weight: bold;
+			}
+			.phone_app_in_app{
+				/*margin-top: 3px;*/
+				clear: left;
+			}
+			 .ios{
+				width: 96px;
+				height: 29px;
+				background: url(../index_img/header.png) no-repeat 0 -167px;
+				margin-right: 5px;
+				/*margin-top: 3px;*/
+				clear: left;
+			}
+			 .ios a,.andr a{
+			 	display: block;
+			 	width: 96px;
+			 	height: 29px;
+			 }
+			.andr{
+				width: 96px;
+				height: 29px;
+				background: url(../index_img/header.png) no-repeat 0 -196px;
+				margin-right: 5px;
+			}
+			.phone_app_in_yaoquan{
+				height: 30px;
+				background: url(../index_img/indexImg20130307.png?v=1.4) no-repeat -182px -210px #fcfbe4;
+				text-align: center;
+				color: #fa6400;
+				font-size: 14px;
+				font-weight: bold;
+				line-height: 30px;
+				width: 230px;
+				cursor: pointer;
+				margin-left: -15px;
+			}
+			
+			.webs_up{
+				    margin-top: 6px;
+				    height: 27px;
+				    padding: 0px 10px;
+				    /* border: 1px solid #DADADA; */
+				    text-align: center;
+				    text-indent: -1em;
+				   
+			}
+			.webs_up b{
+				position: absolute;
+				right: 11px;
+    			top: 14px;
+				background: url(../index_img/header.png) no-repeat -86px -130px;
+				width: 8px;
+				height: 4px;
+				transition: transform .2s ease-in 0s;
+				-webkit-transition: -webkit-transform .2s ease-in 0s;
+				overflow: hidden;
+			}
+			.webs:hover .webs_up{
+				    box-shadow: 0 0 5px #dadada;
+    				background-color: #fff;
+			}
+			.webs_up a{
+				    display: block;
+				    width: 60px;
+				    line-height: 20px;
+			}
+			.webs:hover b{
+				-webkit-transform: rotate(180deg);
+			}
+			.webs_down{
+				position: absolute;
+				right: 0;
+				top: 33px;
+				width: 815px;
+				padding-top: 29px;
+				padding-left: 20px;
+				padding-right: 20px;
+				padding-bottom: 27px;
+				background-color: #fff;
+				display: none;
+				box-shadow: 0 0 5px #dadada;
+			}
+			.webs:hover .webs_down{
+				display: block;
+			}
+			.webs_downs1{
+				/*height: 105px;*/
+				width: 242px;
+				float: left;
+			}
+			.webs_downs1 p{
+				color: #669900;
+			}
+			.webs_downs2{
+				/*height: 105px;*/
+				width: 282px;
+				float: left;
+			}
+			.webs_downs2 p{
+				color: #FA6400;
+			}
+			.webs_downs3{
+				/*height: 105px;*/
+				width: 252px;
+				float: left;
+			}
+			.webs_downs{
+				padding-right: 50px;
+				box-sizing: border-box;
+			}
+			.webs_downs p{
+				font-size: 16px;
+				font-weight: bolder;
+				font-family: "Microsoft Yahei";
+				float: left;
+			}
+			.webs_down .clear_left{
+				float: left;
+				clear: left;
+				margin-top: 11px;
+			}
+			.webs_down .clear_left span{
+				line-height: 30px;
+				float: left;
+				margin-right: 16px;
+				cursor: pointer;
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
