@@ -1,4 +1,4 @@
-//添加（更改）
+//添加（更改
 function setCookie(key,value,days){
 	days = 7 || days;//默认的参数值
 	var date = new Date();

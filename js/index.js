@@ -1,12 +1,15 @@
 requirejs.config({
-	baseUrl:"js/plugins",
+	baseUrl:"js",
 	paths:{
-		baiduT:"baiduTemplate",
-		page:"jPages",
-		extend:"jquery.extend",
-		jquery:"jquery.min",
-		lazy:"jquery.lazyload",
-		swiper:"swiper"
+		baiduT:"plugins/baiduTemplate",
+		page:"plugins/jPages",
+		extend:"plugins/jquery.extend",
+		jquery:"plugins/jquery.min",
+		lazy:"plugins/jquery.lazyload",
+		swiper:"plugins/swiper",
+		cookie:"plugins/cookie",
+		top:"modules/top",
+		head:"modules/head"
 	},
 	shim:{
 		baiduT:{
@@ -27,11 +30,17 @@ requirejs.config({
 		swiper:{
 			exports:"Swiper",
 			deps:["jquery"]
+		},
+		top:{
+			deps:["cookie","jquery"]
+		},
+		head:{
+			deps:["cookie","jquery"]
 		}
 	}
 });
 
-requirejs(["jquery","swiper","baiduT","extend","lazy","page"],function($,Swiper,baidu){
+requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","head"],function($,Swiper,baidu){
 			
 			
 			//上方滚动广告定时处理
@@ -106,45 +115,5 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page"],function($,Swiper,
 				$(".city_title span").html(decodeURI(getCookie("city")));
 			}
 		//城市选择遮罩处理结束
-		
-		
-		//通用top处的处理开始
-			
-		//通用top处的处理结束
-		
-		
-		//通用top城市选择处理
-			$("#top").load('html/top.html',function(){
-				$(".city_title span").html(decodeURI(getCookie("city")));
-				$(".chosing_citys dl dt span").click(clicking_city);
-				$(".city_chosing_middle ul li").click(clicking_city);
-				$(".city_chosing_head b").click(function(){//给叉号添加点击事件
-					$(".city_chosing").removeClass("active");
-					$(".city_chosing_bottom ul li").removeClass("active");
-					$(".chosing_citys dl").removeClass("active");
-				});
-				$(".top_in_two").hover(function(){
-					$(".city_chosing").addClass("active");
-				},function(){
-					$(".city_chosing").removeClass("active");
-					$(".city_chosing_bottom ul li").removeClass("active");
-					$(".chosing_citys dl").removeClass("active");
-				})
-				$(".city_chosing_bottom ul li").click(
-						function(){
-//							$(".citys dl").removeClass("active");
-//							$(".city_chose_bottom ul li").removeClass("active");
-							
-							$(this).toggleClass("active").siblings().removeClass("active");//按钮本身的变化
-							
-							$(this).parent().next().children().eq($(this).index()).toggleClass("active").siblings().removeClass("active");//下方城市列表的变化
-							
-							$(this).parent().next().siblings(".chosing_citys").children().removeClass("active");//清除除了这个城市之外的所有列表
-							
-							$(this).parent().siblings("ul").children().removeClass("active");//清除除了本行按钮之外的所有按钮的活动样式
-						}
-					)
-			});
-		//通用top城市选择处理
 			
 });
