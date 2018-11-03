@@ -72,10 +72,298 @@
 				height: 34px;
 				background-color: #f7f7f7;
 			}
-
-			
 			/*通用top结束*/
 			
+			
+			/*通用head开始*/
+			#head{
+				width: 100%;
+				height: 104px;
+			}
+			.head_in{
+				width: 1200px;
+				height: 104px;
+				margin: 0 auto;
+				/*background-color: yellow;*/
+			}
+			.sf_logo{
+				width: 248px;
+				padding-top: 5px;
+				float: left;
+			}
+			.sf_img_l{
+				width: 124px;
+				height: 66px;
+				float: left;
+				background: url("index_img/indexImg20130307.png") -33px 0px no-repeat;
+				height: 66px;
+			}
+			.yp_img_l{
+				width: 124px;
+				height: 66px;
+				float: left;
+				background: url("index_img/indexImg20130307.png") -160px 0px no-repeat;
+				height: 66px;
+			}
+			.yx_city{
+				display: block;
+				float: left;
+				
+			}
+			.search{
+				float: left;
+				width: 512px;
+				height: 75px;
+				margin-left: 198px;
+				margin-top: 30px;
+			}
+			.search_in{
+				position: relative;
+				width: 512px;
+				height: 36px;
+				float: left;
+			}
+			.search_text{
+				outline: none;
+				height: 36px;
+				width: 430px;
+				border: 1px solid #669900;
+				box-sizing: border-box;
+				float: left;
+				font-size: 12px;
+				color: #666666;
+				text-indent: 5px;
+			}
+			.search_result{
+				position: absolute;
+				top: 36px;
+				left: 0;
+				width: 428px;
+				background-color: #fff;
+				border: 1px solid #dadada;
+				display: none;
+			}
+			.search_result p{
+				height: 31px;
+				width: 425px;
+				line-height: 31px;
+				font-size: 12px;
+			}
+			.search_result p.active{
+				background-color: #f9f9f9;
+				color: #646464;
+			}
+			.search_result p span{
+				float: left;
+			}
+			.search_result p b{
+				float: right;
+				font-weight: normal;
+			}
+			.search_result p i{
+				font-style: normal;
+			}
+			.search_wz{
+				width: 428px;
+				height: 30px;
+				border-top: 1px solid #dadada;;
+			}
+			.search_button{
+				width: 82px;
+				height: 36px;
+				background:url("index_img/header.png") no-repeat -99px -179px;;
+				text-align: center;
+				line-height: 36px;
+				float: left;
+			}
+			.search_down{
+				float: left;
+				margin-top: 7px;
+			}
+			.search_down a{
+				float: left;
+				margin-right: 9px;
+				color: #666666;
+			}
+			.head_cart{
+				float: left;
+				width: 195px;
+				height: 35px;
+				margin-left: 47px;
+				margin-top: 30px;
+				/*background-color: blue;*/
+				/*border:1px solid black;*/
+				box-sizing: border-box;
+				position: relative;
+				
+			}
+			.head_cart_l{
+				width: 155px;
+				height: 35px;
+				float: left;
+				border:1px solid #efefef;
+				box-sizing: border-box;
+				
+			}
+			.head_cart_l b{
+				float: left;
+				display: block;
+				width: 23px;
+				height: 21px;
+				margin-left: 18px;
+				margin-top: 7px;
+				background: url(index_img/header.png) no-repeat -102px -235px;
+			}
+			.head_cart_l a{
+				display: block;
+				float: left;
+				margin-top: 9px;
+				color: #666666;
+			}
+			.head_cart_r{
+				float: left;
+				width: 38px;
+				height: 35px;
+				background-color: #fa9600;
+				text-align: center;
+			}
+			.head_cart_r span{
+				line-height: 35px;
+				font-size: 16px;
+				font-weight: 600;
+				text-align: center;
+				color: #fff;
+			}
+			.head_cart_noneshow{
+				width: 360px;
+				height: 84px;
+				position: absolute;
+				top: 35px;
+				right: 0;
+				background-color: #fff;
+				border:1px solid #efefef;
+				box-shadow: 0 0 5px #dadada;
+				display: none;
+			}
+			
+			.head_cart_noneshow p{
+					display: block;
+				    width: 34px;
+				    height: 42px;
+				    margin-left: 95px;
+				    margin-top: 20px;
+				    background: url(index_img/header.png) no-repeat -99px -123px;
+				    float: left;
+			}
+			.head_cart_noneshow span{
+				margin-left: 13px;
+				margin-top: 22px;
+				float: left;
+			}
+			
+			.head_cart_show{
+				position: absolute;
+				right: 0;
+				top: 35px;
+				width: 360px;
+				background-color: #fff;
+				padding: 0 7px 12px 12px;
+				border: 1px solid #efefef;
+				box-shadow: 0 0 5px #dadada;
+				box-sizing: border-box;
+				display: none;
+				z-index: 999;
+			}
+			.head_cart_show_top{
+				width: 339px;
+				height: 33px;
+				line-height: 33px;
+				color: #6c6c6c;
+				border-bottom: 1px solid #1b6146;
+			}
+			.goods_s{
+				max-height: 195px;
+				overflow: auto;
+			}
+			.goods{
+				width: 100%;
+				height: 65px;
+				background-color: #fff;
+				border-bottom: 1px dashed #ccc;
+				box-sizing: border-box;
+			}
+			.goods_pic{
+				height: 40px;
+				width: 40px;
+				margin-top: 12px;
+				background-color: pink;
+				float: left;
+			}
+			.goods_msg{
+				float: left;
+				height: 33px;
+				margin-top: 15px;
+				margin-left: 7px;
+			}
+			.goods_msg p,.goods_msg span{
+				float: left;
+			}
+			.goods_msg span{
+				clear: left;
+				font-size: 10px;
+				color: #cecece;
+				margin-top: 7px;
+			}
+			.good_price{
+				float: right;
+				margin-top: 15px;
+			}
+			.good_price p{
+				float: right;
+			}
+			.good_price p i,.good_price p span{
+				color: #f05404;
+			    font-size: 14px;
+			    font-weight: bold;
+			}
+			.good_price p b{
+				color: #565656;
+				font-weight: normal;
+			}
+			.good_price div{
+				float: right;
+				clear: right;
+				margin-top: 7px;
+				cursor: pointer;
+			}
+			.head_cart_nums{
+				float: left;
+				width: 210px;
+			}
+			.head_cart_nums p{
+				float: left;
+				
+			}
+			.head_cart_nums p span{
+				font-size: 14px;
+				color: #f05404;
+				font-weight: bold;
+			}
+			.head_cart_nums{
+				
+			}
+			.head_cart_weight{
+				clear: left;
+				margin-top: 7px;
+			}
+			.head_cart_money{
+				float: right;
+			}
+			.head_cart_money span{
+				font-size: 18px;
+				color: #f05404;
+			}
+			/*通用head结束*/
 			
 			.lin_shi{
 				width: 1200px;
@@ -102,11 +390,115 @@
 			<!--承载load过来的方法-->
 		</div>
 		
+		
 		<!--通用top开始-->
 		<div id="top">
 
 		</div>
 		<!--通用top结束-->
+		
+		
+		<!--通用head开始-->
+		<div id="head">
+			
+			<div class="head_in">
+				<div class="sf_logo">
+					<div class="sf_img_l">
+						
+					</div>
+					<div class="yp_img_l">
+						
+					</div>
+					<img class="yx_city" src="http://i.sfimg.cn/html/images/logo_word.png">
+				</div>
+			
+				<div class="search">
+					<div class="search_in">
+						<input placeholder="大闸蟹" type="text" class="search_text" />
+						<div class="search_button"></div>
+						<div class="search_result">
+							<p class="active"><span>111</span>     <b>约<i>888</i>件</b></p>
+							<p><span>111</span>     <b>约<i>888</i>件</b></p>
+							<p><span>111</span>     <b>约<i>888</i>件</b></p>
+							<p><span>111</span>     <b>约<i>888</i>件</b></p>
+							<p><span>111</span>     <b>约<i>888</i>件</b></p>
+							<p><span>111</span>     <b>约<i>888</i>件</b></p>
+							<div class="search_wz">
+								<p>搜<i>1</i>相关文章约<i>142</i>篇</p>
+							</div>
+						</div>
+						
+					</div>
+					<div class="search_down">
+						<a href="#">牛排</a>
+						<a href="#">牛奶</a>
+						<a href="#">鳕鱼</a>
+						<a href="#">茅台</a>
+						<a href="#">洋酒</a>
+						<a href="#">大米</a>
+						<a href="#">白虾</a>
+						<a href="#">葡萄酒</a>
+						<a href="#">油</a>
+					</div>
+				</div>
+			
+				<div class="head_cart">
+					<div class="head_cart_l">
+						<b></b>
+						<a href="#">我的购物车</a>
+					</div>
+					<div class="head_cart_r">
+						<span>2</span>
+					</div>
+					<div class="head_cart_noneshow">
+						<p></p>
+						<span>购物车中没有商品</span>
+					</div>
+				
+					<div class="head_cart_show">
+						<div class="head_cart_show_top">
+							顺丰冷链 配送到家！
+						</div>
+						<div class="goods_s">
+							<div class="goods">
+								<div class="goods_pic">
+									<img src=""/>
+								</div>
+								<div class="goods_msg">
+									<p class="goods_title">德亚Weidendorf全职牛奶 200ml*30</p>
+									<span>6kg</span>
+								</div>
+								<div class="good_price">
+									<p><i>￥</i><span>79.9</span>×<b>2</b></p>
+									<div>删除</div>
+								</div>
+							</div>
+							<div class="goods">
+								
+							</div>
+							<div class="goods">
+								
+							</div>
+							<div class="goods">
+								
+							</div>
+						</div>
+						<div class="head_cart_calc">
+							<div class="head_cart_nums">
+								<p class="head_cart_num">共有<span>6</span>件商品</p>
+								<p class="head_cart_weight">总重<span>25.70</span>kg(含包装)</p>
+							</div>
+							<div class="head_cart_money">
+								<p>共计:<span>￥<b>474.5</b></span></p>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!--通用head结束-->
 		
 		
 		<div class="lin_shi">

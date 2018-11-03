@@ -48,6 +48,7 @@
 				width: 438px;
 				background-color: #fff;
 				display: none;
+				z-index: 999;
 			}
 			.city_chosing.active{
 				display: block;
@@ -246,6 +247,7 @@
 				text-align: center;
 				/*border: 1px solid #DADADA;*/
 				display: none;
+				z-index: 999;
 			}
 			.phone_app{
 				position: relative;
@@ -278,6 +280,7 @@
 				margin-left: 5px;
 				border: 1px solid #dadada;
 				display: none;
+				z-index: 999;
 			}
 			.phone_app:hover .phone_app_in{
 				display: block;
@@ -391,6 +394,8 @@
 				background-color: #fff;
 				display: none;
 				box-shadow: 0 0 5px #dadada;
+				background-color: #fff;
+				z-index: 999;
 			}
 			.webs:hover .webs_down{
 				display: block;
