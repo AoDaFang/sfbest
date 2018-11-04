@@ -9,7 +9,9 @@ requirejs.config({
 		swiper:"plugins/swiper",
 		cookie:"plugins/cookie",
 		top:"modules/top",
-		head:"modules/head"
+		head:"modules/head",
+		nav:"modules/nav",
+		er_ji:"modules/er_ji"
 	},
 	shim:{
 		baiduT:{
@@ -36,11 +38,17 @@ requirejs.config({
 		},
 		head:{
 			deps:["cookie","jquery"]
+		},
+		nav:{
+			deps:["cookie","jquery"]
+		},
+		er_ji:{
+			deps:["cookie","jquery"]
 		}
 	}
 });
 
-requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","head"],function($,Swiper,baidu){
+requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","head","nav","er_ji"],function($,Swiper,baidu){
 			
 			
 			//上方滚动广告定时处理

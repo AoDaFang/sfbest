@@ -31,7 +31,7 @@
 			.search{
 				float: left;
 				width: 512px;
-				height: 75px;
+				height: 74px;
 				margin-left: 198px;
 				margin-top: 30px;
 			}
@@ -60,6 +60,7 @@
 				background-color: #fff;
 				border: 1px solid #dadada;
 				display: none;
+				z-index: 998;
 			}
 			.search_result p{
 				height: 31px;
