@@ -123,5 +123,53 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 				$(".city_title span").html(decodeURI(getCookie("city")));
 			}
 		//城市选择遮罩处理结束
+		
+		
+		//轮播开始
+		var colors = ["rgb(255, 191, 67)","rgb(250, 226, 182)","rgb(115, 42, 193)","rgb(0, 0, 0)","rgb(237, 184, 202)","rgb(29, 50, 83)","rgb(21, 80, 1)","rgb(189, 53, 54)"];
+		
+		
+		var mySwiper = new Swiper ('.swiper-container', {
+			initialSlide:0,//开始是第几张
+			direction: 'horizontal', // 垂直切换选项
+			loop: true, // 循环模式选项
+			setWrapperSize:true,//增加对不支持弹性盒子浏览器的兼容性
+			on: {
+					init: function(){
+//				      //Swiper初始化了
+//				      console.log($(".swiper-pagination-bullet"))
+//				      $(".swiper-pagination-bullet").each(function(index,ele){
+//				      	console.log(index)
+//				      })
+//				      alert('当前的slide序号是'+this.activeIndex);
+//				      this.emit('transitionEnd');//在初始化时触发一次transitionEnd事件
+				    }, 
+			   		 slideChangeTransitionEnd: function(){
+			   		 	$(".slide_main").css("background",colors[this.activeIndex-1]);
+//				      alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
+				    }
+			    }, 
+			pagination: {
+	       		el: '.swiper-pagination',
+	       		clickable:true,
+	     	 }
+		});
+		
+		$(".swiper-pagination-bullet").hover(function() {
+		    $(this).click(); //鼠标划上去之后，自动触发点击事件来模仿鼠标划上去的事件
+		},function() {
+		    mySwiper.autoplay.start(); //鼠标移出之后，自动轮播开启
+		})
+
+		//轮播结束
+		
+		//轮播右侧遮罩图开始
+		$(".slider_mask_pics img").hover(function(){
+			$(this).parent().siblings().children().eq(1).css("display","block");
+			$(this).parent().siblings().children().eq(3).css("display","block");
+		},function(){
+			$(".slider_masks").css("display","none");
+		})
+		//轮播右侧遮罩图结束
 			
 });

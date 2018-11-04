@@ -9,6 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="css/top.css"/>
 		<link rel="stylesheet" type="text/css" href="css/head.css"/>
 		<link rel="stylesheet" type="text/css" href="css/er_ji.css"/>
+		<link rel="stylesheet" type="text/css" href="css/nav.css"/>
 		<style type="text/css">
 			*{
 				margin: 0;
@@ -93,62 +94,10 @@
 			    border-bottom: 2px solid #679800;
 			}
 			
-			.nav_in{
-				width: 1200px;
-				height: 32px;
-				margin: 0 auto;
-			}
-			.all_goods_class_button{
-				float: left;
-				height: 32px;
-				line-height: 32px;
-				display: block;
-				margin: 0px;
-				padding: 0px;
-				color: #fff;
-				font-size: 14px;
-				font-family: Microsoft YaHei;
-				font-weight: bold;
-				width: 200px;
-				text-align: center;
-				text-decoration: none;
-				background-color: #669900;
-			}
-			.nav_main_buttons{
-				height: 32px;
-				width: 1000px;
-				float: left;
-			}
-			.nav_main_button{
-				padding: 10px 0px;
-				float: left;
-			}
-			.nav_main_button a{
-				padding: 0 24px;
-				font-size: 14px;
-				text-align: center;
-				text-decoration: none;
-				display: block;
-				font-family: Microsoft YaHei;
-				font-weight: 700;
-				color: #333;
-			}
-			.nav_main_button:hover a{
-				color: #669900;
-			}
-			.nav_main_button.active a{
-				color: #669900;
-			}
-			.you_xuan_card {
-				float: right;
-				padding: 0;
-				width: 196px;
-				height: 32px;
-				overflow: hidden;
-			}
+			
 			/*通用nav结束*/
 			
-			/*轮播主体部分开始*/
+			/*轮播部分开始*/
 			.slide_main{
 				width: 100%;
 				height: 480px;
@@ -157,9 +106,70 @@
 				margin: 0 auto;
 				width: 1200px;
 				height: 480px;
+				position: relative;
+			}
+			.er_ji {
+				position: relative;
+				float: left;
 			}
 			
-			/*轮播主体部分结束*/
+			
+				/*轮播开始*/
+			#slider{
+				width: 1000px;
+				height: 480px;
+				background-color: yellow;
+				float: left;
+			}
+			#swiper_ture{
+				width: 1000px;
+				height: 480px;
+			}
+			/*自定义分页器的样式，这个你自己想要什么样子自己写*/
+			.swiper-pagination-bullet {
+				width: 20px;
+				height: 20px!important;
+				border-radius: 50%;
+				height: 4px;
+				display: inline-block;
+				background: #000;
+				opacity: .3;
+				margin: 15px 5px;
+				text-align: center;
+				line-height: 20px;
+				/*color: #03ccbb;*/
+			}
+			/*自定义分页器激活时的样式表现*/
+			.slider_in .swiper-pagination-bullet-active {
+				opacity: 1;
+				background-color: #F78E00;
+			}  
+			.slider_mask_pic{
+				position: absolute;
+				width: 260px;
+				height: 462px;
+				right: 0;
+				top: 15px;
+				z-index: 998;
+			}
+			.slider_mask_pics{
+				position: relative;
+			}
+			.slider_masks{
+				position: absolute;
+				top: 0;
+				left: 0;
+				margin-top: 1px;
+				width: 260px;
+				height: 100%;
+				background-color: #646464;
+				opacity: 0.1;
+				filter: alpha(opacity=10);
+				z-index: 999;
+				display: none;
+			}
+			
+			/*轮播部分结束*/
 			
 			
 			.lin_shi{
@@ -211,11 +221,53 @@
 		
 		<!--轮播主体部分开始-->
 		<div class="slide_main">
-			
 			<div class="slide_main_in">
+				<div class="er_ji">
+				</div>
+				<!--轮播图开始-->
+				<div id="slider">
+					<div class="slider_in">
+						<div class="swiper-container" id="swiper_ture">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><img src="index_img/002.jpg"/></div>
+								<div class="swiper-slide"><img src="index_img/006.jpg"/></div>
+						        <div class="swiper-slide"><img src="index_img/001.jpg"/></div>
+						        <div class="swiper-slide"><img src="index_img/005.jpg"/></div>
+						        <div class="swiper-slide"><img src="index_img/004.jpg"/></div>
+						        <div class="swiper-slide"><img src="index_img/007.jpg"/></div>
+						        <div class="swiper-slide"><img src="index_img/008.jpg"/></div>
+						        <div class="swiper-slide"><img src="index_img/003.jpg"/></div>
+						    </div>
+						    <!-- 如果需要分页器 -->
+						    <div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+				<!--轮播图结束-->
 				
+				<!--轮播右侧的遮罩图开始-->
+				<div class="slider_mask_pic">
+					<div class="slider_mask_pics">
+						<img src="index_img/011.jpg"/>
+						<div class="slider_masks">
+							
+						</div>
+					</div>
+					<div class="slider_mask_pics">
+						<img src="index_img/010.jpg"/>
+						<div class="slider_masks">
+							
+						</div>
+					</div>
+					<div class="slider_mask_pics">
+						<img src="index_img/009.jpg"/>
+						<div class="slider_masks">
+							
+						</div>
+					</div>
+				</div>
+				<!--轮播右侧的遮罩图结束-->
 			</div>
-			
 		</div>
 		
 		<!--轮播主体部分结束-->
