@@ -7,7 +7,6 @@
 		});
 
 		$(".er_ji_right_ins").hover(function() {
-			console.log("123")
 			$(this).addClass("active");
 		}, function() {
 			$(this).removeClass("active");

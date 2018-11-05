@@ -101,6 +101,7 @@
 			.slide_main{
 				width: 100%;
 				height: 480px;
+				
 			}
 			.slide_main_in{
 				margin: 0 auto;
@@ -110,7 +111,6 @@
 			}
 			.er_ji {
 				position: relative;
-				float: left;
 			}
 			
 			
@@ -120,6 +120,9 @@
 				height: 480px;
 				background-color: yellow;
 				float: left;
+				position: absolute;
+				right: 0;
+				top: 0;
 			}
 			#swiper_ture{
 				width: 1000px;
@@ -168,9 +171,187 @@
 				z-index: 999;
 				display: none;
 			}
-			
 			/*轮播部分结束*/
 			
+			
+			/*优选必买开始*/
+			.must_buy{
+				width: 100%;
+				height: 545px;
+				background: url(index_img/thefifthyear.png) center center no-repeat;
+				overflow: hidden;
+				position: relative;
+				margin-top: 35px;
+			}
+			.must_buy_in{
+				width: 1200px;
+				height: 545px;
+				margin: 0 auto;
+				position: relative;
+			}
+			.must_buy_title{
+				color: #333333;
+				font-weight: normal;
+				font-size: 18px;
+				font-family: Microsoft YaHei;
+				padding: 0 0 12px 3px;
+			}
+			.must_buy_title span{
+				margin: 0 0 0 15px;
+				overflow: hidden;
+				background: url(index_img/index_icon_new.png) no-repeat -29px -333px;
+				height: 14px;
+				width: 118px;
+				display: inline-block;
+			}
+			.must_buy_all{
+				width: 940px;
+				position: absolute;
+				left: 0;
+				top: 26px;
+			}
+			.must_buy_up{
+				border-top: 1px solid #e8e8e8;
+				border-left: 1px solid #e8e8e8;
+			}
+			.must_buy_down{
+				overflow: hidden;
+			}
+			.must_buy_in ul{
+				width: 940px;
+				overflow: hidden;
+			}
+			.must_buy_in ul li{
+				position: relative;
+				width: 235px;
+				height: 258px;
+				border-right: 1px solid #e8e8e8;
+				border-bottom: 1px solid #e8e8e8;
+				box-sizing: border-box;
+				float: left;
+				overflow: hidden;
+			}
+			.must_buy_in ul li p{
+				float: left;
+				font-size: 14px;
+				color: #323232;
+				display: inline-block;
+				margin-left: 12px;
+				height: 14px;
+				overflow: hidden;
+				font-family: 微软雅黑;
+				padding-top: 10px;
+				line-height: 14px;
+			}
+			.must_buy_in ul li span{
+				color: #f33f00;
+				font-family: 微软雅黑;
+				line-height: 16px;
+				font-weight: bold;
+				float: left;
+				clear: left;
+				margin-top: 8px;
+				margin-left: 12px;
+			}
+			.must_buy_in ul li span b{
+
+				font-size: 16px;
+				color: #f33f00;
+				font-family: 微软雅黑;
+				line-height: 16px;
+				font-weight: bold;
+				
+			}
+			.must_buy_in ul li img{
+				float: right;
+				width: 204px;
+				height: 204px;
+			}
+			.must_buy_in ul li .add_goods_btns{
+				position: absolute;
+				left: 50%;
+				margin-left: -80px;
+				width: 160px;
+				height: 24px;
+				border-radius: 2px;
+				background: #76ac25;
+				filter: alpha(opacity=95);
+				-moz-opacity: 0.95;
+				opacity: 0.95;
+				top: 261px;
+				cursor: pointer;
+				z-index: 4;
+			}
+			.must_buy_in ul li .add_goods_btns a{
+				margin: 0 auto;
+				width: 60px;
+				height: 24px;
+				display: block;
+				background: url(index_img/indexsprite.png) no-repeat -66px -177px;
+				line-height: 24px;
+				font-family: Microsoft YaHei;
+				font-size: 12px;
+				color: #fff;
+				text-decoration: none;
+				padding-left: 20px;
+			}
+			
+			.yx_kuai_bao{
+				position: absolute;
+				top:26px;
+				right: 0;
+				width: 222px;
+				height: 517px;
+				border: 1px solid #E8E8E8;
+			}
+			.kuai_baos{
+				width: 202px;
+				margin: 0 auto;
+			}
+			.yx_kuai_bao_big_pic{
+				width: 220px;
+				height: 300px;
+			}
+			.kuai_baos_title{
+				border-bottom: 1px dotted #DBDBDB;
+				overflow: hidden;
+				padding: 15px 0 10px 0;
+				line-height: 14px;
+				overflow: hidden;
+				height: 14px;
+			}
+			.kuai_baos_main p{
+				line-height: 26px;
+				height: 26px;
+				overflow: hidden;
+			}
+			.kuai_baos_title p{
+				color: #323232;
+				font-size: 14px;
+				font-family: Microsoft YaHei;
+				float: left;
+				font-weight: normal;
+			}
+			.kuai_baos_title a{
+			    color: #969696;
+			    text-decoration: none;
+			    float: right;
+			    display: block;
+			    padding-top: 2px;
+			}
+			.kuai_baos_title a:hover{
+				color: #76ac25;
+			}
+			.kuai_baos_main_high a{
+				color: #FA6400;
+			}
+			.kuai_baos_main_high:hover a{
+				text-decoration: underline;
+			}
+			.kuai_baos_main_low:hover a{
+				color: #76ac25;
+			}
+			/*优选必买结束*/
 			
 			.lin_shi{
 				width: 1200px;
@@ -219,10 +400,11 @@
 		<!--通用nav结束-->
 		
 		
-		<!--轮播主体部分开始-->
+		<!--轮播部分开始-->
 		<div class="slide_main">
 			<div class="slide_main_in">
 				<div class="er_ji">
+					<!--二级列表内容-->
 				</div>
 				<!--轮播图开始-->
 				<div id="slider">
@@ -269,8 +451,59 @@
 				<!--轮播右侧的遮罩图结束-->
 			</div>
 		</div>
+		<!--轮播部分结束-->
 		
-		<!--轮播主体部分结束-->
+		
+		<!--优选必买开始-->
+		<div class="must_buy">
+			<div class="must_buy_in">
+				<div class="must_buy_title">
+					优选必买
+					<span></span>
+				</div>
+				<div class="must_buy_all">
+					<div class="must_buy_up">
+						<ul>
+							<!--<li>
+								<p>丹麦 猪蹄块/八戒有肉 600g 15315614561465456456</p>
+								<span>￥<b>36.8</b></span>
+								<img src="index_img/test-goods.png"/>
+								<div class="add_goods_btns"><a href="#">加入购物车</a></div>
+							</li>-->
+						</ul>
+					</div>
+					<div class="must_buy_down">
+						<ul>
+						
+						</ul>
+					</div>
+				</div>
+				
+				<div class="yx_kuai_bao">
+					<div class="yx_kuai_bao_big_pic">
+						<a href="#">
+							<img src="http://002.sfimg.cn/web/1ad88ba3/1ad88ba38c2b0ed0692d211826449c52.jpg"/>
+						</a>
+					</div>
+					<div class="kuai_baos">
+						<div class="kuai_baos_title">
+							<p>优选快报</p>
+							<a href="#">更多></a>
+						</div>
+						<div class="kuai_baos_main">
+							<p class="kuai_baos_main_high"><a href="#">《昨日青空》电影票中奖名单</a></p>
+							<p class="kuai_baos_main_high"><a href="#">关于顺丰优选线上自营订单的包邮规则</a></p>
+							<p class="kuai_baos_main_high"><a href="#">《反贪风暴3》电影票获奖名单</a></p>
+							<p class="kuai_baos_main_low"><a href="#">关于上合峰会青岛地区客户订单的影响</a></p>
+							<p class="kuai_baos_main_low"><a href="#">顺丰优选用户体验提升调研问卷</a></p>
+							<p class="kuai_baos_main_low"><a href="#">荔枝活动中奖名单</a></p>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+		<!--优选必买结束-->
+		
 		
 		
 		<div class="lin_shi">

@@ -165,11 +165,48 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 		
 		//轮播右侧遮罩图开始
 		$(".slider_mask_pics img").hover(function(){
-			$(this).parent().siblings().children().eq(1).css("display","block");
-			$(this).parent().siblings().children().eq(3).css("display","block");
+			$(this).parent().siblings().children(".slider_masks").css("display","block");
 		},function(){
 			$(".slider_masks").css("display","none");
 		})
 		//轮播右侧遮罩图结束
+		
+		//优选必买处理开始
+		$.ajax({
+			url:"http://www.sfbest.com/ajaxIndex/GetPerfectGoods",
+			dataType:'jsonp',
+			jsonpCallback:"jsonp1541215666386",
+			data:{
+				callback:"jsonp1541215666386"
+			},
+			success:function(data){
+				$.each(data.upProduct, function(index,ele) {
+					console.log(index);
+					$(".must_buy_up ul").append('<li><p>'+ele.name+'</p><span>￥<b>'+ele.price+'</b></span><img src="'+ele.img+'"/><div class="add_goods_btns"><a href="#">加入购物车</a></div></li>');
+				});
+				$.each(data.downProduct, function(index,ele) {
+					console.log(index);
+					$(".must_buy_down ul").append('<li><p>'+ele.name+'</p><span>￥<b>'+ele.price+'</b></span><img src="'+ele.img+'"/><div class="add_goods_btns"><a href="#">加入购物车</a></div></li>');
+				});
+				//$("must_buy_up ul").append('<li><p>丹麦 猪蹄块/八戒有肉 600g 15315614561465456456</p><span>￥<b>36.8</b></span><img src="index_img/test-goods.png"/><div class="add_goods_btns"><a href="#">加入购物车</a></div></li>')
+				
+				$(".must_buy_in ul li").hover(function(){
+					$(this).children(".add_goods_btns").animate({//第一个参数，要运动的属性
+						top:225
+					},{//第二个参数
+						queue:false,//是否进行排队
+					})
+				},function(){
+					$(this).children(".add_goods_btns").animate({//第一个参数，要运动的属性
+						top:260
+					},{//第二个参数
+						queue:false,//是否进行排队
+					})
+				})
+				
+			}
+		});
+		$("must_buy_up ul")
+		//优选必买处理结束
 			
 });
