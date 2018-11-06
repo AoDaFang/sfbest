@@ -174,11 +174,11 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 		
 		//优选必买处理开始
 		$.ajax({
-			url:"http://www.sfbest.com/ajaxIndex/GetPerfectGoods",
-			dataType:'jsonp',
-			jsonpCallback:"jsonp1541215666386",
+			url:"data/must_buy.json",
+			dataType:'json',
+//			jsonpCallback:"jsonp1541215666386",
 			data:{
-				callback:"jsonp1541215666386"
+//				callback:"jsonp1541215666386"
 			},
 			success:function(data){
 				$.each(data.upProduct, function(index,ele) {
@@ -210,13 +210,13 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 		
 		//水果处理开始
 		$.ajax({
-			url:"http://www.sfbest.com/ajaxIndex/GetFloorGoods",
-			dataType:'jsonp',
-			jsonpCallback:"jsonp1541411803363",
+			url:"data/shui_guo.json",
+			dataType:'json',
+//			jsonpCallback:"jsonp1541411803363",
 			data:{
-				callback:"jsonp1541411803363",
-				cId:7,
-				floorId:297
+//				callback:"jsonp1541411803363",
+//				cId:7,
+//				floorId:297
 			},
 			success:function(data){
 				$.each(data,function(index,ele){
@@ -242,13 +242,9 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 		
 		//生鲜处理开始
 		$.ajax({
-			url:"http://www.sfbest.com/ajaxIndex/GetFloorGoods",
-			dataType:'jsonp',
-			jsonpCallback:"jsonp1541417801712",
+			url:"data/sheng_xian.json",
+			dataType:'json',
 			data:{
-				callback:"jsonp1541417801712",
-				cId:7,
-				floorId:301
 			},
 			success:function(data){
 				$.each(data,function(index,ele){
@@ -274,13 +270,9 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 		
 		//冷藏处理开始
 		$.ajax({
-			url:"http://www.sfbest.com/ajaxIndex/GetFloorGoods",
-			dataType:'jsonp',
-			jsonpCallback:"jsonp1541422243809",
+			url:"data/leng_cang.json",
+			dataType:'json',
 			data:{
-				callback:"jsonp1541422243809",
-				cId:0,
-				floorId:357
 			},
 			success:function(data){
 				$.each(data,function(index,ele){
@@ -306,13 +298,9 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 		
 		//粮油处理开始
 		$.ajax({
-			url:"http://www.sfbest.com/ajaxIndex/GetFloorGoods",
-			dataType:'jsonp',
-			jsonpCallback:"jsonp1541422243810",
+			url:"data/liang_you.json",
+			dataType:'json',
 			data:{
-				callback:"jsonp1541422243810",
-				cId:7,
-				floorId:309
 			},
 			success:function(data){
 				$.each(data,function(index,ele){
@@ -338,13 +326,9 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 		
 		//糖巧处理开始
 		$.ajax({
-			url:"http://www.sfbest.com/ajaxIndex/GetFloorGoods",
-			dataType:'jsonp',
-			jsonpCallback:"jsonp1541465635035",
+			url:"data/tang_qiao.json",
+			dataType:'json',
 			data:{
-				callback:"jsonp1541465635035",
-				cId:7,
-				floorId:173
 			},
 			success:function(data){
 				$.each(data,function(index,ele){
@@ -370,13 +354,9 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 		
 		//茶饮处理开始
 		$.ajax({
-			url:"http://www.sfbest.com/ajaxIndex/GetFloorGoods",
-			dataType:'jsonp',
-			jsonpCallback:"jsonp1541465635036",
+			url:"data/cha_yin.json",
+			dataType:'json',
 			data:{
-				callback:"jsonp1541465635036",
-				cId:5,
-				floorId:371
 			},
 			success:function(data){
 				$.each(data,function(index,ele){
@@ -402,13 +382,9 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 		
 		//酒水处理开始
 		$.ajax({
-			url:"http://www.sfbest.com/ajaxIndex/GetFloorGoods",
-			dataType:'jsonp',
-			jsonpCallback:"jsonp1541465635037",
+			url:"data/jiu_shui.json",
+			dataType:'json',
 			data:{
-				callback:"jsonp1541465635037",
-				cId:4,
-				floorId:169
 			},
 			success:function(data){
 				$.each(data,function(index,ele){
@@ -519,4 +495,19 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 		});
 		
 		//为你推荐结束
+		
+		$.ajax({
+			type:"get",
+			url:"data/all_goods.json",
+			dataType:'json',
+			data:{
+			},
+			
+			success:function(data){
+				console.log(data)
+			}
+		});
+		
+		
+		$(".foot").load('html/foot.html');
 });

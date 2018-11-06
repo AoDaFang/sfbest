@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>顺丰优选-顺丰旗下全球美食优选网购商城-进口食品、母婴、营养保健品、生鲜、粮油、酒水饮料、休闲食品-顺丰优选Sfbest.com</title>
+		<title>我的顺丰优选-顺丰旗下全球美食优选网购商城-进口食品、母婴、营养保健品、生鲜、粮油、酒水饮料、休闲食品-顺丰优选Sfbest.com</title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/swiper.css"/>
 		<link rel="stylesheet" type="text/css" href="css/city_chose.css"/>
@@ -10,6 +10,8 @@
 		<link rel="stylesheet" type="text/css" href="css/head.css"/>
 		<link rel="stylesheet" type="text/css" href="css/er_ji.css"/>
 		<link rel="stylesheet" type="text/css" href="css/nav.css"/>
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/foot.css"/>
 		<style type="text/css">
 			*{
 				margin: 0;
@@ -17,13 +19,13 @@
 				list-style: none;
 			}
 			body{
-				height: 99999px;
 			}
 			
 			/*头部广告开始*/
 			.head_prev{
 				width: 100%;
 				margin: 0 auto;
+				min-width: 1200px;
 				
 			}
 			.head_prev_up{
@@ -33,7 +35,8 @@
 				height: 0;
 				background: url("index_img/Z.jpg");
 				background-repeat: no-repeat;
-				background-position: center top;			
+				background-position: center top;		
+				min-width: 1200px;	
 			}
 			.head_prev_up a{
 				display: block;
@@ -74,6 +77,7 @@
 				width: 100%;
 				height: 34px;
 				background-color: #f7f7f7;
+				min-width: 1200px;
 			}
 			/*通用top结束*/
 			
@@ -484,6 +488,7 @@
 				width: 100%;
 				height: 600px;
 				margin-top: 30px;
+				min-width:1200px
 			}
 			.main_class_in{
 				width: 1200px;
@@ -830,6 +835,7 @@
 			.tui_jian{
 				margin-top: 46px;
 				width: 100%;
+				min-width:1200px
 			}
 			.tui_jian_in{
 				margin: 0 auto;
@@ -864,6 +870,7 @@
 				float: left;
 				position: relative;
 				z-index: 1;
+				height: 306px;
 			}
 			.tui_jian_goods_pic{
 				position: relative;
@@ -938,13 +945,47 @@
 				width: 97px;
 				height: 18px;
 				background-color: white;
+				color: #969696;
+				font-size: 14px;
 			}
 			/*推荐结束*/
+			
+			/*ad4*/
+			.ad4{
+				width: 100%;
+				height: 120px;
+				margin-top: 10px;
+				background-color: #F5F5F5;
+				min-width:1200px
+			}
+			.ad4_in{
+				width: 1200px;
+				margin: 0 auto;
+			}
+			.ad4_in>div{
+				float: left;
+				width: 300px;
+				height: 120px;
+				text-align: center;
+			}
+			.ad4_in>div>img{
+				/*display: block;*/
+				margin-top: 40px;
+			}
+			/*ad4*/
+			
+			/*通用底部开始*/
+			.foot{
+				width: 100%;
+				height: 285px;
+			}
+
+			/*通用底部结束*/
 		</style>
 	</head>
 	<body>
 		<!--上方广告开始-->
-		<!--<div class="head_prev">
+		<div class="head_prev">
 			<div class="head_prev_up">
 				<a href="#"></a>
 				<span></span>
@@ -952,7 +993,7 @@
 			<div class="head_prev_down">
 				<a href="#"></a>
 			</div>
-		</div>-->
+		</div>
 		<!--上方广告结束-->
 		
 		<div id="city">
@@ -1629,9 +1670,24 @@
 		<div class="tui_jian_nomore">
 			<div></div>
 			<span>已经没有了</span>
-			
 		</div>
 		<!--为你推荐结束-->
+		
+		<div class="ad4">
+			<div class="ad4_in">
+				<div><img src="index_img/f1.png"/></div>
+				<div><img src="index_img/f2.png"/></div>
+				<div><img src="index_img/f3.png"/></div>
+				<div><img src="index_img/f4.png"/></div>
+			</div>
+		</div>
+		
+		<!--通用底部开始-->
+		<div class="foot">
+			
+		</div>
+		<!--通用底部开始-->
+		
 		<script src="js/lib/require.min.js" data-main = "js/index.js"></script>
 	</body>
 </html>

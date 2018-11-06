@@ -1,0 +1,76 @@
+{
+	"upProduct": [{
+		"product_id": "278087",
+		"url": "http:\/\/www.sfbest.com\/html\/products\/279\/4600278087.html",
+		"img": "http:\/\/p02.sfimg.cn\/2018\/4600278087\/middle_4600278087_1_1\/160x160.jpg",
+		"name": "圣农sunner 健身鸡胸肉-男款 169g",
+		"ProductAbbreviation": "",
+		"ProductAd": "",
+		"productIndexPic": "http:\/\/pic.sfimg.cn\/adsSaleGoodsPic\/cef5b80e35f3c499a7c0c9e939368e25.png",
+		"price": 15
+	}, {
+		"product_id": "188409",
+		"url": "http:\/\/www.sfbest.com\/html\/products\/189\/1400188409.html",
+		"img": "http:\/\/p02.sfimg.cn\/2016\/1400188409\/middle_1400188409_1_1\/160x160.jpg",
+		"name": "爱尔兰 韦沃VIVA 全脂纯牛奶 200ml*12 礼盒装",
+		"ProductAbbreviation": "",
+		"ProductAd": "",
+		"productIndexPic": "http:\/\/pic.sfimg.cn\/adsSaleGoodsPic\/fbba3fda2753b73383a9679571f9dea5.png",
+		"price": 58
+	}, {
+		"product_id": "299089",
+		"url": "http:\/\/www.sfbest.com\/html\/products\/300\/4400299089.html",
+		"img": "http:\/\/p02.sfimg.cn\/2018\/4400299089\/middle_w_4400299089_1_1\/160x160.jpg",
+		"name": "爱常鲜儿 山东莱阳丰水梨5斤装（6~8个） 2.5kg",
+		"ProductAbbreviation": "",
+		"ProductAd": "",
+		"productIndexPic": "http:\/\/pic.sfimg.cn\/adsSaleGoodsPic\/d8983dd6ffd4a378246c42a31698efe5.jpg",
+		"price": 59.9
+	}, {
+		"product_id": "37615",
+		"url": "http:\/\/www.sfbest.com\/html\/products\/38\/1400037615.html",
+		"img": "http:\/\/p02.sfimg.cn\/2017\/1400037615\/middle_1400037615_1_16\/160x160.jpg",
+		"name": "香奈 XO白兰地40° 700mL",
+		"ProductAbbreviation": "",
+		"ProductAd": "",
+		"productIndexPic": "http:\/\/pic.sfimg.cn\/adsSaleGoodsPic\/d0040354da5a1168c1cd50b5f3eeba00.png",
+		"price": 88
+	}],
+	"downProduct": [{
+		"product_id": "257729",
+		"url": "http:\/\/www.sfbest.com\/html\/products\/258\/1800257729.html",
+		"img": "http:\/\/p02.sfimg.cn\/2018\/1800257729\/middle_1800257729_5_5\/160x160.jpg",
+		"name": "三都港 无公害黄花鱼（两条装） 600g",
+		"ProductAbbreviation": "",
+		"ProductAd": "",
+		"productIndexPic": "http:\/\/pic.sfimg.cn\/adsSaleGoodsPic\/a0c39d020bcb508cde57c82dc06ad4a0.png",
+		"price": 49.9
+	}, {
+		"product_id": "162901",
+		"url": "http:\/\/www.sfbest.com\/html\/products\/163\/1500162901.html",
+		"img": "http:\/\/p02.sfimg.cn\/2015\/1500162901\/middle_1500162901_1_01\/160x160.jpg",
+		"name": "DNZ Kids蜂蜜375g",
+		"ProductAbbreviation": "",
+		"ProductAd": "",
+		"productIndexPic": "http:\/\/pic.sfimg.cn\/adsSaleGoodsPic\/39cf56b5a79f5adea7f046bba30eb167.png",
+		"price": 99
+	}, {
+		"product_id": "264539",
+		"url": "http:\/\/www.sfbest.com\/html\/products\/265\/1800264539.html",
+		"img": "http:\/\/p02.sfimg.cn\/2017\/1800264539\/middle_1800264539_0_1_1\/160x160.jpg",
+		"name": "挪威 北极鳕 整条圆切\/爱吃鱼 900g",
+		"ProductAbbreviation": "",
+		"ProductAd": "",
+		"productIndexPic": "http:\/\/pic.sfimg.cn\/adsSaleGoodsPic\/081aeb8158ca04268d4c564381f9bea0.png",
+		"price": 99
+	}, {
+		"product_id": "292269",
+		"url": "http:\/\/www.sfbest.com\/html\/products\/293\/5600292269.html",
+		"img": "http:\/\/p02.sfimg.cn\/2018\/5600292269\/middle_5600292269_1_1\/160x160.jpg",
+		"name": "翡丽百瑞 混合橄榄油 2L",
+		"ProductAbbreviation": "",
+		"ProductAd": "",
+		"productIndexPic": "http:\/\/pic.sfimg.cn\/adsSaleGoodsPic\/d419b14067d2067a9adc637c748d0ca3.png",
+		"price": 218
+	}]
+}
