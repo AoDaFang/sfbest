@@ -11,7 +11,8 @@ requirejs.config({
 		top:"modules/top",
 		head:"modules/head",
 		nav:"modules/nav",
-		er_ji:"modules/er_ji"
+		er_ji:"modules/er_ji",
+		xuan_fu:"modules/xuan_fu"
 	},
 	shim:{
 		baiduT:{
@@ -44,11 +45,14 @@ requirejs.config({
 		},
 		er_ji:{
 			deps:["cookie","jquery"]
+		},
+		xuan_fu:{
+			deps:["cookie","jquery"]
 		}
 	}
 });
 
-requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","head","nav","er_ji"],function($,Swiper,baidu){
+requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","head","nav","er_ji","xuan_fu"],function($,Swiper,baidu){
 			$(".lazy").lazyload();//图片懒加载
 			
 			
@@ -182,10 +186,10 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 			},
 			success:function(data){
 				$.each(data.upProduct, function(index,ele) {
-					$(".must_buy_up ul").append('<li><p>'+ele.name+'</p><span>￥<b>'+ele.price+'</b></span><img pid="'+ele.product_id+'" src="'+ele.img+'"/><div class="add_goods_btns"><a href="#">加入购物车</a></div></li>');
+					$(".must_buy_up ul").append('<li><p>'+ele.name+'</p><span>￥<b>'+ele.price+'</b></span><img pid="'+ele.product_id+'" src="'+ele.img+'"/><div class="add_goods_btns"><a href="javascript:void(0)">加入购物车</a></div></li>');
 				});
 				$.each(data.downProduct, function(index,ele) {
-					$(".must_buy_down ul").append('<li><p>'+ele.name+'</p><span>￥<b>'+ele.price+'</b></span><img pid="'+ele.product_id+'" src="'+ele.img+'"/><div class="add_goods_btns"><a href="#">加入购物车</a></div></li>');
+					$(".must_buy_down ul").append('<li><p>'+ele.name+'</p><span>￥<b>'+ele.price+'</b></span><img pid="'+ele.product_id+'" src="'+ele.img+'"/><div class="add_goods_btns"><a href="javascript:void(0)">加入购物车</a></div></li>');
 				});
 				//$("must_buy_up ul").append('<li><p>丹麦 猪蹄块/八戒有肉 600g 15315614561465456456</p><span>￥<b>36.8</b></span><img src="index_img/test-goods.png"/><div class="add_goods_btns"><a href="#">加入购物车</a></div></li>')
 				
@@ -203,6 +207,35 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 					})
 				})
 				$(".lazy").lazyload();//图片懒加载
+				
+				//点击加入购物车按键
+				$(".add_goods_btns").click(function(){
+					
+					var that = this;
+					console.log(parseInt($(that).offset().top))
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").attr("src")+'"/>');
+					var need_top = parseInt($(that).offset().top)-parseInt(50);
+					$(".append").animate({
+						top: need_top,
+					},{
+						queue:false,//是否进行排队
+						complete:function(){
+							$(this).animate({
+								top:$(".xfbtn2").offset().top,
+								left:$(".xfbtn2").offset().left
+							},{
+								queue:false,//是否进行排队
+								complete:function(){
+									$(".append").css("display","none");
+									$("body").remove(".append");
+								}
+							})
+						}
+					});
+					
+					
+					
+				})
 			}
 		});
 		//优选必买处理结束

@@ -201,6 +201,17 @@
 				color: #6c6c6c;
 				border-bottom: 1px solid #1b6146;
 			}
+			.head_cart_btn{
+				width: 110px;
+				height: 28px;
+				background-color: #76AC25;
+				float: right;
+				color: #fff;
+				text-align: center;
+				line-height: 28px;
+				font-size: 14px;
+				cursor: pointer;
+			}
 			.goods_s{
 				max-height: 195px;
 				overflow: auto;
