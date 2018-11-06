@@ -219,7 +219,6 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 				floorId:297
 			},
 			success:function(data){
-				console.log(data)
 				$.each(data,function(index,ele){
 					$(".fruits .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
 				});
@@ -252,7 +251,6 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 				floorId:301
 			},
 			success:function(data){
-				console.log(data)
 				$.each(data,function(index,ele){
 					$(".sheng_xian .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
 				});
@@ -285,7 +283,6 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 				floorId:357
 			},
 			success:function(data){
-				console.log(data)
 				$.each(data,function(index,ele){
 					$(".leng_cang .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
 				});
@@ -318,7 +315,6 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 				floorId:309
 			},
 			success:function(data){
-				console.log(data)
 				$.each(data,function(index,ele){
 					$(".liang_you .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
 				});
@@ -351,7 +347,6 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 				floorId:173
 			},
 			success:function(data){
-				console.log(data)
 				$.each(data,function(index,ele){
 					$(".tang_qiao .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
 				});
@@ -384,7 +379,6 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 				floorId:371
 			},
 			success:function(data){
-				console.log(data)
 				$.each(data,function(index,ele){
 					$(".cha_yin .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
 				});
@@ -417,7 +411,6 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 				floorId:169
 			},
 			success:function(data){
-				console.log(data)
 				$.each(data,function(index,ele){
 					$(".jiu_shui .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
 				});
@@ -438,4 +431,92 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 			}
 		});
 		//酒水处理结束
+		
+		//为你推荐开始
+		$.ajax({
+			type:"get",
+			url:"data/tui_jian1.json",
+			dataType:'json',
+			data:{
+				page:1
+			},
+			
+			success:function(data){
+				$.each(data.data,function(index,ele){
+					$(".tui_jian_goods").append('<li><div class="tui_jian_goods_pic"><img class="lazy" pid="'+ele.proudct_id+'" data-original= "'+ele.img+'"/><div class="tui_jian_goods_pic_btn"><b></b>加入购物车</div></div><div class="tui_jian_goods_title">'+ele.name+'</div><div class="tui_jian_goods_price">￥<span>'+ele.sfbestPrice+'</span></div></li>');
+				});
+				$(".lazy").lazyload();//图片懒加载
+				$(".tui_jian_goods li").hover(function(){
+					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn").animate({
+						top:186
+					},{
+						queue:false//是否进行排队
+					});
+				},function(){
+					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn").animate({
+						top:210
+					},{
+						queue:false//是否进行排队
+					});
+				})
+			}
+		});
+		$.ajax({
+			type:"get",
+			url:"data/tui_jian2.json",
+			dataType:'json',
+			data:{
+				page:1
+			},
+			
+			success:function(data){
+				$.each(data.data,function(index,ele){
+					$(".tui_jian_goods").append('<li><div class="tui_jian_goods_pic"><img class="lazy" pid="'+ele.proudct_id+'" data-original= "'+ele.img+'"/><div class="tui_jian_goods_pic_btn"><b></b>加入购物车</div></div><div class="tui_jian_goods_title">'+ele.name+'</div><div class="tui_jian_goods_price">￥<span>'+ele.sfbestPrice+'</span></div></li>');
+				});
+				$(".lazy").lazyload();//图片懒加载
+				$(".tui_jian_goods li").hover(function(){
+					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn").animate({
+						top:186
+					},{
+						queue:false//是否进行排队
+					});
+				},function(){
+					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn").animate({
+						top:210
+					},{
+						queue:false//是否进行排队
+					});
+				})
+			}
+		});
+		$.ajax({
+			type:"get",
+			url:"data/tui_jian3.json",
+			dataType:'json',
+			data:{
+				page:1
+			},
+			
+			success:function(data){
+				$.each(data.data,function(index,ele){
+					$(".tui_jian_goods").append('<li><div class="tui_jian_goods_pic"><img class="lazy" pid="'+ele.proudct_id+'" data-original= "'+ele.img+'"/><div class="tui_jian_goods_pic_btn"><b></b>加入购物车</div></div><div class="tui_jian_goods_title">'+ele.name+'</div><div class="tui_jian_goods_price">￥<span>'+ele.sfbestPrice+'</span></div></li>');
+				});
+				$(".lazy").lazyload();//图片懒加载
+				$(".tui_jian_goods li").hover(function(){
+					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn").animate({
+						top:186
+					},{
+						queue:false//是否进行排队
+					});
+				},function(){
+					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn").animate({
+						top:210
+					},{
+						queue:false//是否进行排队
+					});
+				})
+			}
+		});
+		
+		//为你推荐结束
 });

@@ -826,12 +826,120 @@
 			
 			/*大分类结束*/
 			
-			.lin_shi{
-				width: 1200px;
-				height: 300px;
-				background-color: pink;
-				margin: 0 auto;
+			/*推荐开始*/
+			.tui_jian{
+				margin-top: 46px;
+				width: 100%;
 			}
+			.tui_jian_in{
+				margin: 0 auto;
+				border: #f5f5f5 1px solid;
+				padding: 15px 14px;
+				width: 1170px;
+				position: relative;
+				font-family: 微软雅黑;
+			}
+			.tui_jian_title{
+				width: 116px;
+				height: 23px;
+				position: absolute;
+				top: -14px;
+				left: 50%;
+				margin-left: -58px;
+				background: #fff;
+				text-align: center;
+			}
+			.tui_jian_title p{
+				width: 97px;
+				height: 23px;
+				display: inline-block;
+				background: url(index_img/sf_new_bg.png) left top no-repeat;
+			}
+			.tui_jian_goods{
+				overflow: hidden;
+			}
+			.tui_jian_goods li{
+				width: 210px;
+				padding: 15px 12px;
+				float: left;
+				position: relative;
+				z-index: 1;
+			}
+			.tui_jian_goods_pic{
+				position: relative;
+				overflow: hidden;
+			}
+			.tui_jian_goods_pic_btn{
+				position: absolute;
+				top: 210px;
+				/*top: 186px;*/
+				left: 50%;
+				margin-left: -80px;
+				width: 160px;
+				height: 24px;
+				border-radius: 2px;
+				background: #76ac25;
+				filter: alpha(opacity=95);
+				-moz-opacity: 0.95;
+				opacity: 0.95;
+				cursor: pointer;
+				line-height: 24px;
+				color: #fff;
+			}
+			.tui_jian_goods_pic_btn b{
+				    float: left;
+				    margin-left: 40px;
+				    width: 0px;
+				    height: 24px;
+				    display: block;
+				    background: url(index_img/indexsprite.png) no-repeat -66px -177px;
+				    line-height: 24px;
+				    font-family: Microsoft YaHei;
+				    font-size: 12px;
+				    color: #fff;
+				    text-decoration: none;
+				    padding-left: 20px;
+			}
+			.tui_jian_goods_title{
+				height: 36px;
+				margin-top: 10px;
+			}
+			.tui_jian_goods_price{
+				color: #f33f00;
+				font-family: 微软雅黑;
+				line-height: 12px;
+				font-weight: bold;
+				padding-top: 6px;
+			}
+			.tui_jian_goods_price span{
+				color: #f33f00;
+				font-family: 微软雅黑;
+				line-height: 14px;
+				font-weight: bold;
+			}
+			.tui_jian_nomore{
+				position: relative;
+			}
+			.tui_jian_nomore div{
+				margin: 0 auto;
+				height: 1px;
+				width: 220px;
+				overflow: hidden;
+				margin-top: 18px;
+				background: #f5f5f5;
+			}
+			.tui_jian_nomore span{
+				position: absolute;
+				left: 50%;
+    			top: -9px;
+    			text-align: center;
+    			margin-left: -49px;
+				display: block;
+				width: 97px;
+				height: 18px;
+				background-color: white;
+			}
+			/*推荐结束*/
 		</style>
 	</head>
 	<body>
@@ -1499,7 +1607,30 @@
 		<!--酒水结束-->
 		
 		<!--为你推荐开始-->
-		
+		<div class="tui_jian">
+			<div class="tui_jian_in">
+				<div class="tui_jian_title">
+					<p></p>
+				</div>
+				<ul class="tui_jian_goods">
+					<!--<li>
+						<div class="tui_jian_goods_pic">
+							<img class="lazy" data-original= "http://p02.sfimg.cn/2017/1800269007/middle_1800269007_1_1/210x210.jpg"/>
+							<div class="tui_jian_goods_pic_btn"><b></b>加入购物车</div>
+						</div>
+						<div class="tui_jian_goods_title">阳澄碧波 大闸蟹礼券1280型 公蟹4.0两*5只  母蟹3.0两*5只</div>
+						<div class="tui_jian_goods_price">
+							￥<span>268</span>
+						</div>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+		<div class="tui_jian_nomore">
+			<div></div>
+			<span>已经没有了</span>
+			
+		</div>
 		<!--为你推荐结束-->
 		<script src="js/lib/require.min.js" data-main = "js/index.js"></script>
 	</body>
