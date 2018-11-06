@@ -49,6 +49,7 @@ requirejs.config({
 });
 
 requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","head","nav","er_ji"],function($,Swiper,baidu){
+			$(".lazy").lazyload();//图片懒加载
 			
 			
 			//上方滚动广告定时处理
@@ -181,12 +182,10 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 			},
 			success:function(data){
 				$.each(data.upProduct, function(index,ele) {
-					console.log(index);
-					$(".must_buy_up ul").append('<li><p>'+ele.name+'</p><span>￥<b>'+ele.price+'</b></span><img src="'+ele.img+'"/><div class="add_goods_btns"><a href="#">加入购物车</a></div></li>');
+					$(".must_buy_up ul").append('<li><p>'+ele.name+'</p><span>￥<b>'+ele.price+'</b></span><img pid="'+ele.product_id+'" src="'+ele.img+'"/><div class="add_goods_btns"><a href="#">加入购物车</a></div></li>');
 				});
 				$.each(data.downProduct, function(index,ele) {
-					console.log(index);
-					$(".must_buy_down ul").append('<li><p>'+ele.name+'</p><span>￥<b>'+ele.price+'</b></span><img src="'+ele.img+'"/><div class="add_goods_btns"><a href="#">加入购物车</a></div></li>');
+					$(".must_buy_down ul").append('<li><p>'+ele.name+'</p><span>￥<b>'+ele.price+'</b></span><img pid="'+ele.product_id+'" src="'+ele.img+'"/><div class="add_goods_btns"><a href="#">加入购物车</a></div></li>');
 				});
 				//$("must_buy_up ul").append('<li><p>丹麦 猪蹄块/八戒有肉 600g 15315614561465456456</p><span>￥<b>36.8</b></span><img src="index_img/test-goods.png"/><div class="add_goods_btns"><a href="#">加入购物车</a></div></li>')
 				
@@ -203,10 +202,240 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 						queue:false,//是否进行排队
 					})
 				})
-				
+				$(".lazy").lazyload();//图片懒加载
 			}
 		});
-		$("must_buy_up ul")
 		//优选必买处理结束
-			
+		
+		
+		//水果处理开始
+		$.ajax({
+			url:"http://www.sfbest.com/ajaxIndex/GetFloorGoods",
+			dataType:'jsonp',
+			jsonpCallback:"jsonp1541411803363",
+			data:{
+				callback:"jsonp1541411803363",
+				cId:7,
+				floorId:297
+			},
+			success:function(data){
+				console.log(data)
+				$.each(data,function(index,ele){
+					$(".fruits .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+				});
+				$(".lazy").lazyload();//图片懒加载
+				$(".main_class_bottom_middle ul li").hover(function(){
+					$(this).children(".main_class_bottom_middle_goodspic").children(".main_class_bottom_middle_goodspic_btn").animate({
+						top:136
+					},{
+						queue:false//是否进行排队
+					});
+				},function(){
+					$(this).children(".main_class_bottom_middle_goodspic").children(".main_class_bottom_middle_goodspic_btn").animate({
+						top:160
+					},{
+						queue:false//是否进行排队
+					});
+				})
+			}
+		});
+		//水果处理结束
+		
+		//生鲜处理开始
+		$.ajax({
+			url:"http://www.sfbest.com/ajaxIndex/GetFloorGoods",
+			dataType:'jsonp',
+			jsonpCallback:"jsonp1541417801712",
+			data:{
+				callback:"jsonp1541417801712",
+				cId:7,
+				floorId:301
+			},
+			success:function(data){
+				console.log(data)
+				$.each(data,function(index,ele){
+					$(".sheng_xian .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+				});
+				$(".lazy").lazyload();//图片懒加载
+				$(".main_class_bottom_middle ul li").hover(function(){
+					$(this).children(".main_class_bottom_middle_goodspic").children(".main_class_bottom_middle_goodspic_btn").animate({
+						top:136
+					},{
+						queue:false//是否进行排队
+					});
+				},function(){
+					$(this).children(".main_class_bottom_middle_goodspic").children(".main_class_bottom_middle_goodspic_btn").animate({
+						top:160
+					},{
+						queue:false//是否进行排队
+					});
+				})
+			}
+		});
+		//生鲜处理结束
+		
+		//冷藏处理开始
+		$.ajax({
+			url:"http://www.sfbest.com/ajaxIndex/GetFloorGoods",
+			dataType:'jsonp',
+			jsonpCallback:"jsonp1541422243809",
+			data:{
+				callback:"jsonp1541422243809",
+				cId:0,
+				floorId:357
+			},
+			success:function(data){
+				console.log(data)
+				$.each(data,function(index,ele){
+					$(".leng_cang .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+				});
+				$(".lazy").lazyload();//图片懒加载
+				$(".main_class_bottom_middle ul li").hover(function(){
+					$(this).children(".main_class_bottom_middle_goodspic").children(".main_class_bottom_middle_goodspic_btn").animate({
+						top:136
+					},{
+						queue:false//是否进行排队
+					});
+				},function(){
+					$(this).children(".main_class_bottom_middle_goodspic").children(".main_class_bottom_middle_goodspic_btn").animate({
+						top:160
+					},{
+						queue:false//是否进行排队
+					});
+				})
+			}
+		});
+		//冷藏处理结束
+		
+		//粮油处理开始
+		$.ajax({
+			url:"http://www.sfbest.com/ajaxIndex/GetFloorGoods",
+			dataType:'jsonp',
+			jsonpCallback:"jsonp1541422243810",
+			data:{
+				callback:"jsonp1541422243810",
+				cId:7,
+				floorId:309
+			},
+			success:function(data){
+				console.log(data)
+				$.each(data,function(index,ele){
+					$(".liang_you .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+				});
+				$(".lazy").lazyload();//图片懒加载
+				$(".main_class_bottom_middle ul li").hover(function(){
+					$(this).children(".main_class_bottom_middle_goodspic").children(".main_class_bottom_middle_goodspic_btn").animate({
+						top:136
+					},{
+						queue:false//是否进行排队
+					});
+				},function(){
+					$(this).children(".main_class_bottom_middle_goodspic").children(".main_class_bottom_middle_goodspic_btn").animate({
+						top:160
+					},{
+						queue:false//是否进行排队
+					});
+				})
+			}
+		});
+		//粮油处理开始
+		
+		//糖巧处理开始
+		$.ajax({
+			url:"http://www.sfbest.com/ajaxIndex/GetFloorGoods",
+			dataType:'jsonp',
+			jsonpCallback:"jsonp1541465635035",
+			data:{
+				callback:"jsonp1541465635035",
+				cId:7,
+				floorId:173
+			},
+			success:function(data){
+				console.log(data)
+				$.each(data,function(index,ele){
+					$(".tang_qiao .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+				});
+				$(".lazy").lazyload();//图片懒加载
+				$(".main_class_bottom_middle ul li").hover(function(){
+					$(this).children(".main_class_bottom_middle_goodspic").children(".main_class_bottom_middle_goodspic_btn").animate({
+						top:136
+					},{
+						queue:false//是否进行排队
+					});
+				},function(){
+					$(this).children(".main_class_bottom_middle_goodspic").children(".main_class_bottom_middle_goodspic_btn").animate({
+						top:160
+					},{
+						queue:false//是否进行排队
+					});
+				})
+			}
+		});
+		//糖巧处理结束
+		
+		//茶饮处理开始
+		$.ajax({
+			url:"http://www.sfbest.com/ajaxIndex/GetFloorGoods",
+			dataType:'jsonp',
+			jsonpCallback:"jsonp1541465635036",
+			data:{
+				callback:"jsonp1541465635036",
+				cId:5,
+				floorId:371
+			},
+			success:function(data){
+				console.log(data)
+				$.each(data,function(index,ele){
+					$(".cha_yin .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+				});
+				$(".lazy").lazyload();//图片懒加载
+				$(".main_class_bottom_middle ul li").hover(function(){
+					$(this).children(".main_class_bottom_middle_goodspic").children(".main_class_bottom_middle_goodspic_btn").animate({
+						top:136
+					},{
+						queue:false//是否进行排队
+					});
+				},function(){
+					$(this).children(".main_class_bottom_middle_goodspic").children(".main_class_bottom_middle_goodspic_btn").animate({
+						top:160
+					},{
+						queue:false//是否进行排队
+					});
+				})
+			}
+		});
+		//茶饮处理结束
+		
+		//酒水处理开始
+		$.ajax({
+			url:"http://www.sfbest.com/ajaxIndex/GetFloorGoods",
+			dataType:'jsonp',
+			jsonpCallback:"jsonp1541465635037",
+			data:{
+				callback:"jsonp1541465635037",
+				cId:4,
+				floorId:169
+			},
+			success:function(data){
+				console.log(data)
+				$.each(data,function(index,ele){
+					$(".jiu_shui .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+				});
+				$(".lazy").lazyload();//图片懒加载
+				$(".main_class_bottom_middle ul li").hover(function(){
+					$(this).children(".main_class_bottom_middle_goodspic").children(".main_class_bottom_middle_goodspic_btn").animate({
+						top:136
+					},{
+						queue:false//是否进行排队
+					});
+				},function(){
+					$(this).children(".main_class_bottom_middle_goodspic").children(".main_class_bottom_middle_goodspic_btn").animate({
+						top:160
+					},{
+						queue:false//是否进行排队
+					});
+				})
+			}
+		});
+		//酒水处理结束
 });
