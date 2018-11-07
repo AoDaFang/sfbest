@@ -294,3 +294,8 @@
 				font-size: 18px;
 				color: #f05404;
 			}
+			.goods_title{
+				width: 199px;
+				height: 20px;
+				overflow: hidden;
+			}

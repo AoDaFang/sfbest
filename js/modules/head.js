@@ -56,7 +56,21 @@
 					
 					$(".search_result").append('<div class="search_wz"><p>搜<i>'+$(".search_text").val()+'</i>相关文章约<i>'+aticle_count+'</i>篇</p></div>')
 				}
-			})
+			});
+		});
+		
+		$(".head_cart").hover(function(){//悬浮到head的购物车上
+			if(!getCookie("cart")){
+				$(".head_cart_noneshow").css("display","block");
+			}else{
+				$(".head_cart_show").css("display","block");
+			}
+		},function(){
+			$(".head_cart_noneshow").css("display","none");
+			$(".head_cart_show").css("display","none");
 		})
+		
+		do_index_cart("#head");
+		
 	});
 })()

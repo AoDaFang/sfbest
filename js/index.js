@@ -12,7 +12,9 @@ requirejs.config({
 		head:"modules/head",
 		nav:"modules/nav",
 		er_ji:"modules/er_ji",
-		xuan_fu:"modules/xuan_fu"
+		xuan_fu:"modules/xuan_fu",
+		do_cookie:"plugins/do_cookie",
+		do_index_cart:"plugins/do_index_cart"
 	},
 	shim:{
 		baiduT:{
@@ -38,7 +40,7 @@ requirejs.config({
 			deps:["cookie","jquery"]
 		},
 		head:{
-			deps:["cookie","jquery"]
+			deps:["cookie","jquery","do_index_cart"]
 		},
 		nav:{
 			deps:["cookie","jquery"]
@@ -47,12 +49,19 @@ requirejs.config({
 			deps:["cookie","jquery"]
 		},
 		xuan_fu:{
+			deps:["cookie","jquery","do_index_cart"]
+		},
+		do_cookie:{
+			exports:"dc",
+			deps:["cookie","jquery"]
+		},
+		do_index_cart:{
 			deps:["cookie","jquery"]
 		}
 	}
 });
 
-requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","head","nav","er_ji","xuan_fu"],function($,Swiper,baidu){
+requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie","top","head","nav","er_ji","xuan_fu","do_index_cart"],function($,Swiper,baidu,do_cookie){
 			$(".lazy").lazyload();//图片懒加载
 			
 			
@@ -107,7 +116,6 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 					)
 					
 				})
-
 			}else{
 				$("#city").css("display","none");
 			}
@@ -212,6 +220,7 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 				$(".add_goods_btns").click(function(){
 					
 					var that = this;
+					var pid = $(that).siblings("img").attr("pid");
 					console.log(parseInt($(that).offset().top))
 					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
@@ -227,15 +236,14 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 								queue:false,//是否进行排队
 								complete:function(){
 									$(".append").css("display","none");
-									$("body").remove(".append");
+//									$("body").remove(".append");
 								}
-							})
+							});
 						}
 					});
 					
-					
-					
-				})
+					do_cookie.do_cookie(that,pid);
+				});
 			}
 		});
 		//优选必买处理结束
@@ -268,7 +276,38 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 					},{
 						queue:false//是否进行排队
 					});
-				})
+				});
+				
+				
+				//点击加入购物车按键
+				$(".main_class_bottom_middle_goodspic_btn").click(function(){
+					
+					var that = this;
+					var pid = $(that).siblings("a").children().eq(0).attr("pid");
+					console.log(parseInt($(that).offset().top))
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
+					var need_top = parseInt($(that).offset().top)-parseInt(50);
+					$(".append").animate({
+						top: need_top,
+					},{
+						queue:false,//是否进行排队
+						complete:function(){
+							$(this).animate({
+								top:$(".xfbtn2").offset().top,
+								left:$(".xfbtn2").offset().left
+							},{
+								queue:false,//是否进行排队
+								complete:function(){
+									$(".append").css("display","none");
+//									$("body").remove(".append");
+								}
+							});
+						}
+					});
+					
+					do_cookie.do_cookie(that,pid);
+				});
+				
 			}
 		});
 		//水果处理结束
@@ -296,7 +335,35 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 					},{
 						queue:false//是否进行排队
 					});
-				})
+				});
+				//点击加入购物车按键
+				$(".main_class_bottom_middle_goodspic_btn").click(function(){
+					
+					var that = this;
+					var pid = $(that).siblings("a").children().eq(0).attr("pid");
+					console.log(parseInt($(that).offset().top))
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
+					var need_top = parseInt($(that).offset().top)-parseInt(50);
+					$(".append").animate({
+						top: need_top,
+					},{
+						queue:false,//是否进行排队
+						complete:function(){
+							$(this).animate({
+								top:$(".xfbtn2").offset().top,
+								left:$(".xfbtn2").offset().left
+							},{
+								queue:false,//是否进行排队
+								complete:function(){
+									$(".append").css("display","none");
+//									$("body").remove(".append");
+								}
+							});
+						}
+					});
+					
+					do_cookie.do_cookie(that,pid);
+				});
 			}
 		});
 		//生鲜处理结束
@@ -324,7 +391,36 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 					},{
 						queue:false//是否进行排队
 					});
-				})
+				});
+				
+				//点击加入购物车按键
+				$(".main_class_bottom_middle_goodspic_btn").click(function(){
+					
+					var that = this;
+					var pid = $(that).siblings("a").children().eq(0).attr("pid");
+					console.log(parseInt($(that).offset().top))
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
+					var need_top = parseInt($(that).offset().top)-parseInt(50);
+					$(".append").animate({
+						top: need_top,
+					},{
+						queue:false,//是否进行排队
+						complete:function(){
+							$(this).animate({
+								top:$(".xfbtn2").offset().top,
+								left:$(".xfbtn2").offset().left
+							},{
+								queue:false,//是否进行排队
+								complete:function(){
+									$(".append").css("display","none");
+//									$("body").remove(".append");
+								}
+							});
+						}
+					});
+					
+					do_cookie.do_cookie(that,pid);
+				});
 			}
 		});
 		//冷藏处理结束
@@ -352,7 +448,36 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 					},{
 						queue:false//是否进行排队
 					});
-				})
+				});
+				
+				//点击加入购物车按键
+				$(".main_class_bottom_middle_goodspic_btn").click(function(){
+					
+					var that = this;
+					var pid = $(that).siblings("a").children().eq(0).attr("pid");
+					console.log(parseInt($(that).offset().top))
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
+					var need_top = parseInt($(that).offset().top)-parseInt(50);
+					$(".append").animate({
+						top: need_top,
+					},{
+						queue:false,//是否进行排队
+						complete:function(){
+							$(this).animate({
+								top:$(".xfbtn2").offset().top,
+								left:$(".xfbtn2").offset().left
+							},{
+								queue:false,//是否进行排队
+								complete:function(){
+									$(".append").css("display","none");
+//									$("body").remove(".append");
+								}
+							});
+						}
+					});
+					
+					do_cookie.do_cookie(that,pid);
+				});
 			}
 		});
 		//粮油处理开始
@@ -380,7 +505,36 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 					},{
 						queue:false//是否进行排队
 					});
-				})
+				});
+				
+				//点击加入购物车按键
+				$(".main_class_bottom_middle_goodspic_btn").click(function(){
+					
+					var that = this;
+					var pid = $(that).siblings("a").children().eq(0).attr("pid");
+					console.log(parseInt($(that).offset().top))
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
+					var need_top = parseInt($(that).offset().top)-parseInt(50);
+					$(".append").animate({
+						top: need_top,
+					},{
+						queue:false,//是否进行排队
+						complete:function(){
+							$(this).animate({
+								top:$(".xfbtn2").offset().top,
+								left:$(".xfbtn2").offset().left
+							},{
+								queue:false,//是否进行排队
+								complete:function(){
+									$(".append").css("display","none");
+//									$("body").remove(".append");
+								}
+							});
+						}
+					});
+					
+					do_cookie.do_cookie(that,pid);
+				});
 			}
 		});
 		//糖巧处理结束
@@ -408,7 +562,36 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 					},{
 						queue:false//是否进行排队
 					});
-				})
+				});
+				
+				//点击加入购物车按键
+				$(".main_class_bottom_middle_goodspic_btn").click(function(){
+					
+					var that = this;
+					var pid = $(that).siblings("a").children().eq(0).attr("pid");
+					console.log(parseInt($(that).offset().top))
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
+					var need_top = parseInt($(that).offset().top)-parseInt(50);
+					$(".append").animate({
+						top: need_top,
+					},{
+						queue:false,//是否进行排队
+						complete:function(){
+							$(this).animate({
+								top:$(".xfbtn2").offset().top,
+								left:$(".xfbtn2").offset().left
+							},{
+								queue:false,//是否进行排队
+								complete:function(){
+									$(".append").css("display","none");
+//									$("body").remove(".append");
+								}
+							});
+						}
+					});
+					
+					do_cookie.do_cookie(that,pid);
+				});
 			}
 		});
 		//茶饮处理结束
@@ -436,7 +619,36 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 					},{
 						queue:false//是否进行排队
 					});
-				})
+				});
+				
+				//点击加入购物车按键
+				$(".main_class_bottom_middle_goodspic_btn").click(function(){
+					
+					var that = this;
+					var pid = $(that).siblings("a").children().eq(0).attr("pid");
+					console.log(parseInt($(that).offset().top))
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
+					var need_top = parseInt($(that).offset().top)-parseInt(50);
+					$(".append").animate({
+						top: need_top,
+					},{
+						queue:false,//是否进行排队
+						complete:function(){
+							$(this).animate({
+								top:$(".xfbtn2").offset().top,
+								left:$(".xfbtn2").offset().left
+							},{
+								queue:false,//是否进行排队
+								complete:function(){
+									$(".append").css("display","none");
+//									$("body").remove(".append");
+								}
+							});
+						}
+					});
+					
+					do_cookie.do_cookie(that,pid);
+				});
 			}
 		});
 		//酒水处理结束
@@ -467,7 +679,36 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 					},{
 						queue:false//是否进行排队
 					});
-				})
+				});
+				//点击加入购物车按键
+				$(".tui_jian_goods_pic_btn").click(function(){
+					
+					var that = this;
+					console.log(parseInt($(that).offset().top));
+					var pid = $(that).siblings("img").attr("pid");
+					
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").attr("src")+'"/>');
+					var need_top = parseInt($(that).offset().top)-parseInt(50);
+					$(".append").animate({
+						top: need_top,
+					},{
+						queue:false,//是否进行排队
+						complete:function(){
+							$(this).animate({
+								top:$(".xfbtn2").offset().top,
+								left:$(".xfbtn2").offset().left
+							},{
+								queue:false,//是否进行排队
+								complete:function(){
+									$(".append").css("display","none");
+//									$("body").remove(".append");
+								}
+							});
+						}
+					});
+					
+					do_cookie.do_cookie(that,pid);
+				});
 			}
 		});
 		$.ajax({
@@ -495,7 +736,36 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 					},{
 						queue:false//是否进行排队
 					});
-				})
+				});
+				//点击加入购物车按键
+				$(".tui_jian_goods_pic_btn").click(function(){
+					
+					var that = this;
+					console.log(parseInt($(that).offset().top));
+					var pid = $(that).siblings("img").attr("pid");
+					
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").attr("src")+'"/>');
+					var need_top = parseInt($(that).offset().top)-parseInt(50);
+					$(".append").animate({
+						top: need_top,
+					},{
+						queue:false,//是否进行排队
+						complete:function(){
+							$(this).animate({
+								top:$(".xfbtn2").offset().top,
+								left:$(".xfbtn2").offset().left
+							},{
+								queue:false,//是否进行排队
+								complete:function(){
+									$(".append").css("display","none");
+//									$("body").remove(".append");
+								}
+							});
+						}
+					});
+					
+					do_cookie.do_cookie(that,pid);
+				});
 			}
 		});
 		$.ajax({
@@ -523,7 +793,37 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 					},{
 						queue:false//是否进行排队
 					});
-				})
+				});
+				
+				//点击加入购物车按键
+				$(".tui_jian_goods_pic_btn").click(function(){
+					
+					var that = this;
+					console.log(parseInt($(that).offset().top));
+					var pid = $(that).siblings("img").attr("pid");
+					
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").attr("src")+'"/>');
+					var need_top = parseInt($(that).offset().top)-parseInt(50);
+					$(".append").animate({
+						top: need_top,
+					},{
+						queue:false,//是否进行排队
+						complete:function(){
+							$(this).animate({
+								top:$(".xfbtn2").offset().top,
+								left:$(".xfbtn2").offset().left
+							},{
+								queue:false,//是否进行排队
+								complete:function(){
+									$(".append").css("display","none");
+//									$("body").remove(".append");
+								}
+							});
+						}
+					});
+					
+					do_cookie.do_cookie(that,pid);
+				});
 			}
 		});
 		
@@ -537,10 +837,13 @@ requirejs(["jquery","swiper","baiduT","extend","lazy","page","cookie","top","hea
 			},
 			
 			success:function(data){
-				console.log(data)
+				console.log(data);
 			}
 		});
 		
 		
 		$(".foot").load('html/foot.html');
+		
+		
+		
 });
