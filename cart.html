@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>My顺丰优选 SF-best</title>
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.css"/>
+		<link rel="stylesheet" type="text/css" href="css/top.css"/>
+		<link rel="stylesheet" type="text/css" href="css/foot.css"/>
+		<style type="text/css">
+			#top{
+				width: 100%;
+				height: 34px;
+				background-color: #f7f7f7;
+				min-width: 1200px;
+			}
+			
+			.cart_header{
+				width: 100%;
+				height: 105px;
+			}
+			.cart_header_in{
+				width: 1000px;
+				height: 105px;
+				margin: 0 auto;
+			}
+			.cart_header_logo{
+				float: left;
+				width: 240px;
+				margin: 0px;
+				padding: 5px 0px 0px 0px;
+			}
+			.cart_header_logo>*{
+				float: left;
+			}
+			.cart_header_logo1{
+				width: 124px;
+				padding: 0px 0px 0px 0px;
+				background:url(index_img/indexImg20130307.png) -33px 0px no-repeat;
+				height: 66px;
+			}
+			.cart_header_logo2{
+				width: 116px;
+				height: 66px;
+				background: url(index_img/indexImg20130307.png) -160px 0px no-repeat;;
+			}
+			.cart_header_step{
+			    float: right;
+			    width: 650px;
+			    padding-top: 30px;
+			}
+			
+			.cart_main{
+				width: 100%;
+				height: 36px;
+			}
+			.cart_main_in{
+				width: 1000px;
+				margin: 0 auto;
+				height: 36px;
+			}
+			.cart_main_head{
+				    padding: 0 0 10px 0;
+				    overflow: hidden;
+				    float: left;
+			}
+			.cart_main_head_title{
+				float: left;
+				font-family: 微软雅黑;
+				font-size: 20px;
+				line-height: 26px;
+			}
+			.cart_main_head_area_show{
+				width: 432px;
+				height: 26px;
+				float: left;
+				margin-left: 18px;
+				overflow: hidden;
+				margin-top: 3px;
+			}
+			.cart_main_head_area_show span{
+				font-weight: bold;
+				float: left;
+				font-size: 14px;
+			}
+			.cart_main_head_area_now{
+				min-width: 100px;
+				border: 1px solid #666666;
+				padding: 1px 1px;
+				float: left;
+				text-align: center;
+			}
+			.cart_main_head_area_show p{
+				height: 20px;
+				line-height: 20px;
+				float: left;
+				margin-left: 16px;
+				
+			}
+			.cart_nav_out{
+				width: 100%;
+				height: 34px;
+			}
+			.cart_nav{
+				margin: 0 auto;
+				width: 1000px;
+				height: 34px;
+				overflow: hidden;
+				height: 34px;
+			}
+			.cart_nav>*{
+				float: left;
+				height: 34px;
+				line-height: 34px;
+				background-color: #81A84A;
+				color: #fff;
+				font-weight: bold;
+				text-align: center;
+			}
+			.cart_nav1{
+				width: 70px;
+			}
+			.cart_nav2{
+				width: 280px;
+			}
+			.cart_nav3{
+				width: 100px;
+			}
+			.cart_nav4{
+				width: 100px;
+			}
+			.cart_nav5{
+				width: 90px;
+			}
+			.cart_nav6{
+				width: 100px;
+			}
+			.cart_nav7{
+				width: 100px;
+			}
+			.cart_nav8{
+				width: 70px;
+			}
+			.cart_nav9{
+				width: 90px;
+			}
+			#all_check{
+				display: inline-block;
+				vertical-align: middle;
+			}
+			.cart_nav1 span{
+				display: inline-block;
+				border: 0px solid #fff;
+			}
+			
+			.cart_goods_main{
+				width: 100%;
+			}
+			.cart_goods_main_in{
+				width: 1000px;
+				margin: 0 auto;
+			}
+			.main_goods{
+				height: 62px;
+				overflow: hidden;
+				padding: 20px 0;
+				border-bottom: 1px solid #EBF7EF;
+			}
+			.main_goods>*{
+				float: left;
+			}
+			.main_goods_checkbox{
+				width: 70px;
+				padding: 20px 0 0 0;
+				text-align: center;
+			}
+			.one_check{
+				vertical-align: middle;
+			}
+			.main_goods_pic{
+				width: 60px;
+				height: 60px;
+				border: 1px solid #EEEEEE;
+			}
+			.main_goods_pic img{
+				width: 62px;
+				height: 62px;
+			}
+			.main_goods_title{
+				width: 204px;
+				height: 62px;
+				margin-left: 11px;
+			}
+			.main_goods_title span{
+				
+			}
+			.main_goods_price{
+				width: 223px;
+				height: 62px;
+			}
+			.main_goods_price p{
+				margin-left: 37px;
+				margin-top: 14px;
+			}
+			.main_goods_amount{
+				width: 110px;
+				height: 62px;
+			}
+			.main_goods_amount_in{
+				width: 69px;
+				height: 16px;
+			}
+			.main_goods_amount_in>*{
+				float: left;
+			}
+			.main_goods_amount button{
+				width: 12px;
+				height: 13px;
+				text-align: center;
+				line-height: 13px;
+				margin: 2px;
+			}
+			.main_goods_text{
+				width: 27px;
+				height: 14px;
+				text-align: center;
+				vertical-align: middle;
+			}
+			.main_goods_weight{
+				width: 102px;
+				height: 62px;
+			}
+			.main_goods_xiaoji{
+				width: 86px;
+				height: 62px;
+			}
+			.main_goods_xiaoji p{
+				font-size: 10px;
+				color: #ea5404;
+				font-weight: bold;
+			}
+			.main_goods_xianhuo{
+				width: 63px;
+				height: 62px;
+			}
+			.main_goods_caozuo{
+				width: 62px;
+				height: 62px;
+			}
+			.main_goods_caozuo span{
+				cursor: pointer;
+			}
+			.foot{
+				width: 100%;
+				height: 285px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			
+		</div>
+		
+		<div class="cart_header">
+			<div class="cart_header_in">
+				<div class="cart_header_top">
+					<div class="cart_header_logo">
+						<div class="cart_header_logo1">
+							
+						</div>
+						<div class="cart_header_logo2">
+							
+						</div>
+						<div class="cart_header_logo3">
+							<img src="http://i.sfimg.cn/html/images/logo_word.png"/>
+						</div>
+					</div>
+					<div class="cart_header_step">
+						<img src="http://i.sfimg.cn/com/images/step_01.jpg"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="cart_main">
+			<div class="cart_main_in">
+				<div class="cart_main_head">
+					<h3 class="cart_main_head_title">我的购物车</h3>
+				</div>
+				<div class="cart_main_head_area_show">
+					<span>送至：</span>
+					<div class="cart_main_head_area_now">
+						北京门头沟区
+					</div>
+					<p>提示：请选择您的收货区域，查看更准确的信息</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="cart_nav_out">
+			<div class="cart_nav">
+				<div class="cart_nav1">
+					<input type="checkbox" name="" id="all_check"/>
+					<span>全选</span>
+				</div>
+				<div class="cart_nav2">
+					<span>商品</span>
+				</div>
+				<div class="cart_nav3">
+					<span>单价</span>
+				</div>
+				<div class="cart_nav4">
+					<span>优惠</span>
+				</div>
+				<div class="cart_nav5">
+					<span>数量</span>
+				</div>
+				<div class="cart_nav6">
+					<span>重量(含包装)</span>
+				</div>
+				<div class="cart_nav7">
+					<span>小计</span>
+				</div>
+				<div class="cart_nav8">
+					<span>库存状态</span>
+				</div>
+				<div class="cart_nav9">
+					<span>操作</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="cart_goods_main">
+			<div class="cart_goods_main_in">
+				<ul>
+					<li class="main_goods">
+						<div class="main_goods_checkbox">
+							<input class="one_check" type="checkbox" name="" id="" value="7" />
+						</div>
+						<div class="main_goods_pic">
+							<img src=""/>
+						</div>
+						<div class="main_goods_title">
+							<span>爱尔兰 韦沃VNA 全脂纯牛奶 200ml*12 礼盒装</span>
+						</div>
+						<div class="main_goods_price">
+							<p>￥<span>58</span></p>
+						</div>
+						<div class="main_goods_amount">
+							<div class="main_goods_amount_in">
+								<button class="main_goods_amount_jia">-</button>
+								<input class="main_goods_text" type="text" value="" />
+								<button class="main_goods_amount_jian">+</button>
+							</div>
+						</div>
+						<div class="main_goods_weight">
+							<span>6kg</span>
+						</div>
+						<div class="main_goods_xiaoji">
+							<p>￥<span>406</span></p>
+						</div>
+						<div class="main_goods_xianhuo">
+							<span>现货</span>
+						</div>
+						<div class="main_goods_caozuo">
+							<span class="main_goods_shoucang">收藏</span>
+							<span class="main_goods_shanchu">删除</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="foot">
+			
+		</div>
+	</body>
+	
+	<!--require模块化引入js-->
+	<script src="js/lib/require.min.js" data-main = "js/cart.js"></script>
+</html>
