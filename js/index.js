@@ -243,6 +243,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					});
 					
 					do_cookie.do_cookie(that,pid);
+					do_index_cart("#head");//渲染head中，购物车部分
+					do_index_cart(".xuan_fu_cart_show");//渲染悬浮按钮中的，购物车部分
 				});
 			}
 		});
@@ -306,6 +308,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					});
 					
 					do_cookie.do_cookie(that,pid);
+					do_index_cart("#head");//渲染head中，购物车部分
+					do_index_cart(".xuan_fu_cart_show");//渲染悬浮按钮中的，购物车部分
 				});
 				
 			}
@@ -363,6 +367,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					});
 					
 					do_cookie.do_cookie(that,pid);
+					do_index_cart("#head");//渲染head中，购物车部分
+					do_index_cart(".xuan_fu_cart_show");//渲染悬浮按钮中的，购物车部分
 				});
 			}
 		});
@@ -420,6 +426,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					});
 					
 					do_cookie.do_cookie(that,pid);
+					do_index_cart("#head");//渲染head中，购物车部分
+					do_index_cart(".xuan_fu_cart_show");//渲染悬浮按钮中的，购物车部分
 				});
 			}
 		});
@@ -477,6 +485,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					});
 					
 					do_cookie.do_cookie(that,pid);
+					do_index_cart("#head");//渲染head中，购物车部分
+					do_index_cart(".xuan_fu_cart_show");//渲染悬浮按钮中的，购物车部分
 				});
 			}
 		});
@@ -534,6 +544,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					});
 					
 					do_cookie.do_cookie(that,pid);
+					do_index_cart("#head");//渲染head中，购物车部分
+					do_index_cart(".xuan_fu_cart_show");//渲染悬浮按钮中的，购物车部分
 				});
 			}
 		});
@@ -591,6 +603,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					});
 					
 					do_cookie.do_cookie(that,pid);
+					do_index_cart("#head");//渲染head中，购物车部分
+					do_index_cart(".xuan_fu_cart_show");//渲染悬浮按钮中的，购物车部分
 				});
 			}
 		});
@@ -648,6 +662,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					});
 					
 					do_cookie.do_cookie(that,pid);
+					do_index_cart("#head");//渲染head中，购物车部分
+					do_index_cart(".xuan_fu_cart_show");//渲染悬浮按钮中的，购物车部分
 				});
 			}
 		});
@@ -708,6 +724,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					});
 					
 					do_cookie.do_cookie(that,pid);
+					do_index_cart("#head");//渲染head中，购物车部分
+					do_index_cart(".xuan_fu_cart_show");//渲染悬浮按钮中的，购物车部分
 				});
 			}
 		});
@@ -765,6 +783,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					});
 					
 					do_cookie.do_cookie(that,pid);
+					do_index_cart("#head");//渲染head中，购物车部分
+					do_index_cart(".xuan_fu_cart_show");//渲染悬浮按钮中的，购物车部分
 				});
 			}
 		});
@@ -823,6 +843,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					});
 					
 					do_cookie.do_cookie(that,pid);
+					do_index_cart("#head");//渲染head中，购物车部分
+					do_index_cart(".xuan_fu_cart_show");//渲染悬浮按钮中的，购物车部分
 				});
 			}
 		});

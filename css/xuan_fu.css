@@ -87,7 +87,7 @@
 
 .xuan_fu_cart_show_over{
 	position: absolute;
-    right: 102px;
+    right: 45px;
     top: 7px;
     width: 360px;
     height: 295px;
@@ -158,5 +158,5 @@
 	position: absolute;
 	top: 0;
     right: -360px;
-    right: 0;
+    /*right: 0;*/
 }
