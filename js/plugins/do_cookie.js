@@ -1,8 +1,8 @@
-//按钮按下处理cookie，和图片移动的方法
+//按钮按下处理cookie,添加cookie方法，删除cookie的方法在do_index_cart.js中
 
 var dc = {
 	do_cookie: function(btn, pid_now) {
-		var that = btn;
+//		var that = btn;
 		var pid = pid_now; //获取当前的商品id
 		var the_cookie = getCookie("cart"); //获取点击之前的cookie，以供本次使用
 		if(!the_cookie) { //当还没有cookie
@@ -12,13 +12,10 @@ var dc = {
 				setCookie("cart", the_cookie + "&" + pid + "|1", 7);
 			} else {
 				var cookies = the_cookie.split("&"); //把每个商品的cookie拆分开
-				console.log("商品种数", cookies.length);
-
 				for(var i = 0; i < cookies.length; i++) {
 					var cooks = cookies[i].split("|"); //把每个商品的cookie再拆分成两个值
 					//										console.log(cooks);
 					if(cooks[0] == pid) { //如果匹配到这个商品的id
-						console.log("cookie加1")
 						cooks[1]++; //让这个商品的个数增加
 						cookies.splice(i, 1, cooks.join("|"));
 						//break;

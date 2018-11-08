@@ -14,7 +14,8 @@ requirejs.config({
 		er_ji:"modules/er_ji",
 		xuan_fu:"modules/xuan_fu",
 		do_cookie:"plugins/do_cookie",
-		do_index_cart:"plugins/do_index_cart"
+		do_index_cart:"plugins/do_index_cart",
+		delete_cookie:"plugins/delete_cookie"
 	},
 	shim:{
 		baiduT:{
@@ -56,12 +57,15 @@ requirejs.config({
 			deps:["cookie","jquery"]
 		},
 		do_index_cart:{
+			deps:["cookie","jquery","delete_cookie"]
+		},
+		delete_cookie:{
 			deps:["cookie","jquery"]
 		}
 	}
 });
 
-requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie","top","head","nav","er_ji","xuan_fu","do_index_cart"],function($,Swiper,baidu,do_cookie){
+requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie","top","head","nav","er_ji","xuan_fu","do_index_cart","delete_cookie"],function($,Swiper,baidu,do_cookie){
 			$(".lazy").lazyload();//图片懒加载
 			
 			
@@ -123,7 +127,6 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 		//定义点击城市改变cookie和各种相应的方法
 			function click_city(){
 				setCookie("city",""+encodeURI(this.innerHTML)+"");//将城市汉字转化为编码加入到cookie中
-				console.log(decodeURI(this.innerHTML));
 				$(".city_mask").css("display","none");
 				$(".city_chose").css("display","none");
 				$("#city").css("display","none");
@@ -131,7 +134,6 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			}
 			function clicking_city(){
 				setCookie("city",""+encodeURI(this.innerHTML)+"");//将城市汉字转化为编码加入到cookie中
-				console.log(decodeURI(this.innerHTML));
 				$(".city_chosing").removeClass("active");
 				$(".city_title span").html(decodeURI(getCookie("city")));
 			}
@@ -221,7 +223,6 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					
 					var that = this;
 					var pid = $(that).siblings("img").attr("pid");
-					console.log(parseInt($(that).offset().top))
 					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
 					$(".append").animate({
@@ -282,11 +283,12 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 				
 				
 				//点击加入购物车按键
-				$(".main_class_bottom_middle_goodspic_btn").click(function(){
-					
+				$(".fruits .main_class_bottom_middle_goodspic_btn").click(function(){
+					console.log("点击事件触发一次");
 					var that = this;
+					console.log("that",that);
 					var pid = $(that).siblings("a").children().eq(0).attr("pid");
-					console.log(parseInt($(that).offset().top))
+					console.log("pid",pid);
 					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
 					$(".append").animate({
@@ -341,11 +343,10 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					});
 				});
 				//点击加入购物车按键
-				$(".main_class_bottom_middle_goodspic_btn").click(function(){
+				$(".sheng_xian .main_class_bottom_middle_goodspic_btn").click(function(){
 					
 					var that = this;
 					var pid = $(that).siblings("a").children().eq(0).attr("pid");
-					console.log(parseInt($(that).offset().top))
 					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
 					$(".append").animate({
@@ -400,11 +401,10 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 				});
 				
 				//点击加入购物车按键
-				$(".main_class_bottom_middle_goodspic_btn").click(function(){
+				$(".leng_cang .main_class_bottom_middle_goodspic_btn").click(function(){
 					
 					var that = this;
 					var pid = $(that).siblings("a").children().eq(0).attr("pid");
-					console.log(parseInt($(that).offset().top))
 					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
 					$(".append").animate({
@@ -459,11 +459,10 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 				});
 				
 				//点击加入购物车按键
-				$(".main_class_bottom_middle_goodspic_btn").click(function(){
+				$(".liang_you .main_class_bottom_middle_goodspic_btn").click(function(){
 					
 					var that = this;
 					var pid = $(that).siblings("a").children().eq(0).attr("pid");
-					console.log(parseInt($(that).offset().top))
 					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
 					$(".append").animate({
@@ -518,11 +517,10 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 				});
 				
 				//点击加入购物车按键
-				$(".main_class_bottom_middle_goodspic_btn").click(function(){
+				$(".tang_qiao .main_class_bottom_middle_goodspic_btn").click(function(){
 					
 					var that = this;
 					var pid = $(that).siblings("a").children().eq(0).attr("pid");
-					console.log(parseInt($(that).offset().top))
 					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
 					$(".append").animate({
@@ -577,11 +575,10 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 				});
 				
 				//点击加入购物车按键
-				$(".main_class_bottom_middle_goodspic_btn").click(function(){
+				$(".cha_yin .main_class_bottom_middle_goodspic_btn").click(function(){
 					
 					var that = this;
 					var pid = $(that).siblings("a").children().eq(0).attr("pid");
-					console.log(parseInt($(that).offset().top))
 					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
 					$(".append").animate({
@@ -636,11 +633,10 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 				});
 				
 				//点击加入购物车按键
-				$(".main_class_bottom_middle_goodspic_btn").click(function(){
+				$(".jiu_shui .main_class_bottom_middle_goodspic_btn").click(function(){
 					
 					var that = this;
 					var pid = $(that).siblings("a").children().eq(0).attr("pid");
-					console.log(parseInt($(that).offset().top))
 					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
 					$(".append").animate({
@@ -680,27 +676,26 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			
 			success:function(data){
 				$.each(data.data,function(index,ele){
-					$(".tui_jian_goods").append('<li><div class="tui_jian_goods_pic"><img class="lazy" pid="'+ele.proudct_id+'" data-original= "'+ele.img+'"/><div class="tui_jian_goods_pic_btn"><b></b>加入购物车</div></div><div class="tui_jian_goods_title">'+ele.name+'</div><div class="tui_jian_goods_price">￥<span>'+ele.sfbestPrice+'</span></div></li>');
+					$(".tui_jian_goods").append('<li><div class="tui_jian_goods_pic"><img class="lazy" pid="'+ele.proudct_id+'" data-original= "'+ele.img+'"/><div class="tui_jian_goods_pic_btn1"><b></b>加入购物车</div></div><div class="tui_jian_goods_title">'+ele.name+'</div><div class="tui_jian_goods_price">￥<span>'+ele.sfbestPrice+'</span></div></li>');
 				});
 				$(".lazy").lazyload();//图片懒加载
 				$(".tui_jian_goods li").hover(function(){
-					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn").animate({
+					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn1").animate({
 						top:186
 					},{
 						queue:false//是否进行排队
 					});
 				},function(){
-					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn").animate({
+					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn1").animate({
 						top:210
 					},{
 						queue:false//是否进行排队
 					});
 				});
 				//点击加入购物车按键
-				$(".tui_jian_goods_pic_btn").click(function(){
+				$(".tui_jian_goods_pic_btn1").click(function(){
 					
 					var that = this;
-					console.log(parseInt($(that).offset().top));
 					var pid = $(that).siblings("img").attr("pid");
 					
 					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").attr("src")+'"/>');
@@ -739,27 +734,26 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			
 			success:function(data){
 				$.each(data.data,function(index,ele){
-					$(".tui_jian_goods").append('<li><div class="tui_jian_goods_pic"><img class="lazy" pid="'+ele.proudct_id+'" data-original= "'+ele.img+'"/><div class="tui_jian_goods_pic_btn"><b></b>加入购物车</div></div><div class="tui_jian_goods_title">'+ele.name+'</div><div class="tui_jian_goods_price">￥<span>'+ele.sfbestPrice+'</span></div></li>');
+					$(".tui_jian_goods").append('<li><div class="tui_jian_goods_pic"><img class="lazy" pid="'+ele.proudct_id+'" data-original= "'+ele.img+'"/><div class="tui_jian_goods_pic_btn2"><b></b>加入购物车</div></div><div class="tui_jian_goods_title">'+ele.name+'</div><div class="tui_jian_goods_price">￥<span>'+ele.sfbestPrice+'</span></div></li>');
 				});
 				$(".lazy").lazyload();//图片懒加载
 				$(".tui_jian_goods li").hover(function(){
-					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn").animate({
+					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn2").animate({
 						top:186
 					},{
 						queue:false//是否进行排队
 					});
 				},function(){
-					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn").animate({
+					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn2").animate({
 						top:210
 					},{
 						queue:false//是否进行排队
 					});
 				});
 				//点击加入购物车按键
-				$(".tui_jian_goods_pic_btn").click(function(){
+				$(".tui_jian_goods_pic_btn2").click(function(){
 					
 					var that = this;
-					console.log(parseInt($(that).offset().top));
 					var pid = $(that).siblings("img").attr("pid");
 					
 					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").attr("src")+'"/>');
@@ -798,17 +792,17 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			
 			success:function(data){
 				$.each(data.data,function(index,ele){
-					$(".tui_jian_goods").append('<li><div class="tui_jian_goods_pic"><img class="lazy" pid="'+ele.proudct_id+'" data-original= "'+ele.img+'"/><div class="tui_jian_goods_pic_btn"><b></b>加入购物车</div></div><div class="tui_jian_goods_title">'+ele.name+'</div><div class="tui_jian_goods_price">￥<span>'+ele.sfbestPrice+'</span></div></li>');
+					$(".tui_jian_goods").append('<li><div class="tui_jian_goods_pic"><img class="lazy" pid="'+ele.proudct_id+'" data-original= "'+ele.img+'"/><div class="tui_jian_goods_pic_btn3"><b></b>加入购物车</div></div><div class="tui_jian_goods_title">'+ele.name+'</div><div class="tui_jian_goods_price">￥<span>'+ele.sfbestPrice+'</span></div></li>');
 				});
 				$(".lazy").lazyload();//图片懒加载
 				$(".tui_jian_goods li").hover(function(){
-					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn").animate({
+					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn3").animate({
 						top:186
 					},{
 						queue:false//是否进行排队
 					});
 				},function(){
-					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn").animate({
+					$(this).children(".tui_jian_goods_pic").children(".tui_jian_goods_pic_btn3").animate({
 						top:210
 					},{
 						queue:false//是否进行排队
@@ -816,10 +810,9 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 				});
 				
 				//点击加入购物车按键
-				$(".tui_jian_goods_pic_btn").click(function(){
+				$(".tui_jian_goods_pic_btn3").click(function(){
 					
 					var that = this;
-					console.log(parseInt($(that).offset().top));
 					var pid = $(that).siblings("img").attr("pid");
 					
 					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").attr("src")+'"/>');
@@ -841,7 +834,6 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 							});
 						}
 					});
-					
 					do_cookie.do_cookie(that,pid);
 					do_index_cart("#head");//渲染head中，购物车部分
 					do_index_cart(".xuan_fu_cart_show");//渲染悬浮按钮中的，购物车部分
