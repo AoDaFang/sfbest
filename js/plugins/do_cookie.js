@@ -1,4 +1,4 @@
-//按钮按下处理cookie,添加cookie方法，删除cookie的方法在do_index_cart.js中
+//每次cookie值加1，删除cookie的方法在do_index_cart.js中
 
 var dc = {
 	do_cookie: function(btn, pid_now) {

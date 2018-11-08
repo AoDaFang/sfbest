@@ -218,7 +218,7 @@
 				width: 12px;
 				height: 13px;
 				text-align: center;
-				line-height: 13px;
+				line-height: 10px;
 				margin: 2px;
 			}
 			.main_goods_text{
@@ -250,10 +250,65 @@
 			}
 			.main_goods_caozuo span{
 				cursor: pointer;
+				margin: 0 2px;
 			}
 			.foot{
 				width: 100%;
 				height: 285px;
+			}
+			.cart_caozuo{
+				width: 100%;
+				height: 50px;
+			}
+			.cart_caozuo_in{
+				margin: 0 auto;
+				margin-top: 10px;
+				width: 998px;
+				height: 48px;
+				border: 1px solid #dadada;
+			}
+			.cart_caozuo_s{
+				width: 290px;
+			    float: left;
+			    padding-top: 6px;
+			}
+			.cart_caozuo_s>*{
+				background: url(images/cart_img/cartbg.gif) no-repeat scroll 0 -105px;
+				border: 0;
+				color: #6B6B6B;
+				cursor: pointer;
+				height: 18px;
+				line-height: 18px;
+				margin: 10px;
+				overflow: hidden;
+				padding: 0 0 0 15px;
+				text-align: left;
+				width: 110px;
+				float: left;
+				cursor: pointer;
+			}
+			.cart_caozuo_info {
+				float: right;
+				width: 390px;
+				height: 20px;
+				padding: 15px 0px;
+			}
+			.cart_caozuo_info_weight{
+				float: left;
+			}
+			.cart_caozuo_info_allmoney{
+				float: left;
+			}
+			.cart_caozuo_info_allmoney i{
+				float: left;
+				font-style: normal;
+			}
+			.cart_caozuo_info_allmoney p{
+				font-weight: bold;
+				float: left;
+				color: #EA5404;
+				font-size: 22px;
+				margin-top: -7px;
 			}
 		</style>
 	</head>
@@ -369,6 +424,27 @@
 						</div>
 					</li>
 				</ul>
+			</div>
+		</div>
+		
+		<div class="cart_caozuo">
+			<div class="cart_caozuo_in">
+				<div class="cart_caozuo_s">
+					<div class="cart_caozuo_shanxuan">
+						<b>删除选中商品</b>
+					</div>
+					<div class="cart_caozuo_qingkong">
+						<b>清空购物车</b>
+					</div>
+				</div>
+				<div class="cart_caozuo_info">
+					<div class="cart_caozuo_info_weight">
+						重量总计：<span>45.73</span>kg (含包装)&nbsp;&nbsp;&nbsp;&nbsp;(不含运费)
+					</div>
+					<div class="cart_caozuo_info_allmoney">
+						<i>商品总计：</i><p>￥<span>457</span></p>
+					</div>
+				</div>
 			</div>
 		</div>
 		

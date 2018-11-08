@@ -33,7 +33,7 @@ $(place+" .goods_s").html("");//清空购物车中能够的内容，以供重新
 	$(".head_cart_r span").html(cookies.length);//改变购物车总个数显示
 	$(".xfbtn2 span").html(cookies.length);
 	$(".head_cart_num span").html(cookies.length);
-	$(".head_cart_weight span").html(6*cookies.length);//改变总重显示
+	
 	
 	$.ajax({
 		type:"get",
@@ -42,10 +42,12 @@ $(place+" .goods_s").html("");//清空购物车中能够的内容，以供重新
 		success:function(data){
 			var now_data = data.data;
 			var all_money = 0;//总价钱
+			var all_weight = 0;
 			for(var i = 0; i<cookies.length; i++){
 				var infos = cookies[i].split("|");
 				var now_id = infos[0];
 				var now_amount = infos[1];
+				all_weight += 6*now_amount;
 				$(now_data).each(function(index,ele){
 					if(ele.product_id == now_id){
 						all_money = Number(all_money) + (ele.sfbestPrice||ele.price)*now_amount;//计算总价钱
@@ -53,6 +55,7 @@ $(place+" .goods_s").html("");//清空购物车中能够的内容，以供重新
 					}
 				})
 			}
+			$(".head_cart_weight span").html(all_weight);//改变总重显示
 			$(".head_cart_money b").html(all_money);
 			
 			//给删除按钮添加事件,给定一个pid删除cookie的方法
