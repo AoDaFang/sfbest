@@ -6,7 +6,7 @@
 				return;
 			}
 			$.ajax({
-				url:"http://www.sfbest.com/productlist/keysearch?&&&",
+				url:"http://www.sfbest.com/productlist/keysearch",
 				dataType:'jsonp',
 //				jsonpCallback:"fn",
 				data:{

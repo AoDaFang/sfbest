@@ -6,9 +6,8 @@ function delete_cookie(pid_now){
 		//										console.log(cooks);
 		if(cooks[0] == pid_now) { //如果匹配到这个商品的id
 /*			cooks[1] == ""; //让这个商品的个数增加
-			cooks[0] == ""
-			console.log(cooks);*/
-			cookies.splice(i, 1)
+			cooks[0] == "" */
+			cookies.splice(i, 1);
 			//break;
 		}
 	}

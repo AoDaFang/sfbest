@@ -77,7 +77,17 @@ function reloadCartInner() {
 					var now_amount = $(this).val();//此处必须用val不然无法获取新的值
 					setCookieAmount(now_id,now_amount);
 					reloadCartInner();
-				})
+				});
+				
+				//给"删除选中商品"添加事件
+				$(".cart_caozuo_shanxuan").click(function(){
+					$(".one_check").each(function(index, ele) {
+						if($(ele).prop("checked")) {
+							delete_cookie($(ele).attr("pid"));
+						}
+					});
+					reloadCartInner();//模块化刷新购物车
+				});
 				
 			}
 		})

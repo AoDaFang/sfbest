@@ -310,6 +310,152 @@
 				font-size: 22px;
 				margin-top: -7px;
 			}
+			.cart_jiesuan{
+				width: 100%;
+				height: 64px;
+			}
+			.cart_jiesuan_in{
+				width: 980px;
+				height: 45px;
+				padding: 10px;
+				margin: 0 auto;
+			}
+			.cart_jiesuan_in>*{
+				float: right;
+			}
+			.cart_jiesuan_btn1 button{
+				background: #6e9b0c;
+				height: 45px;
+				width: 150px;
+				border: 0;
+				color: #FFF;
+				text-align: center;
+				font-size: 16px;
+				font-weight: bold;
+				cursor: pointer;
+				outline: none;
+			}
+			.cart_jiesuan_btn2{
+				margin-top: 9px;
+			}
+			.cart_jiesuan_btn2 button{
+				background: url(index_img/header.png) no-repeat 0 -225px;
+				height: 28px;
+				width: 73px;
+				border: 1px solid #a5cf69;
+				color: #666666;
+				margin: 0 10px 0 0;
+				cursor: pointer;
+				outline: none;
+			}
+			.cart_jiesuan_btn1 button:hover{
+				background: url(index_img/productinfo.png) no-repeat 0 -124px;
+			}
+			.cart_jiesuan_btn2 button:hover{
+				color: #669900;
+			}
+			
+			/*//选项卡样式*/
+			.tab{
+				width: 1000px;
+				height: 334px;
+				margin: 0 auto;
+			}
+			.btns{
+				height: 32px;
+				line-height: 32px;
+				border-bottom: #629c00 2px solid;
+			}
+			.btns p{
+				display: block;
+				float: left;
+				width: 100px;
+				height: 32px;
+				text-align: center;
+				color: #000;
+				cursor: pointer;
+			}
+			.btns p.active{
+				background: #629c00;
+				color: #fff;
+			}
+			.shows ul{
+				width: 1000px;
+				height: 300px;
+				display: none;
+			}
+			.shows ul.active{
+				display: block;
+			}
+			/*封装的选项卡样式结束*/
+			
+			.swiper-container {
+			    width: 1000px;
+			    height: 300px;
+			}  
+			
+			.cart_tab{
+				width: 1000px;
+				margin: 0 auto;
+				margin-top: 16px;
+			}
+			.cart_slider_goods{
+				width: 180px;
+				padding: 20px 10px;
+				float: left;
+			}
+			.cart_slider_goods_pic{
+				width: 180px;
+				height: 180px;
+				position: relative;
+				overflow: hidden;
+			}
+			.cart_slider_goods_pic img{
+				width: 180px;
+				height: 180px;
+			}
+			.cart_slider_goods_pic_btn{
+				position: absolute;
+				width: 180px;
+				height: 24px;
+				border-radius: 2px;
+				background: #76ac25;
+				filter: alpha(opacity=95);
+				-moz-opacity: 0.95;
+				opacity: 0.95;
+				top: 180px;
+				/*top: 155px;*/
+				cursor: pointer;
+				z-index: 4;
+			}
+			.cart_slider_goods_pic_btn a{
+				margin: 0 auto;
+				width: 60px;
+				height: 24px;
+				display: block;
+				background: url(index_img/indexsprite.png) no-repeat -66px -177px;
+				line-height: 24px;
+				font-family: Microsoft YaHei;
+				font-size: 12px;
+				color: #fff;
+				text-decoration: none;
+				padding-left: 20px;
+			}
+			.cart_slider_goods_title{
+				width: 180px;
+				height: 36px;
+				overflow: hidden;
+				line-height: 18px;
+			}
+			.cart_slider_goods_price{
+				font-size: 14px;
+				margin-left: 0;
+				padding-top: 6px;
+				color: #f33f00;
+				font-family: 微软雅黑;
+				line-height: 16px;
+				font-weight: bold;
+			}
 		</style>
 	</head>
 	<body>
@@ -444,6 +590,65 @@
 					<div class="cart_caozuo_info_allmoney">
 						<i>商品总计：</i><p>￥<span>457</span></p>
 					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="cart_jiesuan">
+			<div class="cart_jiesuan_in">
+				<div class="cart_jiesuan_btn1">
+					<button>去结算</button>
+				</div>
+				<div class="cart_jiesuan_btn2">
+					<button>继续购物</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="cart_tab">
+			<div class="tab">
+				<div class="btns">
+					<p class="active">为你推荐</p>
+					<p>最近浏览</p>
+				</div>
+				<div class="shows">
+					<ul class="active">
+						<!--购物车中轮播开始-->
+						<div class="cart_slider">
+							<div class="swiper-container">
+							    <div class="swiper-wrapper">
+							        <!--<div class="swiper-slide">
+							        	<div class="cart_slider_goods">
+							        		<div class="cart_slider_goods_pic">
+							        			<img src="" pid=""/>
+							        			<div class="cart_slider_goods_pic_btn">
+							        				<a href="javascript:;">加入购物车</a>
+							        			</div>
+							        		</div>
+							        		<div class="cart_slider_goods_title">
+							        			爱阁食品 智利鸡翅中 1000g(新老包装,随机发货)
+							        		</div>
+							        		<div class="cart_slider_goods_price">
+							        			￥<span>47</span>
+							        		</div>
+							        	</div>
+							        	
+							        </div>-->
+							    </div>
+							    <!-- 如果需要分页器 -->
+							    <div class="swiper-pagination"></div>
+							    
+							    <!-- 如果需要导航按钮 -->
+							    <div class="swiper-button-prev"></div>
+							    <div class="swiper-button-next"></div>
+							    
+							    <!-- 如果需要滚动条 -->
+							    <!--<div class="swiper-scrollbar"></div>-->
+							</div>
+						</div>
+						<!--购物车中轮播结束-->
+					</ul>
+					<div>内容2</div>
 				</div>
 			</div>
 		</div>

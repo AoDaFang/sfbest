@@ -9,7 +9,7 @@ Tab.prototype.init=function(){
 			that.btns[index].onclick=function(){
 				that.change(index);
 			}
-		})(i)
+		})(i);
 	}
 }
 Tab.prototype.change=function(index){
@@ -21,6 +21,3 @@ Tab.prototype.change=function(index){
 	this.shows[index].className="active";
 }
 new Tab(document.querySelector(".tab")).init();
-
-
-//var Tab = 
