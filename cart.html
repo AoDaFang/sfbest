@@ -456,6 +456,37 @@
 				line-height: 16px;
 				font-weight: bold;
 			}
+			.test_div{
+				width: 200px;
+				height: 300px;
+				border: 1px solid black;
+				float: left;
+			}
+			.cart_tab .swiper-pagination-bullet-active{
+				background-color: #629c00;
+			}
+			.cart_tab .swiper-button-prev{
+				background: url(images/cart_img/sf_new_bg.png) no-repeat -161px 0px;
+				width: 39px;
+				height: 49px;
+				display: block;
+				cursor: pointer;
+				filter: alpha(opacity=60);
+				opacity: 0.6;
+			}
+			.cart_tab .swiper-button-next{
+				background: url(images/cart_img/sf_new_bg.png) no-repeat -104px 0px;
+				width: 39px;
+				height: 49px;
+				display: block;
+				cursor: pointer;
+				filter: alpha(opacity=60);
+				opacity: 0.6;
+			}
+			.cart_tab .swiper-button-prev:hover,.cart_tab .swiper-button-next:hover{
+				filter: alpha(opacity=80);
+				opacity: 0.8;
+			}
 		</style>
 	</head>
 	<body>
@@ -634,6 +665,16 @@
 							        	</div>
 							        	
 							        </div>-->
+							        <div class="swiper-slide" myindex="1">
+							        	
+							        </div>
+							        <div class="swiper-slide" myindex="2">
+							        	
+							        </div>
+							        <div class="swiper-slide" myindex="3">
+							        	
+							        </div>
+							        
 							    </div>
 							    <!-- 如果需要分页器 -->
 							    <div class="swiper-pagination"></div>
@@ -648,7 +689,9 @@
 						</div>
 						<!--购物车中轮播结束-->
 					</ul>
-					<div>内容2</div>
+					<ul class="cart_foryou">
+						
+					</ul>
 				</div>
 			</div>
 		</div>

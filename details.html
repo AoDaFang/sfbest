@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>My农夫山泉 农夫山泉矿泉水 535ml*12</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.css" />
+		<link rel="stylesheet" type="text/css" href="css/top.css" />
+		<link rel="stylesheet" type="text/css" href="css/head.css" />
+		<link rel="stylesheet" type="text/css" href="css/er_ji.css" />
+		<link rel="stylesheet" type="text/css" href="css/nav.css" />
+		<link rel="stylesheet" type="text/css" href="css/foot.css" />
+		<link rel="stylesheet" type="text/css" href="css/xuan_fu.css" />
+		<link rel="stylesheet" type="text/css" href="css/fang_da_jing.css" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<style type="text/css">
+			#top {
+				width: 100%;
+				height: 34px;
+				background-color: #f7f7f7;
+				min-width: 1200px;
+			}
+			/*通用head开始*/
+			
+			#head {
+				width: 100%;
+				height: 104px;
+			}
+			/*通用head结束*/
+			
+			.er_ji {
+				position: absolute;
+				top: 34px;
+				left: 0px;
+				display: none;
+			}
+			
+			.all_goods_class_button {
+				cursor: pointer;
+			}
+			/*通用nav开始*/
+			
+			.nav {
+				width: 100%;
+				height: 32px;
+				border-bottom: 2px solid #679800;
+			}
+			
+			.nav_in {
+				position: relative;
+			}
+			/*通用nav结束*/
+			
+			.link_nav {
+				height: 20px;
+				line-height: 20px;
+				margin: 10px auto;
+				overflow: hidden;
+				width: 1200px;
+			}
+			
+			.link_nav b {
+				font-family: Microsoft YaHei;
+				font-size: 16px;
+				padding: 0 7px 0 10px;
+			}
+			
+			.link_nav span {
+				line-height: 20px;
+			}
+			
+			.details_main {
+				width: 1200px;
+				margin: 0 auto;
+			}
+			
+			.details_main_left {
+				width: 978px;
+				height: 410px;
+				background-color: #fbfbfb;
+				-webkit-box-shadow: 0 0 4px #efefef;
+				box-shadow: 0 0 4px #c7c7c7;
+				position: relative;
+				z-index: 2;
+				float: left;
+				
+			}
+			
+			.details_main_right {
+				width: 222px;
+				height: 448px;
+				float: right;
+				/*overflow: hidden;*/
+				background-color: #ffffff;
+				position: relative;
+				z-index: 1;
+			}
+			
+			.details_main_fang_da {
+				width: 390px;
+				height: 340px;
+				margin-top: 20px;
+				margin-left: 10px;
+			}
+			
+			.details_main_left_share {
+				position: absolute;
+				top: 370px;
+				border-top: 1px solid #efefef;
+				width: 390px;
+				margin: 0 10px;
+				zoom: 1;
+			}
+			
+			.baidu_share {
+				padding-bottom: 2px;
+				font-size: 12px;
+				float: left;
+				text-align: left;
+				position: relative;
+			}
+			
+			.baidu_share_more {
+				display: block;
+				font-family: '宋体', Arial;
+				height: 16px;
+				width: 53px;
+				float: left;
+				cursor: pointer;
+				padding-top: 6px;
+				padding-bottom: 3px;
+				padding-left: 22px;
+				background: url(images/cart_img/is.png) no-repeat 0 5px;
+			}
+			
+			.baidu_share>span:hover {
+				opacity: 0.8;
+			}
+			
+			.share_qzone {
+				text-decoration: none;
+				cursor: pointer;
+				background: url(images/cart_img/is.png) no-repeat;
+				display: block;
+				font-family: '宋体', Arial;
+				height: 16px;
+				float: left;
+				cursor: pointer;
+				padding-top: 6px;
+				padding-bottom: 3px;
+				padding-left: 22px;
+				background-position: 0 -75px;
+			}
+			
+			.share_sina {
+				background: url(images/cart_img/is.png) no-repeat;
+				display: block;
+				font-family: '宋体', Arial;
+				height: 16px;
+				float: left;
+				cursor: pointer;
+				padding-top: 6px;
+				padding-bottom: 3px;
+				padding-left: 22px;
+				background-position: 0 -115px;
+			}
+			
+			.ge_zhong_share {
+				position: absolute;
+				width: 212px;
+				height: 314px;
+				left: 0;
+				top: -316px;
+				top: 25px;
+				background-color: #fff;
+				box-shadow: 0 0 7px #eee;
+				display: none;
+			}
+			
+			.ge_zhong_share h2 {
+				width: 100%;
+				font-family: "宋体";
+				font-size: 14px;
+				font-weight: normal;
+				text-indent: 0.5em;
+				font-weight: 700;
+				border-top: 1px solid #fbfbfb;
+				border-bottom: 1px solid #f2f1f1;
+				background-color: #f6f6f6;
+				float: left;
+				padding: 5px 0;
+			}
+			
+			.ge_zhong_share ul {
+				width: 98%;
+				float: left;
+				padding: 8px 0;
+				margin-left: 2px;
+				overflow: hidden;
+			}
+			
+			.ge_zhong_share ul li {
+				width: 47%;
+				height: 26px;
+				float: left;
+				margin: 2px;
+			}
+			
+			.ge_zhong_share ul li a {
+				background: url(images/cart_img/is.png) no-repeat;
+				height: auto;
+				color: #565656;
+				display: block;
+				width: 98%;
+				padding: 6px 0;
+				text-indent: 2.4em;
+				border: 1px solid #fff;
+				font-family: "宋体";
+				font-size: 12px;
+			}
+			
+			.ge_zhong_share ul li a:hover {
+				background-color: #f3f3f3;
+				border: 1px solid #eee;
+				border-radius: 3px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(1) a {
+				background-position: 0 -2070px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(2) a {
+				background-position: 0 -75px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(3) a {
+				background-position: 0 -115px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(4) a {
+				background-position: 0 -2550px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(5) a {
+				background-position: 0 -195px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(6) a {
+				background-position: 0 -235px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(7) a {
+				background-position: 0 -2190px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(8) a {
+				background-position: 0 -275px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(9) a {
+				background-position: 0 -595px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(10) a {
+				background-position: 0 -595px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(11) a {
+				background-position: 0 -395px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(12) a {
+				background-position: 0 -435px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(13) a {
+				background-position: 0 -155px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(14) a {
+				background-position: 0 -2230px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(15) a {
+				background-position: 0 -1829px;
+			}
+			
+			.ge_zhong_share ul li:nth-child(16) a {
+				background-position: 0 4px;
+			}
+			
+			.details_main_left_left {
+				float: left;
+			}
+			
+			.details_main_right {
+				width: 568px;
+				float: right;
+				height: 337px;
+			}
+			
+			.details_main_goods_title {
+				padding: 0 15px;
+				margin: 10px 0;
+				height: 60px;
+				overflow: hidden;
+			}
+			
+			.zi_ying {
+				float: left;
+				display: inline-block;
+				width: 37px;
+				height: 18px;
+				line-height: 18px;
+				background-color: #6f9a09;
+				border-radius: 3px;
+				text-align: center;
+				color: #fff;
+				margin-top: 7px;
+				margin-right: 5px;
+			}
+			
+			.details_main_goods_title h1 {
+				float: left;
+				color: #191c1f;
+				font-size: 18px;
+				font-family: 微软雅黑;
+				line-height: 30px;
+				font-weight: bold;
+			}
+			
+			.details_main_goods_price {
+				background-color: #fa8e19;
+				height: 90px;
+				zoom: 1;
+				margin-bottom: 10px;
+				border-bottom: 3px solid #dddddd;
+			}
+			
+			.details_main_goods_price_num {
+				float: left;
+				overflow: hidden;
+				zoom: 1;
+				color: white;
+			}
+			
+			.details_main_goods_price_num1 {
+				float: left;
+				padding: 55px 0 0 10px;
+				height: 18px;
+				line-height: 18px;
+			}
+			
+			.details_main_goods_price_num2 {
+				float: left;
+				padding: 53px 0 0 0;
+				height: 18px;
+				line-height: 18px;
+				font-size: 18px;
+				font-family: 微软雅黑;
+			}
+			
+			.details_main_goods_price_num3 {
+				float: left;
+				padding: 30px 0 0 0;
+				font-family: 微软雅黑;
+				font-size: 50px;
+				height: 45px;
+				line-height: 45px;
+			}
+			.open_vip{
+				display: block;
+				float: left;
+				width: 82px;
+				height: 24px;
+				text-align: center;
+				line-height: 24px;
+				margin: 20px 0 0 15px;
+				color: #df0000;
+				font-size: 12px;
+				background-color: #ffe400;
+				position: absolute;
+				top: 68px;
+				right: 212px;
+			}
+			.details_main_goods_price_tail{
+				    width: 5px;
+				    height: 96px;
+				    background: url(index_img/productinfo.png) no-repeat -271px -121px;
+				    position: absolute;
+				    right: -5px;
+			}
+			.details_main_goods_area{
+				margin-bottom: 10px;
+				padding: 0 5px;
+				position: relative;
+				overflow: hidden;
+			}
+			.details_main_goods_area_to{
+				float: left;
+				width: 90px;
+				text-align: right;
+				line-height: 25px;
+				color: #b0b0b0;
+			}
+			.details_main_goods_area_chose{
+				float: left;
+				width: 465px;
+				z-index: 91;
+				line-height: 25px;
+
+			}
+			.details_main_goods_area_chose_in{
+				background: #FFFFFF;
+				border: 1px solid #CECBCE;
+				float: left;
+				height: 22px;
+				line-height: 22px;
+				overflow: hidden;
+				padding: 0 20px 0 4px;
+				*margin-top: 1px;
+				position: relative;
+				top: 0;
+				font-size: 12px;
+				font-weight: normal;
+			}
+			.details_main_goods_area_chose_in b{
+				background: url(images/cart_img/indexImg20130307.png) no-repeat -386px -2px;
+				display: block;
+				height: 24px;
+				overflow: hidden;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 17px;
+			}
+			.details_main_goods_caozuo{
+				width: 528px;
+				height: 101px;
+				margin-top: 10px;
+			}
+			.details_main_goods_caozuo_chose{
+				/*overflow: hidden;*/
+				height: 25px;
+				margin-top: 10px;
+			}
+			.details_main_goods_caozuo_chose label{
+				width: 201px;
+				height: 24px;
+				float: left;
+				border: 1px solid #dbdbdb;
+				line-height: 24px;
+				margin-right: 9px;
+				text-align: center;
+			}
+			.details_main_goods_caozuo_chose input:checked+label{
+				border:1px solid #6d9a09;
+			}
+			.details_main_goods_caozuo_chose input{
+				display: none;
+			}
+			.details_main_goods_caozuo_jiesuan{
+				width: 528px;
+				height: 45px;
+				margin-top: 21px;
+			}
+			.details_amount{
+				width: 52px;
+				height: 42px;
+				border: 1px solid #dadada;
+				outline: none;
+				float: left;
+				text-align: center;
+			}
+			.details_amount_btns{
+				float: left;
+			}
+			.details_amount_add,.details_amount_sub{
+				width: 24px;
+				height: 22px;
+				border: 1px solid #dadada;
+				border-left: none;
+				float: left;
+				outline: none;
+				background-color: #fff;
+				clear: left;
+				cursor: pointer;
+			}
+			.details_amount_sub{
+				border-top: none;
+			}
+			
+			.details_main_goods_caozuo_bigbtns{
+				float: left;
+				margin-left: 10px;
+			}
+			
+			.details_add_to_cart{
+				width: 159px;
+				height: 45px;
+				float: left;
+				position: relative;
+				cursor: pointer;
+			}
+			.details_add_to_cart input{
+				background-color: #669900;
+				font-size: 18px;
+				color: #fff;
+				border: none;
+				outline: none;
+				width: 159px;
+				height: 45px;
+				border-radius: 2px;
+				text-indent: 1.5em;
+				cursor: pointer;
+			}
+			.details_add_to_cart b{
+				width: 22px;
+				height: 20px;
+				position: absolute;
+				left: 17px;
+				top: 13px;
+				background: url(index_img/productinfo.png) no-repeat -269px -72px;;
+			}
+			
+			
+			.details_fast{
+				float: left;
+				width: 130px;
+				height: 45px;
+				margin-left: 10px;
+				cursor: pointer;
+			}
+			.details_fast input{
+				width: 130px;
+				height: 45px;
+				background-color: #fa8e19;
+				font-size: 18px;
+				color: #fff;
+				border: none;
+				outline: none;
+				border-radius: 2px;
+				text-align: center;
+				cursor: pointer;
+			}
+			
+			.er_ji {
+				z-index: 999;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--通用top开始-->
+		<div id="top">
+
+		</div>
+		<!--通用top结束-->
+		<!--通用head开始-->
+		<div id="head">
+
+		</div>
+		<!--通用head结束-->
+
+		<!--通用nav开始-->
+		<div class="nav">
+			<div class="er_ji">
+				<!--二级列表内容-->
+			</div>
+		</div>
+		<!--通用nav结束-->
+
+		<div class="link_nav">
+			<b>饮料/水</b>
+			<span>> 水 > 矿泉水 > 农夫山泉 > 农夫山泉 农夫山泉矿泉水 535ml</span>
+		</div>
+
+		<div class="details_main">
+			<div class="details_main_left">
+				<div class="details_main_left_left">
+					<div class="details_main_fang_da">
+
+					</div>
+					<div class="details_main_left_share">
+						<div class="baidu_share">
+							<div class="baidu_share_more">
+								分享到:
+							</div>
+							<span class="share_qzone"></span>
+							<span class="share_sina"></span>
+							<div class="ge_zhong_share">
+								<h2>分享到</h2>
+								<ul>
+									<li>
+										<a href="javascript:;">一键分享</a>
+									</li>
+									<li>
+										<a href="javascript:;">QQ空间</a>
+									</li>
+									<li>
+										<a href="javascript:;">新浪微博</a>
+									</li>
+									<li>
+										<a href="javascript:;">百度云收藏</a>
+									</li>
+									<li>
+										<a href="javascript:;">人人网</a>
+									</li>
+									<li>
+										<a href="javascript:;">腾讯微博</a>
+									</li>
+									<li>
+										<a href="javascript:;">百度相册</a>
+									</li>
+									<li>
+										<a href="javascript:;">开心网</a>
+									</li>
+									<li>
+										<a href="javascript:;">腾讯朋友</a>
+									</li>
+									<li>
+										<a href="javascript:;">百度贴吧</a>
+									</li>
+									<li>
+										<a href="javascript:;">豆瓣网</a>
+									</li>
+									<li>
+										<a href="javascript:;">搜狐微博</a>
+									</li>
+									<li>
+										<a href="javascript:;">百度新首页</a>
+									</li>
+									<li>
+										<a href="javascript:;">QQ好友</a>
+									</li>
+									<li>
+										<a href="javascript:;">和讯微博</a>
+									</li>
+									<li>
+										<a href="javascript:;">更多...</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="details_main_right">
+					<div class="details_main_goods_title">
+						<div class="zi_ying">自营</div>
+						<h1>农夫山泉 农夫山泉矿泉水 535ml</h1>
+					</div>
+					<div class="details_main_goods_price">
+						<div class="details_main_goods_price_num">
+							<span class="details_main_goods_price_num1">优选价：</span>
+							<span class="details_main_goods_price_num2">￥</span>
+							<span class="details_main_goods_price_num3">3</span>
+						</div>
+						<a class="open_vip" href="javascript:;">开通优选会员</a>
+						<div class="details_main_goods_price_tail">
+							
+						</div>
+					</div>
+					<div class="details_main_goods_area">
+						<div class="details_main_goods_area_to">
+							送至：
+						</div>
+						<div class="details_main_goods_area_chose">
+							<div class="details_main_goods_area_chose_in">
+								<span>北京门头沟区</span>
+								<b></b>
+							</div>
+						</div>
+					</div>
+					<div class="details_main_goods_caozuo">
+						<div class="details_main_goods_caozuo_chose">
+							<input id="col1" type="radio" name="ma_shu" />
+							<label for="col1">农夫山泉 农夫山泉矿泉水 535ml</label>
+						
+							<input id="col2" type="radio" name="ma_shu" />
+							<label for="col2">农夫山泉 农夫山泉矿泉水 535m*12.5</label>
+						</div>
+						<div class="details_main_goods_caozuo_jiesuan">
+							<input type="text" class="details_amount" value="1" />
+							<div class="details_amount_btns">
+								<input type="button" class="details_amount_add" id="" value="+" />
+								<input type="button" class="details_amount_sub" id="" value="-" />
+							</div>
+							<div class="details_main_goods_caozuo_bigbtns">
+								<div class="details_add_to_cart">
+									<b></b>
+									<input type="button" class="" id="" value="加入购物车" />
+								</div>
+								<div class="details_fast">
+									<input type="button" class="" id="" value="一键购买" />
+								</div>
+							</div>
+							<div class="">
+								
+							</div>
+						</div>
+					</div>
+				
+					
+				</div>
+			</div>
+
+		</div>
+
+		<!--通用底部开始-->
+		<div class="foot">
+
+		</div>
+		<!--通用底部开始-->
+		<!--右侧悬浮开始-->
+		<div class="xuan_fu">
+
+		</div>
+		<!--右侧悬浮结束-->
+
+		<script src="js/lib/require.min.js" data-main="js/details.js"></script>
+	</body>
+
+</html>

@@ -83,24 +83,44 @@ requirejs(["jquery","swiper","baiduT","do_cookie","lazy","cookie","top","delete_
        		clickable:true,
      	 },
      	 				
-			slidesPerView:5,//可以同时显示的slider数
+//			slidesPerView:5,//可以同时显示的slider数
 			centeredSlides : true,
 	    // 如果需要前进后退按钮
 	    navigation: {
 	      nextEl: '.swiper-button-next',
 	      prevEl: '.swiper-button-prev',
 	    },
-	  })        
+	  });
+	  
+	   mySwiper.el.onmouseover = function(){
+		  mySwiper.navigation.$nextEl.removeClass('hide');
+		  mySwiper.navigation.$prevEl.removeClass('hide');
+		}
 	//轮播图结束
 	
 	
+	//<div class="cart_slider_goods"><div class="cart_slider_goods_pic"><img src="'+ele.img+'" pid="'+ele.proudct_id+'"/><div class="cart_slider_goods_pic_btn"><a href="javascript:;">加入购物车</a></div></div><div class="cart_slider_goods_title">'+ele.name+'</div><div class="cart_slider_goods_price">￥<span>'+(ele.sfbestPrice||ele.price)+'</span></div></div>
 	
-	
+	//轮播内容
 	$.ajax({
 		url:"data/cart_data.json",
 		success:function(data){
-			console.log(data)
-			$(data.data).each(function(index,ele){$(".swiper-wrapper").append('<div class="swiper-slide"><div class="cart_slider_goods"><div class="cart_slider_goods_pic"><img src="'+ele.img+'" pid="'+ele.proudct_id+'"/><div class="cart_slider_goods_pic_btn"><a href="javascript:;">加入购物车</a></div></div><div class="cart_slider_goods_title">'+ele.name+'</div><div class="cart_slider_goods_price">￥<span>'+(ele.sfbestPrice||ele.price)+'</span></div></div></div>');
+			var index_a = 0;//每五张放入一个slide中，这是计数变量
+			var slide_index = 0;//每加入了五个商品，这个数加一，用以确定要放入哪个slide中
+			$(data.data).each(function(index,ele){
+//				$(".swiper-wrapper").append('<div class="swiper-slide"></div>');
+			
+			if(index_a<5){//如果还没加满五个执行此处
+				var slide_ins = '<div class="cart_slider_goods"><div class="cart_slider_goods_pic"><img src="'+ele.img+'" pid="'+ele.proudct_id+'"/><div class="cart_slider_goods_pic_btn"><a href="javascript:;">加入购物车</a></div></div><div class="cart_slider_goods_title">'+ele.name+'</div><div class="cart_slider_goods_price">￥<span>'+(ele.sfbestPrice||ele.price)+'</span></div></div>';
+				//var test_div = '<div class="test_div"></div>';
+				$(".swiper-slide").eq(slide_index).append(slide_ins);
+				index_a++;
+				
+			}else{//如果加满了五个
+				index_a = 0//让5张计数为0，重新开始数5个数。
+				slide_index++;//slide计数加一，往下一个slide中装商品
+				
+			}
 			
 			$(".cart_slider_goods").hover(function(){
 				$(this).children(".cart_slider_goods_pic").children(".cart_slider_goods_pic_btn").animate({
@@ -115,10 +135,44 @@ requirejs(["jquery","swiper","baiduT","do_cookie","lazy","cookie","top","delete_
 					queue:false,
 				})
 			});
-			
 			})
 		}
-	})
+	});
+	
+	//为你推荐内容
+	$.ajax({
+		url:"data/cart_data.json",
+		success:function(data){
+			var index_b = 0;
+			$(data.data).each(function(index,ele){
+				if(index_b<4){
+					index_b++;
+					var slide_ins = '<div class="cart_slider_goods"><div class="cart_slider_goods_pic"><img src="'+ele.img+'" pid="'+ele.proudct_id+'"/><div class="cart_slider_goods_pic_btn"><a href="javascript:;">加入购物车</a></div></div><div class="cart_slider_goods_title">'+ele.name+'</div><div class="cart_slider_goods_price">￥<span>'+(ele.sfbestPrice||ele.price)+'</span></div></div>';
+					//var test_div = '<div class="test_div"></div>';
+					$(".cart_foryou").append(slide_ins);
+					
+				
+					$(".cart_slider_goods").hover(function(){
+						$(this).children(".cart_slider_goods_pic").children(".cart_slider_goods_pic_btn").animate({
+							top:155	
+						},{
+							queue:false,
+						})
+					},function(){
+						$(this).children(".cart_slider_goods_pic").children(".cart_slider_goods_pic_btn").animate({
+							top:180
+						},{
+							queue:false,
+						})
+					});
+				}else{
+					return;
+				}
+			})
+		}
+	});
+	
+	
 });
 		
 	
