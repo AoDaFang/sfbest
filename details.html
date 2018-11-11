@@ -16,7 +16,7 @@
 		<link rel="shortcut icon" href="favicon.ico">
 		<style type="text/css">
 			body{
-				height: 5000px;
+				/*height: 5000px;*/
 			}
 			#top {
 				width: 100%;
@@ -760,6 +760,7 @@
 			.details_goods_introduce_in{
 				width: 1200px;
 				margin: 0 auto;
+				overflow: hidden;
 			}
 			
 			.details_left_box{
@@ -849,9 +850,10 @@
 				margin: 0 auto;
 			}
 			.btns{
+				background-color: #fff;
 				width: 1004px;
+				height: 33px;
 				border: 1px solid #dbdbdb;
-				overflow: hidden;
 				margin: 0 -5px;
 				border-top:1px solid #dadada;
 				border-right: 1px solid #dadada;
@@ -872,6 +874,30 @@
 				line-height: 22px;
 				padding: 0 0 0 25px;
 				text-decoration: none;
+			}
+			.details_saosao_sfapp{
+				width: 160px;
+				height: 34px;
+				float: right;
+				position: relative;
+			}
+			.details_saosao_sfapp a{
+				width: 135px;
+				height: 34px;
+				background: url(images/details_img/p_buy_phone.png) no-repeat 110px -38px;
+				display: block;
+				line-height: 34px;
+				padding-left: 25px;
+				text-decoration: none;
+				cursor: default;
+			}
+			.details_saosao_sfapp div{
+				position: absolute;
+				width: 160px;
+				height: 163px;
+			}
+			.details_saosao_sfapp div img{
+				
 			}
 			.btns button{
 				border: none;
@@ -1163,6 +1189,239 @@
 				height: 16px;
 				margin-right: 3px;
 			}
+			.details_pinglun_allsee{
+				color: #6c9c0a;
+				cursor: pointer;
+				text-indent: 12em;
+    			line-height: 54px;
+			}
+			.details_big_pinglun{
+				
+			}
+			.details_sf_you_shi_main{
+				width: 1004px;
+				height: 380px;
+				background-color: #e9e9e9;
+			}
+			
+			/*顺丰优势轮播样式*/
+				.swiper-container {
+				    width: 780px;
+				    height: 380px;
+				}  
+				.swiper-wrapper{
+					top: 105px;
+				}
+				.swiper-pagination{
+					top:0px
+				}
+				/*自定义分页器的样式，这个你自己想要什么样子自己写*/
+				.details_sf_you_shi_main .swiper-pagination-bullet{
+					width: 130px;
+					height: 105px;
+					text-indent: -9999px;
+					float: left;
+					margin: 0!important;
+					border-radius: 0;
+				}
+				.details_sf_you_shi_main .swiper-pagination-bullet:nth-child(1){
+					opacity: 1;
+					background: url(images/details_img/ysicon1000.png) no-repeat 40px 15px;
+				}
+				.details_sf_you_shi_main .swiper-pagination-bullet:nth-child(2){
+					opacity: 1;
+					background: url(images/details_img/ysicon1000.png) no-repeat -120px 15px;
+				}
+				.details_sf_you_shi_main .swiper-pagination-bullet:nth-child(3){
+					opacity: 1;
+					background: url(images/details_img/ysicon1000.png) no-repeat -265px 15px;
+				}
+				.details_sf_you_shi_main .swiper-pagination-bullet:nth-child(4){
+					opacity: 1;
+					background: url(images/details_img/ysicon1000.png) no-repeat -430px 15px;
+				}
+				.details_sf_you_shi_main .swiper-pagination-bullet:nth-child(5){
+					opacity: 1;
+					background: url(images/details_img/ysicon1000.png) no-repeat -590px 15px;
+				}
+				.details_sf_you_shi_main .swiper-pagination-bullet:nth-child(6){
+					opacity: 1;
+					background: url(images/details_img/ysicon1000.png) no-repeat -750px 15px;
+				}
+				
+				
+				
+				.details_sf_you_shi_main .swiper-pagination-bullet:nth-child(1).swiper-pagination-bullet-active {
+					opacity: 1;
+					background:#fff url(images/details_img/ysicon1000.png) no-repeat 40px 15px;
+				}  
+				.details_sf_you_shi_main .swiper-pagination-bullet:nth-child(2).swiper-pagination-bullet-active {
+					opacity: 1;
+					background:#fff url(images/details_img/ysicon1000.png) no-repeat -120px 15px;
+				}  
+				.details_sf_you_shi_main .swiper-pagination-bullet:nth-child(3).swiper-pagination-bullet-active {
+					opacity: 1;
+					background:#fff url(images/details_img/ysicon1000.png) no-repeat -265px 15px;
+				}  
+				.details_sf_you_shi_main .swiper-pagination-bullet:nth-child(4).swiper-pagination-bullet-active {
+					opacity: 1;
+					background:#fff url(images/details_img/ysicon1000.png) no-repeat -430px 15px;
+				}  
+				.details_sf_you_shi_main .swiper-pagination-bullet:nth-child(5).swiper-pagination-bullet-active {
+					opacity: 1;
+					background:#fff url(images/details_img/ysicon1000.png) no-repeat -590px 15px;
+				}  
+				.details_sf_you_shi_main .swiper-pagination-bullet:nth-child(6).swiper-pagination-bullet-active {
+					opacity: 1;
+					background:#fff url(images/details_img/ysicon1000.png) no-repeat -750px 15px;
+				}  
+				
+				
+				.details_sf_foryou{
+					width: 1002px;
+					height: 272px;
+					margin-top: 10px;
+					border: 1px solid #dadada;
+				}
+				.details_sf_foryou_title{
+					line-height: 30px;
+					height: 30px;
+					padding-left: 10px;
+					background-color: #f5f5f5;
+				}
+				.details_sf_foryou_main{
+					width: 900px;
+					height: 230px;
+					padding: 0 51px;
+				}
+				.details_sf_foryou_main ul li{
+					cursor: pointer;
+					float: left;
+					width: 150px;
+					padding: 0 15px;
+					overflow: hidden;
+					height: 216px;
+				}
+				.details_sf_foryou_main ul li span{
+					color: #BB3221;
+					font-family: 微软雅黑;
+					margin-right: 5px;
+				}
+				.details_sf_foryou_main ul li span b{
+					font-size: 20px;
+					font-weight: normal;
+				}
+				.details_sf_foryou_main ul li p{
+					width: 155px;
+				}
+				
+				.details_afterbuy_server{
+					padding: 20px 10px;
+					font-family: "微软雅黑";
+				}
+				.details_afterbuy_server_1{
+					width: 100%;
+					height: 140px;
+					border: 1px solid #f0f0f0;
+				}
+				.details_afterbuy_server_1_in{
+					margin: 10px;
+					padding: 0 30px;
+					height: 120px;
+					background: #f9f9f9;
+					float: left;
+				}
+				.details_afterbuy_server_1_in_img{
+					float: left;
+					width: 199px;
+					height: 119px;
+				}
+				.details_afterbuy_server_1_in span{
+					display: inline-block;
+					width: 678px;
+					padding: 20px 0 0 22px;
+					line-height: 28px;
+					color: #333;
+					font-size: 14px;
+					float: left;
+				}
+				.details_afterbuy_server_2{
+					width: 984px;
+					height: 296px;
+					margin-top: 18px;
+				}
+				
+				.details_afterbuy_server_2 h2,.details_afterbuy_server_3 h2,.details_afterbuy_server_4 h2{
+					font-weight: normal;
+					height: 18px;
+					padding: 13px 0;
+					border-bottom: 1px solid #dcdcdc;
+				}
+				.details_afterbuy_server_2 h2 em,.details_afterbuy_server_3 h2 em,.details_afterbuy_server_4 h2 em{
+					display: inline-block;
+					float: left;
+					width: 4px;
+					height: 20px;
+					background: #6c9c0a;
+					overflow: hidden;
+					margin-top: 3px;
+				}
+				.details_afterbuy_server_2 h2 span,.details_afterbuy_server_3 h2 span,.details_afterbuy_server_4 h2 span{
+					padding-left: 3px;
+					font-size: 18px;
+				}
+				.details_afterbuy_server_2 h2 span i,.details_afterbuy_server_3 h2 span i,.details_afterbuy_server_4 h2 span i{
+					font-size: 12px;
+					font-family: Arial, Helvetica, sans-serif;
+					font-style: normal;
+					padding-left: 3px;
+				}
+				.details_afterbuy_server_2>p{
+					font-size: 14px;
+					padding: 10px 10px 5px 10px;
+					line-height: 24px;
+				}
+				
+				.details_afterbuy_server_3_ins{
+					margin: 20px 10px 10px 0;
+					width: 204px;
+					height: 420px;
+					padding: 0 15px;
+					border: 1px solid #f4f4f4;
+					float: left;
+					text-align: center;
+				}
+				.details_afterbuy_server_3_ins img{
+					width: 196px;
+					height: 165px;
+				}
+				.details_afterbuy_server_3_ins span{
+					display: block;
+					margin-top: 20px;
+					font-size: 14px;
+					color: #333;
+					line-height: 22px;
+					text-align: left;
+				}
+				.details_afterbuy_server_4 h2 a{
+					padding-right: 3px;
+					font-size: 14px;
+					color: #669900;
+					text-decoration: underline;
+					float: right;
+				}
+				.details_afterbuy_server_4>p{
+					line-height: 30px;
+					font-size: 14px;
+				}
+				.details_afterbuy_server>div{
+					overflow: hidden;
+				}
+				
+				/*吸顶样式开始*/
+				.details_xiding{
+					position: absolute;
+				}
 		</style>
 	</head>
 
@@ -1407,7 +1666,7 @@
 							<span>农夫山泉</span>
 							<span>SIRMA</span>
 							<span>芙丝</span>
-							<span>巴黎水 Perrier</span>
+							<span>巴黎水</span>
 							<span>圣碧涛</span>
 							<span>圣培露</span>
 							<span>斐泉</span>
@@ -1453,6 +1712,12 @@
 								<button>评价(61690)</button>
 								<!--<div class="details_cart_btn">
 									<a href="#">加入购物车</a>
+								</div>
+								<div class="details_saosao_sfapp">
+									<a href="javascrpt:;">扫扫手机购买</a>
+									<div class="details_saosao_sfapp_QRcode">
+										<img src="images/cart_img/sfapp.png"/>
+									</div>
 								</div>-->
 							</div>
 							
@@ -1582,16 +1847,135 @@
 								
 								<!--选项卡第二部分内容开始-->
 								<div>
-									
+									<div class="details_afterbuy_server">
+										<div class="details_afterbuy_server_1">
+											<div class="details_afterbuy_server_1_in">
+												<div class="details_afterbuy_server_1_in_img">
+													<img src="http://i.sfimg.cn/html/images/shouhou/img.png"/>
+												</div>
+												<span>顺丰优选所售商品均经过严格的供应商资质审查、商品审查、入库全检、出货全检流程。由于部分商品存在厂家更换包装、不同批次、不同生产日期、不同生产工厂等情况，导致商品实物与图片存在微小差异，因此请您以收到的商品实物为准，同时我们会尽量做到及时更新，由此给您带来不便敬请谅解，谢谢！</span>
+											</div>
+										</div>
+										<div class="details_afterbuy_server_2">
+											<h2>
+												<em></em>
+												<span>商品签收提示  <i>Notice for goods receipt</i></span>
+											</h2>
+											<p>若您收到的商品存在任何质量问题或单货不符，请当场拒收整个包裹，顺丰优选将为您办理退款服务。</p>
+											<img src="http://i.sfimg.cn/html/images/shouhou/banner.jpg"/>
+											<p>您也可以先对整个包裹做签收，再针对存在异常的商品做退换货处理，此时请务必在业务员在场情况下立即联系顺丰优选客服，客服人员将会根据您反映实际状况为您做出相应处理；为了保护您的权益，建议您尽量不要委托他人代为签收；如由他人代为签收商品而没有在配送人员在场的情况下验货，则视为您所订购商品无任何问题。</p>
+										</div>
+										<div class="details_afterbuy_server_3">
+											<h2>
+												<em></em>
+												<span>退换货政策<i>Return &Exchange Policy </i></span>
+											</h2>
+											<div class="details_afterbuy_server_3_ins">
+												<img src="http://i.sfimg.cn/html/images/shouhou/img1.jpg"/>
+												<span>水果、蔬菜、水产、肉类等生鲜易腐食品，请您在签收前检查商品的品质，此类商品一经签收将不予以办理退换货；</span>
+											</div>
+											<div class="details_afterbuy_server_3_ins">
+												<img src="http://i.sfimg.cn/html/images/shouhou/img2.jpg"/>
+												<span>除生鲜易腐食品外，其他食品仅支持质量问题退换货，不支持无理由退换货，一经签收非质量问题不予以办理；<br />若签收后24小时内您发现验货时无法发现的质量问题，请致电 9533858  与客服中心联系，并提交相关食品检验部门的质检证明，顺丰优选将上门为您处理；</span>
+											</div>
+											<div class="details_afterbuy_server_3_ins">
+												<img src="http://i.sfimg.cn/html/images/shouhou/img3.jpg"/>
+												<span>非食品类商品，顺丰优选承诺可为您提供7天无理由退换货服务; <br /> 若是由非质量问题引起的退换货，须确保商品及包装保持顺丰优选出售时原状，且配件、赠品齐全，不影响二次销售；</span>
+											</div>
+											<div class="details_afterbuy_server_3_ins">
+												<img src="http://i.sfimg.cn/html/images/shouhou/img4.jpg"/>
+												<span>优选国际商品不提供七天无理由退货服务，质量问题只提供退货服务，不提供换货服务；<br />如需换货，请先退货，再重新下单。 </span>
+											</div>
+										</div>
+										<div class="details_afterbuy_server_4">
+											<h2>
+												<em></em>
+												<span>以下情况不予办理退换货：  <i>Goods can’t be returned or exchanged in the following situation </i></span>
+												<a href="javascript:;">详细退换货政策说明</a>
+											</h2>
+											<p>
+												1、任何非顺丰优选出售的商品；<br />
+												2、换货商品只能针对同一商品、同一价位的更换，不支持商品间换货及差价换货；<br />
+												3、任何已使用过的商品，有质量问题的除外；<br />
+												4、任何因您个人原因导致超过保质期的商品；<br />
+												5、未经授权的误用、疏忽、滥用、事故、改动、不正确的使用方法所造成的商品质量问题，或撕毁、涂改标贴、防伪标记的商品不予退换货；<br />
+												6、任何因非正常使用及保管导致出现质量问题的商品
+											</p>
+										</div>
+									</div>
 								</div>
 								<!--选项卡第二部分内容结束-->
 								<!--选项卡第三部分内容开始-->
-								<div>
-									
+								<div class="details_big_pinglun">
+									<div class="details_goodspj_2">
+										
+									</div>
 								</div>
 								<!--选项卡第三部分内容结束-->
 							</div>
 						</div>
+						
+						<!--顺丰优势开始-->
+						<div class="details_sf_you_shi">
+							<div class="details_sf_you_shi_title">
+								<img src="http://i.sfimg.cn/html/images/ysimg/ystitle.jpg?v1"/>
+							</div>
+							<div class="details_sf_you_shi_main">
+								<div class="swiper-container">
+								    <div class="swiper-wrapper">
+								        <div class="swiper-slide"><img src="http://i.sfimg.cn/html/images/ysimg/yspic7801.jpg?v1"/></div>
+								        <div class="swiper-slide"><img src="http://i.sfimg.cn/html/images/ysimg/yspic7801.jpg?v1"/></div>
+								        <div class="swiper-slide"><img src="http://i.sfimg.cn/html/images/ysimg/yspic7801.jpg?v1"/></div>
+								        <div class="swiper-slide"><img src="http://i.sfimg.cn/html/images/ysimg/yspic7801.jpg?v1"/></div>
+								        <div class="swiper-slide"><img src="http://i.sfimg.cn/html/images/ysimg/yspic7801.jpg?v1"/></div>
+								        <div class="swiper-slide"><img src="http://i.sfimg.cn/html/images/ysimg/yspic7801.jpg?v1"/></div>
+								    </div>
+								    <!-- 如果需要分页器 -->
+								    <div class="swiper-pagination"></div>
+								</div>
+							</div>
+						</div>
+						<!--顺丰优势结束-->
+						
+						<!--为你推荐开始-->
+						<div class="details_sf_foryou">
+							<div class="details_sf_foryou_title">
+								根据浏览为您推荐
+							</div>
+							<div class="details_sf_foryou_main">
+								<ul>
+									<li>
+										<div class="details_sf_foryou_main_goods_img">
+											<img src="http://p02.sfimg.cn/2018/4300296957/small_4300296957_1_0.jpg"/>
+										</div>
+										<span>￥<b>2.8</b></span>
+										<p>农夫山泉 饮用天然水 1.5L</p>
+									</li>
+									<li>
+										<div class="details_sf_foryou_main_goods_img">
+											<img src="http://p02.sfimg.cn/2018/4300303335/small_4300303335_9_99.jpg"/>
+										</div>
+										<span>￥<b>2.5</b></span>
+										<p>农夫山泉 饮用天然水 750ml</p>
+									</li>
+									<li>
+										<div class="details_sf_foryou_main_goods_img">
+											<img src="http://p02.sfimg.cn/2018/4300296957/small_4300296957_1_0.jpg"/>
+										</div>
+										<span>￥<b>8.9</b></span>
+										<p>农夫山泉 饮用天然矿泉水 5L</p>
+									</li>
+									<li>
+										<div class="details_sf_foryou_main_goods_img">
+											<img src="http://p02.sfimg.cn/2018/4300296957/small_4300296957_1_0.jpg"/>
+										</div>
+										<span>￥<b>1.5</b></span>
+										<p>农夫山泉 饮用 天然水 550ml</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!--为你推荐结束-->
 					</div>
 				</div>
 			</div>
@@ -1605,10 +1989,15 @@
 		<!--通用底部开始-->
 		<!--右侧悬浮开始-->
 		<div class="xuan_fu">
-
+			
 		</div>
 		<!--右侧悬浮结束-->
-
+		
+		<!--本页面的吸顶开始-->
+			<div class="details_xiding">
+				
+			</div>
+		<!--本页面的吸顶开始-->
 		<script src="js/lib/require.min.js" data-main="js/details.js"></script>
 	</body>
 

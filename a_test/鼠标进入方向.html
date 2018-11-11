@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>判断鼠标从哪个方向进入和离开容器</title>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <style>
+            *{border: 0;margin: 0;padding: 0;}
+            .item{width: 300px; height: 200px;border: 1px solid #999;margin: 50px;}
+        </style>
+    </head>
+    <body>
+        <div class="item">
+        </div>
+        <p id="info"></p>
+    </body>
+    <script type="text/javascript" src="../js/lib/jquery.min.js">
+    	
+    </script>
+    <script>
+        /**
+         * 判断鼠标从哪个方向进入和离开容器
+         * @param {Object} tag JQuery对象，事件绑定的主体
+         * @param {Object} e   event对象
+         * @return {Number} direction 值为“0,1,2,3”分别对应着“上，右，下，左”
+         */
+        function moveDirection(tag,e){
+            var w = $(tag).width();
+            var h = $(tag).height();
+            var x = (e.pageX - tag.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+            var y = (e.pageY - tag.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+            var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4; 
+            return direction;
+        }
+        //使用方法
+        $(".item").on("mouseenter mouseleave", function (e) {
+            var eType = e.type;
+            var direction = moveDirection(this,e);
+            var dirName = new Array("上","右","下","左");
+            if(eType == "mouseenter"){
+                $("#info").text("鼠标从"+dirName[direction]+"方进入方框");
+            }else if(eType == "mouseleave"){
+                $("#info").text("鼠标从"+dirName[direction]+"方离开方框");
+            }
+        });
+    </script>
+</html

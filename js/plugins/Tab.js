@@ -1,5 +1,4 @@
 function Tab(ele){
-	console.log(ele);
 	this.btns=ele.children[0].children;
 	this.shows=ele.children[1].children;
 }

@@ -74,10 +74,21 @@ requirejs(["jquery", "swiper", "baiduT", "do_cookie", "extend", "lazy", "page", 
 	$(".details_main_fang_da").load('html/fang_da_jing.html', function() {
 		doFangda();
 	});
+	
+	//商品介绍里的评价
 	$(".details_goodspj").load('html/details_goodspj.html',function(){
 		var oTab1 = document.querySelector("#details_pinglun_tab .tab_inner");
 		var tab2 = new Tab(oTab1);
 		tab2.init();
+		$(".details_cart_btn").off();
+		$(".details_cart_btn").unbind();
+	});
+	
+	//整个页面的大评价
+	$(".details_big_pinglun .details_goodspj_2").load('html/details_goodspj.html',function(){
+		var oTab2 = document.querySelector(".details_goodspj_2 .tab_inner");
+		var tab3 = new Tab(oTab2);
+		tab3.init();
 	});
 	
 	//分享弹出处理开始
@@ -142,5 +153,76 @@ requirejs(["jquery", "swiper", "baiduT", "do_cookie", "extend", "lazy", "page", 
 		$(".lazy").lazyload();//图片懒加载
 		
 		
+		//顺丰优势轮播
+			var mySwiper = new Swiper ('.swiper-container', {
+			  	initialSlide:0,//开始是第几张
+			    direction: 'horizontal', // 垂直切换选项
+			    loop: true, // 循环模式选项
+			    grabCursor:true,//鼠标覆盖轮播图时指针会变成手掌形状，拖动时指针会变成抓手形状
+			    parallax:true,
+			    setWrapperSize:true,//增加对不支持弹性盒子浏览器的兼容性
+			    onlyExternal:true,
+			    // 如果需要分页器
+				pagination: {
+		       		el: '.swiper-pagination',
+		       		clickable:true,
+		       		onlyExternal:true,
+		     	 },
+		     	 				
+			  })        
+			$(".swiper-pagination-bullet").hover(function() {
+			    $(this).click(); //鼠标划上去之后，自动触发点击事件来模仿鼠标划上去的事件
+			},function() {
+			    mySwiper.autoplay.start(); //鼠标移出之后，自动轮播开启
+			})
+			
+			
+			$(".foot").load('html/foot.html');
+			
+			
+			//一些事件的处理
+			$(".details_dapp").click(function(){
+				$(".details_dapp_QRcode").css("display","block");
+			});
+			$(".details_dapp").mouseleave(function(){
+				$(".details_dapp_QRcode").css("display","none");
+			});
+			$(".details_dapp_QRcode").hover(function(){
+				$(".details_dapp_QRcode").css("display","block");
+			},function(){
+				$(".details_dapp_QRcode").css("display","none");
+			});
+			$(".details_dapp_QRcode_close").click(function(){
+				$(".details_dapp_QRcode").css("display","none");
+			});
+			
+			
+			$(".details_more_pinpai").click(function(){
+				if($(".details_left_box_middle").height() == 280){
+					$(".details_left_box_middle").animate({
+						height:105
+					});
+					var now_i = document.querySelector(".details_more_pinpai i");
+					now_i.className = "hide";
+				}else{
+					$(".details_left_box_middle").animate({
+						height:280
+					});
+					var now_i = document.querySelector(".details_more_pinpai i");
+					now_i.className = "show";
+				}
+				
+			})
+			
+			
+			//吸顶
+			window.onscroll = function(){
+				if($(document).scrollTop() > 660){
+					$(".details_main_box_tab .btns").css("position","fixed").css("top","0").css("z-index","9999");
+				}else{
+					$(".details_main_box_tab .btns").css("position","")
+				}
+			}
+			
 
 });
