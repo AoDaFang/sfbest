@@ -16,7 +16,8 @@ requirejs.config({
 		do_cookie: "plugins/do_cookie",
 		do_index_cart: "plugins/do_index_cart",
 		delete_cookie: "plugins/delete_cookie",
-		fang_da_jing: "modules/fang_da_jing"
+		fang_da_jing: "modules/fang_da_jing",
+		tab:"plugins/Tab"
 	},
 	shim: {
 		baiduT: {
@@ -69,11 +70,15 @@ requirejs.config({
 	}
 });
 
-requirejs(["jquery", "swiper", "baiduT", "do_cookie", "extend", "lazy", "page", "cookie", "top", "head", "nav_s", "er_ji", "xuan_fu", "do_index_cart", "delete_cookie", "fang_da_jing"], function($, Swiper, baidu, do_cookie) {
+requirejs(["jquery", "swiper", "baiduT", "do_cookie", "extend", "lazy", "page", "cookie", "top", "head", "nav_s", "er_ji", "xuan_fu", "do_index_cart", "delete_cookie", "fang_da_jing","tab"], function($, Swiper, baidu, do_cookie) {
 	$(".details_main_fang_da").load('html/fang_da_jing.html', function() {
 		doFangda();
 	});
-	
+	$(".details_goodspj").load('html/details_goodspj.html',function(){
+		var oTab1 = document.querySelector("#details_pinglun_tab .tab_inner");
+		var tab2 = new Tab(oTab1);
+		tab2.init();
+	});
 	
 	//分享弹出处理开始
 	 function moveDirection(tag,e){
@@ -120,5 +125,22 @@ requirejs(["jquery", "swiper", "baiduT", "do_cookie", "extend", "lazy", "page", 
 		}
 		
 		//分享弹出处理结束
+		
+		
+		//选项卡
+		var oTab = document.querySelector(".tab");
+		var tab1 = new Tab(oTab);
+		tab1.init();
+		
+//		var oTab1 = document.querySelector(".tab_inner");
+//		var tab2 = new Tab(oTab1);
+//		tab2.init();
+		//移除加入购物车按钮原来的事件
+		$('.details_cart_btn').unbind("click"); //移除click
+		$("details_cart_btn a").unbind("click");
+		
+		$(".lazy").lazyload();//图片懒加载
+		
+		
 
 });

@@ -1,4 +1,5 @@
 function Tab(ele){
+	console.log(ele);
 	this.btns=ele.children[0].children;
 	this.shows=ele.children[1].children;
 }
@@ -20,4 +21,4 @@ Tab.prototype.change=function(index){
 	this.btns[index].className="active";
 	this.shows[index].className="active";
 }
-new Tab(document.querySelector(".tab")).init();
+//new Tab(document.querySelector(".tab")).init();

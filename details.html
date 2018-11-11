@@ -15,6 +15,9 @@
 		<link rel="stylesheet" type="text/css" href="css/fang_da_jing.css" />
 		<link rel="shortcut icon" href="favicon.ico">
 		<style type="text/css">
+			body{
+				height: 5000px;
+			}
 			#top {
 				width: 100%;
 				height: 34px;
@@ -69,10 +72,14 @@
 			.link_nav span {
 				line-height: 20px;
 			}
-			
+			.details_main_out{
+				width: 100%;
+				
+			}
 			.details_main {
 				width: 1200px;
 				margin: 0 auto;
+				overflow: hidden;
 			}
 			
 			.details_main_left {
@@ -544,9 +551,617 @@
 				text-align: center;
 				cursor: pointer;
 			}
-			
+			.details_dapp{
+				position: relative;
+				float: left;
+				width: 90px;
+				height: 40px;
+				margin-left: 10px;
+				border: 1px solid #dddddd;
+				padding-left: 34px;
+				padding-top: 3px;
+				background: #fbfbfb url(images/cart_img/phone.jpg) 10px center no-repeat;
+				cursor: pointer;
+			}
+			.details_dapp.active{
+				border: 1px solid #669900;
+			}
+			.details_dapp>*{
+				float: left;
+				margin-top: 2px;
+			}
+			.details_dapp p{
+				color: #fa6400;
+			}
+			.details_dapp_QRcode{
+				position: absolute;
+				left: -1px;
+				top: -116px;
+				width: 124px;
+				height: 98px;
+				border-left: 1px solid #ddd;
+				border-top: 1px solid #ddd;
+				border-right: 1px solid #ddd;
+				background: #fff;
+				text-align: center;
+				padding-top: 18px;
+				display: none;
+			}
+			.details_dapp_QRcode_close{
+				width: 20px;
+				height: 20px;
+				background: url(images/cart_img/close1.png) left top no-repeat;
+				position: absolute;
+				float: right;
+				top: -8px;
+				right: -8px;
+			}
+			.details_dapp_QRcode img{
+				width: 82px;
+				height: 82px;
+				margin-left: 23px;
+			}
+			.details_main_right_main{
+				width: 222px;
+				height: 448px;
+				float: right;
+			}
+			.details_main_right_main_top{
+				height: 65px;
+				width: 202px;
+				padding-top: 20px;
+				padding: 0 10px;
+			}
+			.details_main_right_main_top>*{
+				width: 45px;
+				height: 67px;
+				float: left;
+				border: 1px dashed #f1f1f1;
+				border-top: none;
+				padding: 0 10px;
+			}
+			.details_main_right_main_top1{
+				
+			}
+			.details_main_right_main_middle{
+				width: 201px;
+				height: 215px;
+				border-bottom: 1px solid #f1f1f1;
+				padding-left: 21px;
+			}
+			.details_main_right_main_middle>*{
+				float: left;
+				clear: left;
+			}
+			.details_main_right_main_middle>p{
+				line-height: 24px;
+			}
+			.details_main_right_main_middle p:nth-child(1){
+				margin-top: 5px;
+			}
+			.details_main_right_main_middle p:nth-child(3){
+				margin-top: 14px;
+			}
+			.details_yxcard{
+				width: 182px;
+				height: 25px;
+				border-radius: 10px;
+				border:1px solid #eaeaea;
+				margin-top: 10px;
+				text-align: center;
+			}
+			.details_yxcard_in{
+				border-radius: 10px;
+				width: 51px;
+				height: 25px;
+				background-color: #ee4040;
+				color: #fff;
+				line-height: 25px;
+				text-align: center;
+				font-family: italic;
+				float: left;
+			}
+			.details_yxcard span{
+				color: #669900;
+				float: left;
+				margin-left: 12px;
+				margin-top: 4px;
+			}
+			.details_goods_back{
+				width: 186px;
+				height: 23px;
+				border-radius: 10px;
+				border:1px solid #eaeaea;
+				line-height: 23px;
+				margin-top: 5px;
+				text-indent: 1em;
+			}
+			.details_goods_back b{
+				margin-top: 2px;
+				line-height: 23px;
+				display: inline-block;
+				width: 13px;
+				height: 14px;
+				background: url(index_img/productinfo.png) no-repeat -173px -28px;
+			}
 			.er_ji {
 				z-index: 999;
+			}
+			.details_main_right_main_bottom{
+				width: 202px;
+				height: 149px;
+				padding-left: 20px;
+			}
+			.details_main_right_main_bottom>*{
+				float: left;
+			}
+			.details_hao_ping{
+				width: 192px;
+				height: 27px;
+				padding-top: 13px;
+			}
+			.details_hao_ping>*{
+				float: left;
+			}
+			.details_hao_ping span{
+				font-weight: bold;
+			}
+			.details_hao_ping p{
+				width: 81px;
+				height: 8px;
+				background-color: #f9a345;
+				margin-left: 10px;
+				margin-top: 5px;
+			}
+			.details_hao_ping b{
+				color: #fa8200;
+				margin-left: 5px;
+			}
+			.details_ping_jia>span{
+				color: #6c9c0a;
+			}
+			.details_ping_jia_demo{
+				color: #999999;
+				padding-top: 6px;
+				position: relative;
+			}
+			.details_ping_jia_demo b{
+				position: absolute;
+				top: 0;
+				border-color: #FBFBFB #FBFBFB #F8CD9E #FBFBFB;
+				border-style: dashed dashed solid dashed;
+				border-width: 0 5px 6px 5px;
+				display: inline-block;
+				font-size: 0;
+				height: 0;
+				overflow: hidden;
+				width: 0;
+				left: 30px;
+			}
+			.details_ping_jia_demo_in{
+				border: 1px solid #f8cd9e;
+				padding: 8px 10px;
+			}
+			.details_ping_jia_demo_in span{
+				display: block;
+				line-height: 20px;
+				height: 60px;
+				overflow: hidden;
+				word-break: break-all;
+			}
+			.details_ping_jia_demo_in a{
+				color: #999999;
+			}
+			
+			
+			.details_goods_introduce{
+				width: 100%;
+			}
+			.details_goods_introduce_in{
+				width: 1200px;
+				margin: 0 auto;
+			}
+			
+			.details_left_box{
+				width: 186px;
+				float: left;
+				overflow: hidden;
+			}
+			.details_left_box_top,.details_left_box_bottom_next,.details_left_box_bottom{
+				width: 184px;
+				border: 1px solid #dadada;
+				overflow: hidden;
+				margin-top: 10px;
+			}
+			.details_left_box_middle{
+				width: 184px;
+				height: 105px;
+				border: 1px solid #dadada;
+				overflow: hidden;
+				margin-top: 10px;
+				position: relative;
+			}
+			.details_more_pinpai{
+				display: block;
+				width: 182px;
+				height: 9px;
+				margin: 1px;
+				padding: 2px 0;
+				background-color: #f4f4f4;
+				cursor: pointer;
+				position: absolute;
+				bottom: -1px;
+				left: 0;
+			}
+			.details_more_pinpai i.hide{
+				display: block;
+				height: 9px;
+				width: 12px;
+				margin: 0px auto;
+				background: url(images/cart_img/psprite.gif) no-repeat -11px -225px;
+			}
+			.details_more_pinpai i.show{
+				display: block;
+				height: 9px;
+				width: 12px;
+				margin: 0px auto;
+				background: url(images/cart_img/psprite.gif) no-repeat  -23px -225px;
+			}
+			
+			
+			
+			.details_left_box b{
+				margin-left: 10px;
+				height: 23px;
+				line-height: 23px;
+				float: left;
+				margin-top: 3px;
+			}
+			.details_left_box span{
+				width: 71px;
+				float: left;
+				height: 21px;
+				line-height: 21px;
+			}
+			.details_left_title{
+				line-height: 30px;
+				height: 30px;
+				width: 184px;
+				background-color: #f4f4f4;
+				text-align: center;
+			}
+			.details_left_spans{
+				float: left;
+				clear: left;
+				margin-left: 10px;
+			}
+			
+			
+			.details_main_box{
+				width: 1004px;
+				float: right;
+				overflow: hidden;
+			}
+			
+			/*选项卡样式开始*/
+			.tab{
+				width:1004px;
+				margin: 0 auto;
+			}
+			.btns{
+				width: 1004px;
+				border: 1px solid #dbdbdb;
+				overflow: hidden;
+				margin: 0 -5px;
+				border-top:1px solid #dadada;
+				border-right: 1px solid #dadada;
+			}
+			.btns .details_cart_btn{
+				float: right;
+				margin: 5px 10px 0 0;
+				width: 90px;
+				height: 24px;
+			}
+			.btns .details_cart_btn a{
+				display: block;
+				background: url(index_img/productinfo.png) no-repeat -190px -75px;
+				border: 1px solid #DADADA;
+				color: #557E00;
+				cursor: pointer;
+				font-size: 12px;
+				line-height: 22px;
+				padding: 0 0 0 25px;
+				text-decoration: none;
+			}
+			.btns button{
+				border: none;
+				width: 100px;
+				height: 34px;
+				float: left;
+				line-height: 34px;
+				text-align: center;
+				border-right: 1px solid #dadada;
+				border-bottom: 1px solid #dadada;
+				background-color: #ffffff;
+				color: #565656;
+				overflow: hidden;
+				outline: none;
+				font-size: 12px;
+			}
+			.btns button.active{
+				background-color: #6c9c0a;
+				border-right: 1px solid #6c9c0a;
+				border-bottom: 1px solid #6c9c0a;
+				color: #fff;
+			}
+			.shows{
+				width: 100px;
+			}
+			.shows>div{
+				display: none;
+				width: 1004px;
+				overflow: hidden;
+			}
+			.shows div.active{
+				display: block;
+			}
+			/*选项卡样式结束*/
+			
+			.details_goods_info_text{
+				width: 979px;
+				height: 208px;
+				background-color: #f5f5f5;
+				margin-left: 13px;
+				margin-top: 10px;
+				overflow: hidden;
+			}
+			.details_goods_info_text_ul1{
+				float: left;
+				overflow: hidden;
+				
+			}
+			.details_goods_info_text_ul1 li{
+				color: #6b6b6b;
+				float: left;
+				height: 20px;
+				line-height: 20px;
+				padding: 4px 0;
+				width: 402px;
+			}
+			.details_goods_info_text_ul1 li>*{
+				float: left;
+			}
+			.details_goods_info_text_ul1 li span{
+				width: 96px;
+				text-align: right;
+			}
+			.details_goods_info_text_ul1 li p{
+				margin-left: 17px;
+			}
+			.details_goods_info_text_ul2{
+				float: left;
+				clear: left;
+			}
+			
+			.details_goods_info_text_ul2>*{
+				float: left;
+			}
+			.details_goods_info_text_ul2>span{
+				display: block;
+				width: 96px;
+				height: 45px;
+				text-align: right;
+			}
+			.details_goods_info_text_ul2>p{
+				width: 860px;
+				margin-left: 17px;
+				height: 45px;
+			}
+			.details_goods_info_text_ul2_complex{
+				width: 860px;
+				margin-left: 17px;
+			}
+			.details_goods_info_text_ul2_complex>p>span{
+				color: #666666;
+				text-decoration: underline;
+			}
+			.details_goods_info_wrong{
+				width: 982px;
+				height: 43px;
+				margin-left: 13px;
+				margin-top: 3px;
+			}
+			.details_goods_info_wrong span{
+				color: #4c9811;
+				cursor: pointer;
+			}
+			.details_goods_inf_bigimgs img{
+				display: block;
+			}
+			
+			
+			
+			.details_goods_pinglun{
+				width: 1002px;
+				height: 163px;
+				border: 1px solid #dadada;
+				margin-bottom: 30px;
+			}
+			.details_goods_pinglun_title{
+				width: 1004px;
+				height: 30px;
+				background-color: #f4f4f4;
+				line-height: 30px;
+				font-weight: bold;
+				text-indent: 10px;
+			}
+			.details_goods_pinglun_haopingdu{
+				width: 209px;
+				height: 109px;
+				margin-top: 10px;
+				margin-left: 103px;
+				border-right: 1px dashed #ebebeb;
+			}
+			.details_goods_pinglun_haopingdu span{
+				font-size: 48px;
+				line-height: 60px;
+				font-family: 微软雅黑;
+				color: #d62b2b;
+			}
+			.details_goods_pinglun_haopingdu p{
+				margin-top: 22px;
+				margin-left: 36px;
+			}
+			.details_goods_pinglun_star{
+				width: 234px;
+				height: 115px;
+				margin-left: 80px;
+				margin-top: 10px;
+				border-right: 1px dashed #ebebeb;
+			}
+			.details_goods_pinglun_star b{
+				margin-top: 43px;
+				width: 84px;
+				height: 16px;
+				float: left;
+				background: url(images/cart_img/starNew.jpg) no-repeat 0 -81px;
+			}
+			.details_goods_pinglun_star p{
+				margin-top: 43px;
+				float: left;
+				margin-left: 13px;
+			}
+			.details_goods_pinglun_main>*{
+				float: left;
+			}
+			.details_goods_pinglun_btn{
+				width: 170px;
+				height: 87px;
+				margin-left: 86px;
+			}
+			.details_goods_pinglun_btn_in{
+				width: 84px;
+				height: 30px;
+				border: 1px solid #aad254;
+				border-radius: 3px;
+				margin-top: 12px;
+				color: #aad254;
+				text-align: center;
+				line-height: 30px;
+				cursor: pointer;
+			}
+			.details_goods_pinglun_btn p{
+				margin-top: 16px;
+			}
+			.details_goods_pinglun_btn span{
+				display: block;
+				text-decoration: underline;
+				margin-top: 10px;
+				cursor: pointer;
+			}
+			
+			
+			/*评论区的选项卡*/
+			.details_pinglun_tab{
+				width: 1004px;
+			}
+			.tab_inner{
+				width:1004px;
+			}
+			.btns_inner{
+				overflow: hidden;
+				width: 1004px;
+				border-bottom: 1px solid #aaaaaa;
+			}
+			.btns_inner button{
+				width: 126px;
+				height: 31px;
+				border: none;
+				float: left;
+				outline: none;
+				background-color: #fff;
+				cursor: pointer;
+				box-sizing: border-box;
+			}
+			.btns_inner button:hover{
+				color: #6c9c0a;
+			}
+			.btns_inner button.active{
+				color: #6c9c0a;
+				border-bottom: 2px solid #6c9c0a;
+			}
+			.shows_inner>div{
+				width: 1004px;
+				background: #fff;
+				text-align: center;
+				display: none;
+			}
+			.shows_inner div.active{
+				display: block;
+			}
+			.details_pinglun_tab_qbpl{
+				width: 991px;
+				height: 79px;
+				padding: 13px;
+				padding-right: 0;
+				border-bottom: 1px solid #dadada;
+			}
+			.details_pinglun_tab_qbpl_uname{
+				width: 122px;
+				height: 81px;
+				position: relative;
+				float: left;
+			}
+			.details_pinglun_tab_qbpl_uname span{
+				display: block;
+				margin-top: 5px;
+			}
+			.details_pinglun_tab_qbpl_uname img{
+				position: absolute;
+				width: 28px;
+    			height: 45px;
+    			top: 0;
+    			left: 98px;
+			}
+			.details_pinglun_tab_qbpl_right{
+				float: left;
+			}
+			.details_pinglun_tab_qbpl_star{
+				width: 147px;
+				height: 16px;
+				float: left;
+				margin-left: 9px;
+			}
+			.details_pinglun_tab_qbpl_star b{
+			    width: 84px;
+			    height: 16px;
+			    float: left;
+			    background: url(images/cart_img/starNew.jpg) no-repeat 0 -81px;
+			}
+			.details_pinglun_tab_qbpl_star span{
+				display: block;
+				float: left;
+				margin-left: 15px;
+			}
+			.details_pinglun_tab_qbpl_content{
+				float: left;
+				margin-top: 23px;
+				clear: left;
+				margin-left: 9px;
+			}
+			.details_pinglun_tab_qbpl_zan{
+				margin-left: 9px;
+				float: left;
+				clear: left;
+				margin-top: 10px;
+			}
+			.details_pinglun_tab_qbpl_zan b{
+				float: left;
+				display: block;
+				background: url(images/details_img/zan-icon.png) no-repeat;
+				width: 17px;
+				height: 16px;
+				margin-right: 3px;
 			}
 		</style>
 	</head>
@@ -575,138 +1190,414 @@
 			<b>饮料/水</b>
 			<span>> 水 > 矿泉水 > 农夫山泉 > 农夫山泉 农夫山泉矿泉水 535ml</span>
 		</div>
-
-		<div class="details_main">
-			<div class="details_main_left">
-				<div class="details_main_left_left">
-					<div class="details_main_fang_da">
-
-					</div>
-					<div class="details_main_left_share">
-						<div class="baidu_share">
-							<div class="baidu_share_more">
-								分享到:
-							</div>
-							<span class="share_qzone"></span>
-							<span class="share_sina"></span>
-							<div class="ge_zhong_share">
-								<h2>分享到</h2>
-								<ul>
-									<li>
-										<a href="javascript:;">一键分享</a>
-									</li>
-									<li>
-										<a href="javascript:;">QQ空间</a>
-									</li>
-									<li>
-										<a href="javascript:;">新浪微博</a>
-									</li>
-									<li>
-										<a href="javascript:;">百度云收藏</a>
-									</li>
-									<li>
-										<a href="javascript:;">人人网</a>
-									</li>
-									<li>
-										<a href="javascript:;">腾讯微博</a>
-									</li>
-									<li>
-										<a href="javascript:;">百度相册</a>
-									</li>
-									<li>
-										<a href="javascript:;">开心网</a>
-									</li>
-									<li>
-										<a href="javascript:;">腾讯朋友</a>
-									</li>
-									<li>
-										<a href="javascript:;">百度贴吧</a>
-									</li>
-									<li>
-										<a href="javascript:;">豆瓣网</a>
-									</li>
-									<li>
-										<a href="javascript:;">搜狐微博</a>
-									</li>
-									<li>
-										<a href="javascript:;">百度新首页</a>
-									</li>
-									<li>
-										<a href="javascript:;">QQ好友</a>
-									</li>
-									<li>
-										<a href="javascript:;">和讯微博</a>
-									</li>
-									<li>
-										<a href="javascript:;">更多...</a>
-									</li>
-								</ul>
-							</div>
+		
+		
+		<!--购物车主体开始-->
+		<div class="details_main_out">
+			<div class="details_main">
+				<div class="details_main_left">
+					<div class="details_main_left_left">
+						<div class="details_main_fang_da">
+	
 						</div>
-					</div>
-				</div>
-				<div class="details_main_right">
-					<div class="details_main_goods_title">
-						<div class="zi_ying">自营</div>
-						<h1>农夫山泉 农夫山泉矿泉水 535ml</h1>
-					</div>
-					<div class="details_main_goods_price">
-						<div class="details_main_goods_price_num">
-							<span class="details_main_goods_price_num1">优选价：</span>
-							<span class="details_main_goods_price_num2">￥</span>
-							<span class="details_main_goods_price_num3">3</span>
-						</div>
-						<a class="open_vip" href="javascript:;">开通优选会员</a>
-						<div class="details_main_goods_price_tail">
-							
-						</div>
-					</div>
-					<div class="details_main_goods_area">
-						<div class="details_main_goods_area_to">
-							送至：
-						</div>
-						<div class="details_main_goods_area_chose">
-							<div class="details_main_goods_area_chose_in">
-								<span>北京门头沟区</span>
-								<b></b>
-							</div>
-						</div>
-					</div>
-					<div class="details_main_goods_caozuo">
-						<div class="details_main_goods_caozuo_chose">
-							<input id="col1" type="radio" name="ma_shu" />
-							<label for="col1">农夫山泉 农夫山泉矿泉水 535ml</label>
-						
-							<input id="col2" type="radio" name="ma_shu" />
-							<label for="col2">农夫山泉 农夫山泉矿泉水 535m*12.5</label>
-						</div>
-						<div class="details_main_goods_caozuo_jiesuan">
-							<input type="text" class="details_amount" value="1" />
-							<div class="details_amount_btns">
-								<input type="button" class="details_amount_add" id="" value="+" />
-								<input type="button" class="details_amount_sub" id="" value="-" />
-							</div>
-							<div class="details_main_goods_caozuo_bigbtns">
-								<div class="details_add_to_cart">
-									<b></b>
-									<input type="button" class="" id="" value="加入购物车" />
+						<div class="details_main_left_share">
+							<div class="baidu_share">
+								<div class="baidu_share_more">
+									分享到:
 								</div>
-								<div class="details_fast">
-									<input type="button" class="" id="" value="一键购买" />
+								<span class="share_qzone"></span>
+								<span class="share_sina"></span>
+								<div class="ge_zhong_share">
+									<h2>分享到</h2>
+									<ul>
+										<li>
+											<a href="javascript:;">一键分享</a>
+										</li>
+										<li>
+											<a href="javascript:;">QQ空间</a>
+										</li>
+										<li>
+											<a href="javascript:;">新浪微博</a>
+										</li>
+										<li>
+											<a href="javascript:;">百度云收藏</a>
+										</li>
+										<li>
+											<a href="javascript:;">人人网</a>
+										</li>
+										<li>
+											<a href="javascript:;">腾讯微博</a>
+										</li>
+										<li>
+											<a href="javascript:;">百度相册</a>
+										</li>
+										<li>
+											<a href="javascript:;">开心网</a>
+										</li>
+										<li>
+											<a href="javascript:;">腾讯朋友</a>
+										</li>
+										<li>
+											<a href="javascript:;">百度贴吧</a>
+										</li>
+										<li>
+											<a href="javascript:;">豆瓣网</a>
+										</li>
+										<li>
+											<a href="javascript:;">搜狐微博</a>
+										</li>
+										<li>
+											<a href="javascript:;">百度新首页</a>
+										</li>
+										<li>
+											<a href="javascript:;">QQ好友</a>
+										</li>
+										<li>
+											<a href="javascript:;">和讯微博</a>
+										</li>
+										<li>
+											<a href="javascript:;">更多...</a>
+										</li>
+									</ul>
 								</div>
 							</div>
-							<div class="">
+						</div>
+					</div>
+					<div class="details_main_right">
+						<div class="details_main_goods_title">
+							<div class="zi_ying">自营</div>
+							<h1>农夫山泉 农夫山泉矿泉水 535ml</h1>
+						</div>
+						<div class="details_main_goods_price">
+							<div class="details_main_goods_price_num">
+								<span class="details_main_goods_price_num1">优选价：</span>
+								<span class="details_main_goods_price_num2">￥</span>
+								<span class="details_main_goods_price_num3">3</span>
+							</div>
+							<a class="open_vip" href="javascript:;">开通优选会员</a>
+							<div class="details_main_goods_price_tail">
 								
 							</div>
 						</div>
-					</div>
-				
+						<div class="details_main_goods_area">
+							<div class="details_main_goods_area_to">
+								送至：
+							</div>
+							<div class="details_main_goods_area_chose">
+								<div class="details_main_goods_area_chose_in">
+									<span>北京门头沟区</span>
+									<b></b>
+								</div>
+							</div>
+						</div>
+						<div class="details_main_goods_caozuo">
+							<div class="details_main_goods_caozuo_chose">
+								<input id="col1" type="radio" name="ma_shu" />
+								<label for="col1">农夫山泉 农夫山泉矿泉水 535ml</label>
+							
+								<input id="col2" type="radio" name="ma_shu" />
+								<label for="col2">农夫山泉 农夫山泉矿泉水 535m*12.5</label>
+							</div>
+							<div class="details_main_goods_caozuo_jiesuan">
+								<input type="text" class="details_amount" value="1" />
+								<div class="details_amount_btns">
+									<input type="button" class="details_amount_add" id="" value="+" />
+									<input type="button" class="details_amount_sub" id="" value="-" />
+								</div>
+								<div class="details_main_goods_caozuo_bigbtns">
+									<div class="details_add_to_cart">
+										<b></b>
+										<input type="button" class="" id="" value="加入购物车" />
+									</div>
+									<div class="details_fast">
+										<input type="button" class="" id="" value="一键购买" />
+									</div>
+								</div>
+								<div class="details_dapp">
+									<span>扫描下载客户端</span>
+									<p>先摇券 后买单</p>
+									<div class="details_dapp_QRcode">
+										<a class="details_dapp_QRcode_close" href="javascript:;"></a>
+										<img  src="images/cart_img/sfapp.png"/>
+									</div>
+								</div>
+							</div>
+						</div>
 					
+						
+					</div>
+				</div>
+	
+				<div class="details_main_right_main">
+					<div class="details_main_right_main_top">
+						<div class="details_main_right_main_top1">
+							<img src="http://i.sfimg.cn/html/images/productattr3.png"/>
+						</div>
+						<div class="details_main_right_main_top2">
+							<img src="http://i.sfimg.cn/html/images/productattr2.png"/>
+						</div>
+						<div class="details_main_right_main_top3">
+							<img src="http://i.sfimg.cn/html/images/productattr4.png"/>
+						</div>
+					</div>
+					<div class="details_main_right_main_middle">
+						<p>品牌：农夫山泉</p>
+						<p>产地：中国</p>
+						<p>规格：535ml</p>
+						<p>重量:0.55kg (含包装)</p>
+						<p>商品编号：4300289511</p>
+						<div class="details_yxcard">
+							<div class="details_yxcard_in">
+								<i>优选卡</i>
+							</div>
+							<span>支持优选卡支付</span>
+						</div>
+						<div class="details_goods_back">
+							<b></b>
+							本品不支持无理由退换货
+						</div>
+					</div>
+					<div class="details_main_right_main_bottom">
+						<div class="details_hao_ping">
+							<span>好评度：</span>
+							<p></p>
+							<b>100%</b>
+						</div>
+						<div class="details_ping_jia">
+							<span>61544条评论</span>
+							<div class="details_ping_jia_demo">
+								<b></b>
+								<div class="details_ping_jia_demo_in">
+									<span>
+										s*****4：
+										<a href="javascript:;">一如既往的支持</a>
+										
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-
 		</div>
-
+		<!--购物车主体结束-->
+		
+		<!--商品介绍开始-->
+		<div class="details_goods_introduce">
+			<div class="details_goods_introduce_in">
+				<div class="details_left_box">
+					<div class="details_left_box_top">
+						<div class="details_left_title">
+							相关分类
+						</div>
+						<b>水</b>
+						<div class="details_left_spans">
+							<span>矿泉水</span>
+							<span>蒸馏水</span>
+							<span>纯净水</span>
+							<span>苏打水</span>
+						</div>
+					</div>
+					<div class="details_left_box_middle">
+						<div class="details_left_title">
+							相关品牌
+						</div>
+						<div class="details_left_spans">
+							<span>依云 evian</span>
+							<span>农夫山泉</span>
+							<span>SIRMA</span>
+							<span>芙丝</span>
+							<span>巴黎水 Perrier</span>
+							<span>圣碧涛</span>
+							<span>圣培露</span>
+							<span>斐泉</span>
+							<span>冰露</span>
+							<span>巴马百年</span>
+							<span>FONTE</span>
+							<span>Casa Filaca</span>
+							<span>雀巢</span>
+							<span>普娜 Acqua</span>
+							<span>统一</span>
+							<span>富维克</span>
+							<span>味丹</span>
+							<span>达能</span>
+							<span>悦派</span>
+							<span>塔维娜</span>
+							<span>景田</span>
+							<span>康师傅</span>
+						</div>
+						<div class="details_more_pinpai">
+							<i class="hide"></i>
+						</div>
+					</div>
+					<div class="details_left_box_bottom">
+						<div class="details_left_title">
+							购买此商品的顾客还买了
+						</div>
+					</div>
+					<div class="details_left_box_bottom_next">
+						<div class="details_left_title">
+							浏览此商品的顾客还浏览了
+						</div>
+					</div>
+					
+				</div>
+				
+				
+				<div class="details_main_box">
+					<div class="details_main_box_tab">
+						<div class="tab">
+							<div class="btns">
+								<button class="active">商品介绍</button>
+								<button>售后服务</button>
+								<button>评价(61690)</button>
+								<!--<div class="details_cart_btn">
+									<a href="#">加入购物车</a>
+								</div>-->
+							</div>
+							
+							<div class="shows">
+								<!--选项卡第一部分内容开始-->
+								<div class="active">
+									<div class="details_goods_info_text">
+										<ul class="details_goods_info_text_ul1">
+											<li>
+												<span>保质期：</span>
+												<p>730(天)</p>
+											</li>
+											<li>
+												<span>存储条件：</span>
+												<p>常温2-30度</p>
+											</li>
+											<li>
+												<span>重量(含包装)：</span>
+												<p>0.55(kg)</p>
+											</li>
+											<li>
+												<span>销售单位：</span>
+												<p>瓶</p>
+											</li>
+											<li>
+												<span>产地：</span>
+												<p>7中国内地</p>
+											</li>
+											<li>
+												<span>规格：</span>
+												<p>535ml</p>
+											</li>
+										</ul>
+									
+										<div class="details_goods_info_text_ul2">
+											<span>温馨提示：</span>
+											<p>顺丰优选所售商品均经过严格的供应商资质审查、商品审查、入库全检、出货全检流程。由于部分商品存在厂家更换包装、不同批次、不同生产日期、不同生产工厂等情况，导致商品实物与图片存在微小差异，因此请您以收到的商品实物为准，同时我们会尽量做到及时更新，由此给您带来不便敬请谅解，谢谢！</p>
+											<span>价格说明：</span>
+											<div class="details_goods_info_text_ul2_complex">
+												<p><span>划线价</span> 商品展示的划线价格为参考价，该价格可能是商品在优选平台上曾经展示过的销售价或优选门店销售过的价格、该价格可能是品牌专柜标价、商品吊牌价或由品牌供应商提供的正品零售价（如厂商指导价、建议零售价等）；由于地区、时间的差异性和市场行情波动，品牌专柜标价、商品吊牌价等可能会与您购物时展示的不一致，该价格仅供您参考。</p>
+												<p><span>划线价</span> 优选会员价为商品的销售价，是您最终决定是否购买商品的依据。（“优选会员价”是完成注册并成功支付会费的会员享受的销售价）</p>
+											</div>
+										</div>
+									</div>
+									<div class="details_goods_info_wrong">
+										<p>如果您发现商品信息存在问题，<span>欢迎纠错</span></p>
+									</div>
+									<!--<ul class="details_goods_inf_bigimgs">
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_1.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_2.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_3.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_4.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_5.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_6.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_7.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_8.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_9.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_10.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_11.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_12.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_13.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_14.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_15.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_16.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_17.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_18.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_19.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_21.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_22.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_23.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_24.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_25.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_26.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_27.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_28.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_29.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_30.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_31.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_32.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_33.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_34.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_35.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_36.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_37.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_38.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_39.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_40.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_41.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_42.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_43.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_44.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_45.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_46.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_47.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_48.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_49.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_50.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_51.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_52.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_53.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_54.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_55.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_56.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_57.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_58.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_59.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_60.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_61.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_62.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_63.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_64.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_65.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_66.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_67.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_68.jpg" class="lazy" style="margin:0;" alt="" />
+										<img   data-original="http://p01.sfimg.cn/4300289511/1533721650_69.jpg" class="lazy" style="margin:0;" alt="" />
+									</ul>
+									-->
+									
+									<div class="details_goodspj">
+										
+									</div>
+									
+								</div>
+								
+								<!--选项卡第一部分内容结束-->
+								
+								<!--选项卡第二部分内容开始-->
+								<div>
+									
+								</div>
+								<!--选项卡第二部分内容结束-->
+								<!--选项卡第三部分内容开始-->
+								<div>
+									
+								</div>
+								<!--选项卡第三部分内容结束-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--商品介绍结束-->
+		
 		<!--通用底部开始-->
 		<div class="foot">
 
