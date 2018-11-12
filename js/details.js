@@ -288,8 +288,15 @@ requirejs(["jquery", "swiper", "baiduT", "do_cookie", "extend", "lazy", "page", 
 				var now_pid = $(".page_pid_input").attr("pid")
 				var now_amount = $(".details_amount").val();
 				
-				console.log(now_pid,now_amount)
-				console.log(setCookieAmount(now_pid,now_amount));
+				do_cookie.do_cookie(null,now_pid);
+				setCookieAmount(now_pid,now_amount);
+				
+				$(".details_add_to_cart_tanchu").css("display","block");
+			});
+			
+			$(".details_add_to_cart_tanchu_close").click(function(e){
+				e.stopPropagation();
+				$(".details_add_to_cart_tanchu").css("display","none");
 			})
 			
 

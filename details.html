@@ -530,7 +530,57 @@
 				top: 13px;
 				background: url(index_img/productinfo.png) no-repeat -269px -72px;;
 			}
-			
+			.details_add_to_cart_tanchu{
+				padding: 15px 10px 10px 80px;
+			    position: absolute;
+			    width: 300px;
+			    border: 1px solid #dbdbdb;
+			    border-bottom: 1px solid #196247;
+			    background-color: #fff;
+			    top: -1px;
+			    left: -88px;
+			    height: 80px;
+			    display: none;
+			}
+			.details_add_to_cart_tanchu_title{
+				color: #45403a;
+				font-family: 微软雅黑;
+				font-size: 18px;
+				margin-bottom: 5px;
+				line-height: 24px;
+			}
+			.details_add_to_cart_tanchu_btns_gouwu{
+				background-color: #6c9c0a;
+				height: 24px;
+				line-height: 24px;
+				color: white!important;
+				float: left;
+				margin-right: 10px;
+				width: 90px;
+				text-align: center;
+				margin-top: 15px;
+			}
+			.details_add_to_cart_tanchu_btns_jieshuan{
+				background-color: #6c9c0a;
+				height: 24px;
+				line-height: 24px;
+				color: white!important;
+				float: left;
+				margin-right: 10px;
+				width: 90px;
+				text-align: center;
+				margin-top: 15px;
+			}
+			.details_add_to_cart_tanchu_close{
+				position: absolute;
+				background: url(images/details_img/sf-stock.png) no-repeat 0 -70px;
+				height: 17px;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				width: 17px;
+				cursor: pointer;
+			}
 			
 			.details_fast{
 				float: left;
@@ -1559,7 +1609,7 @@
 								<label for="col2">农夫山泉 农夫山泉矿泉水 535m*12.5</label>
 							</div>
 							<div class="details_main_goods_caozuo_jiesuan">
-								<input type="text" class="details_amount" value="1" />
+								<input type="text" class="details_amount" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" value="1" />
 								<div class="details_amount_btns">
 									<input type="button" class="details_amount_add" id="" value="+" />
 									<input type="button" class="details_amount_sub" id="" value="-" />
@@ -1568,6 +1618,16 @@
 									<div class="details_add_to_cart">
 										<b></b>
 										<input type="button" class="" id="" value="加入购物车" />
+										<div class="details_add_to_cart_tanchu">
+											<ul>
+												<li class="details_add_to_cart_tanchu_title">该商品已成功放入购物车！</li>
+												<li class="details_add_to_cart_tanchu_btns">
+													<a class="details_add_to_cart_tanchu_btns_gouwu" href="index.html">&lt;&lt; 继续购物 </a>
+													<a class="details_add_to_cart_tanchu_btns_jieshuan" href="cart.html"> 去结算&gt;&gt; </a>
+												</li>
+												<li class="details_add_to_cart_tanchu_close"></li>
+											</ul>
+										</div>
 									</div>
 									<div class="details_fast">
 										<input type="button" class="" id="" value="一键购买" />
