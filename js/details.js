@@ -17,7 +17,8 @@ requirejs.config({
 		do_index_cart: "plugins/do_index_cart",
 		delete_cookie: "plugins/delete_cookie",
 		fang_da_jing: "modules/fang_da_jing",
-		tab:"plugins/Tab"
+		tab:"plugins/Tab",
+		set_cookie_amount : "plugins/set_cookie_amount"
 	},
 	shim: {
 		baiduT: {
@@ -66,14 +67,59 @@ requirejs.config({
 		},
 		fang_da_jing: {
 			deps: ["jquery"]
+		},
+		set_cookie_amount:{
+			deps: ["cookie"]
 		}
 	}
 });
 
-requirejs(["jquery", "swiper", "baiduT", "do_cookie", "extend", "lazy", "page", "cookie", "top", "head", "nav_s", "er_ji", "xuan_fu", "do_index_cart", "delete_cookie", "fang_da_jing","tab"], function($, Swiper, baidu, do_cookie) {
+requirejs(["jquery", "swiper", "baiduT", "do_cookie", "extend", "lazy", "page", "cookie", "top", "head", "nav_s", "er_ji", "xuan_fu", "do_index_cart", "delete_cookie", "fang_da_jing","tab","set_cookie_amount"], function($, Swiper, baidu, do_cookie) {
 	$(".details_main_fang_da").load('html/fang_da_jing.html', function() {
 		doFangda();
 	});
+	
+	
+	
+	function GetQueryString(name)
+	{
+	     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	     var r = window.location.search.substr(1).match(reg);
+	     if(r!=null)return  unescape(r[2]); return null;
+	}
+	
+	
+	var page_pid =  GetQueryString("pid");
+	
+	(function(){//判定是否有pid
+		if(!page_pid){
+			return;
+		}else{
+			$.ajax({
+				type:"get",
+				url:"data/all_goods.json",
+				async:true,
+				success:function(data){
+					$(data.data).each(function(index,ele){
+						var now_id = ele.product_id || ele.proudct_id;
+						if(now_id == page_pid){
+							console.log(ele);//当前的对象
+							
+							$(".details_main_goods_title h1").html(ele.name);
+							
+							$(".imgdet .imglist ul li img").attr("src",ele.img);
+							$(".imgdet .imgpart .pic img").attr("src",ele.img);
+							$(".details_main_goods_price_num3").html(ele.price || ele.sfbestPrice);
+							$(".details_main_goods_caozuo_chose label").eq(0).html("套餐1");
+							$(".details_main_goods_caozuo_chose label").eq(1).html("套餐2");
+							$(".page_pid_input").attr("pid",now_id)
+						}
+					});
+				}
+				
+			});
+		}
+	})()
 	
 	//商品介绍里的评价
 	$(".details_goodspj").load('html/details_goodspj.html',function(){
@@ -223,6 +269,28 @@ requirejs(["jquery", "swiper", "baiduT", "do_cookie", "extend", "lazy", "page", 
 					$(".details_main_box_tab .btns").css("position","")
 				}
 			}
+			
+			
+			//下面是关于商品购买的一些处理
+			$(".details_amount_add").click(function(){
+				$(".details_amount").val(parseInt($(".details_amount").val())+1);
+			});
+			
+			$(".details_amount_sub").click(function(){
+				if($(".details_amount").val() == 1){
+					$(".details_amount").prop("disabled")
+				}else{
+					$(".details_amount").val(parseInt($(".details_amount").val())-1);
+				}
+			});
+			
+			$(".details_add_to_cart").click(function(){
+				var now_pid = $(".page_pid_input").attr("pid")
+				var now_amount = $(".details_amount").val();
+				
+				console.log(now_pid,now_amount)
+				console.log(setCookieAmount(now_pid,now_amount));
+			})
 			
 
 });

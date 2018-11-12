@@ -196,10 +196,20 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			},
 			success:function(data){
 				$.each(data.upProduct, function(index,ele) {
-					$(".must_buy_up ul").append('<li><p>'+ele.name+'</p><span>￥<b>'+ele.price+'</b></span><img pid="'+ele.product_id+'" src="'+ele.img+'"/><div class="add_goods_btns"><a href="javascript:void(0)">加入购物车</a></div></li>');
+					var now_href = document.createElement("a");
+					now_href.setAttribute("href","http://127.0.0.1:8020/A_sfbest.com/details.html?pid="+ele.product_id+"");
+					now_href.setAttribute("target","_blank");
+					
+					$(now_href).append('<li><p>'+ele.name+'</p><span>￥<b>'+ele.price+'</b></span><img pid="'+ele.product_id+'" src="'+ele.img+'"/><div class="add_goods_btns"><a href="javascript:void(0)">加入购物车</a></div></li>');
+				
+					$(".must_buy_down ul").append(now_href);
 				});
 				$.each(data.downProduct, function(index,ele) {
-					$(".must_buy_down ul").append('<li><p>'+ele.name+'</p><span>￥<b>'+ele.price+'</b></span><img pid="'+ele.product_id+'" src="'+ele.img+'"/><div class="add_goods_btns"><a href="javascript:void(0)">加入购物车</a></div></li>');
+					var now_href = document.createElement("a");
+					now_href.setAttribute("href","http://127.0.0.1:8020/A_sfbest.com/details.html?pid="+ele.product_id+"");
+					now_href.setAttribute("target","_blank");
+					$(now_href).append('<li><p>'+ele.name+'</p><span>￥<b>'+ele.price+'</b></span><img pid="'+ele.product_id+'" src="'+ele.img+'"/><div class="add_goods_btns"><a href="javascript:void(0)">加入购物车</a></div></li>');
+					$(".must_buy_down ul").append(now_href);
 				});
 				//$("must_buy_up ul").append('<li><p>丹麦 猪蹄块/八戒有肉 600g 15315614561465456456</p><span>￥<b>36.8</b></span><img src="index_img/test-goods.png"/><div class="add_goods_btns"><a href="#">加入购物车</a></div></li>')
 				
@@ -264,7 +274,12 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			},
 			success:function(data){
 				$.each(data,function(index,ele){
-					$(".fruits .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+					var now_href = document.createElement("a");//创建a标签
+					now_href.setAttribute("href","http://127.0.0.1:8020/A_sfbest.com/details.html?pid="+ele.product_id+"");//设置跳转地址
+					now_href.setAttribute("target","_blank");//设置另外开页打开
+					
+					$(now_href).append('<li><div class="main_class_bottom_middle_goodspic"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+					$(".fruits .main_class_bottom_middle ul").append(now_href);
 				});
 				$(".lazy").lazyload();//图片懒加载
 				$(".main_class_bottom_middle ul li").hover(function(){
@@ -283,13 +298,14 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 				
 				
 				//点击加入购物车按键
-				$(".fruits .main_class_bottom_middle_goodspic_btn").click(function(){
-					console.log("点击事件触发一次");
+				$(".fruits .main_class_bottom_middle_goodspic_btn").click(function(e){
+//					e.bubbles = false;
+//					e.stopPropagation();
+					e.preventDefault();
+					
 					var that = this;
-					console.log("that",that);
-					var pid = $(that).siblings("a").children().eq(0).attr("pid");
-					console.log("pid",pid);
-					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
+					var pid = $(that).siblings("img").eq(0).attr("pid");
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").eq(0).attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
 					$(".append").animate({
 						top: need_top,
@@ -326,7 +342,12 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			},
 			success:function(data){
 				$.each(data,function(index,ele){
-					$(".sheng_xian .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+					var now_href = document.createElement("a");//创建a标签
+					now_href.setAttribute("href","http://127.0.0.1:8020/A_sfbest.com/details.html?pid="+ele.product_id+"");//设置跳转地址
+					now_href.setAttribute("target","_blank");//设置另外开页打开
+					
+					$(now_href).append('<li><div class="main_class_bottom_middle_goodspic"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+					$(".sheng_xian .main_class_bottom_middle ul").append(now_href);
 				});
 				$(".lazy").lazyload();//图片懒加载
 				$(".main_class_bottom_middle ul li").hover(function(){
@@ -343,11 +364,13 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					});
 				});
 				//点击加入购物车按键
-				$(".sheng_xian .main_class_bottom_middle_goodspic_btn").click(function(){
+				$(".sheng_xian .main_class_bottom_middle_goodspic_btn").click(function(e){
+					
+					e.preventDefault();
 					
 					var that = this;
-					var pid = $(that).siblings("a").children().eq(0).attr("pid");
-					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
+					var pid = $(that).siblings("img").eq(0).attr("pid");
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").eq(0).attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
 					$(".append").animate({
 						top: need_top,
@@ -383,7 +406,12 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			},
 			success:function(data){
 				$.each(data,function(index,ele){
-					$(".leng_cang .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+					var now_href = document.createElement("a");//创建a标签
+					now_href.setAttribute("href","http://127.0.0.1:8020/A_sfbest.com/details.html?pid="+ele.product_id+"");//设置跳转地址
+					now_href.setAttribute("target","_blank");//设置另外开页打开
+					
+					$(now_href).append('<li><div class="main_class_bottom_middle_goodspic"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+					$(".leng_cang .main_class_bottom_middle ul").append(now_href);
 				});
 				$(".lazy").lazyload();//图片懒加载
 				$(".main_class_bottom_middle ul li").hover(function(){
@@ -401,11 +429,13 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 				});
 				
 				//点击加入购物车按键
-				$(".leng_cang .main_class_bottom_middle_goodspic_btn").click(function(){
+				$(".leng_cang .main_class_bottom_middle_goodspic_btn").click(function(e){
+					
+					e.preventDefault();
 					
 					var that = this;
-					var pid = $(that).siblings("a").children().eq(0).attr("pid");
-					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
+					var pid = $(that).siblings("img").eq(0).attr("pid");
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").eq(0).attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
 					$(".append").animate({
 						top: need_top,
@@ -441,7 +471,12 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			},
 			success:function(data){
 				$.each(data,function(index,ele){
-					$(".liang_you .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+					var now_href = document.createElement("a");//创建a标签
+					now_href.setAttribute("href","http://127.0.0.1:8020/A_sfbest.com/details.html?pid="+ele.product_id+"");//设置跳转地址
+					now_href.setAttribute("target","_blank");//设置另外开页打开
+					
+					$(now_href).append('<li><div class="main_class_bottom_middle_goodspic"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+					$(".liang_you .main_class_bottom_middle ul").append(now_href);
 				});
 				$(".lazy").lazyload();//图片懒加载
 				$(".main_class_bottom_middle ul li").hover(function(){
@@ -459,11 +494,13 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 				});
 				
 				//点击加入购物车按键
-				$(".liang_you .main_class_bottom_middle_goodspic_btn").click(function(){
+				$(".liang_you .main_class_bottom_middle_goodspic_btn").click(function(e){
+					
+					e.preventDefault();
 					
 					var that = this;
-					var pid = $(that).siblings("a").children().eq(0).attr("pid");
-					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
+					var pid = $(that).siblings("img").eq(0).attr("pid");
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").eq(0).attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
 					$(".append").animate({
 						top: need_top,
@@ -499,7 +536,12 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			},
 			success:function(data){
 				$.each(data,function(index,ele){
-					$(".tang_qiao .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+					var now_href = document.createElement("a");//创建a标签
+					now_href.setAttribute("href","http://127.0.0.1:8020/A_sfbest.com/details.html?pid="+ele.product_id+"");//设置跳转地址
+					now_href.setAttribute("target","_blank");//设置另外开页打开
+					
+					$(now_href).append('<li><div class="main_class_bottom_middle_goodspic"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+					$(".tang_qiao .main_class_bottom_middle ul").append(now_href);
 				});
 				$(".lazy").lazyload();//图片懒加载
 				$(".main_class_bottom_middle ul li").hover(function(){
@@ -517,11 +559,13 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 				});
 				
 				//点击加入购物车按键
-				$(".tang_qiao .main_class_bottom_middle_goodspic_btn").click(function(){
+				$(".tang_qiao .main_class_bottom_middle_goodspic_btn").click(function(e){
+					
+					e.preventDefault();
 					
 					var that = this;
-					var pid = $(that).siblings("a").children().eq(0).attr("pid");
-					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
+					var pid = $(that).siblings("img").eq(0).attr("pid");
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").eq(0).attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
 					$(".append").animate({
 						top: need_top,
@@ -557,7 +601,12 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			},
 			success:function(data){
 				$.each(data,function(index,ele){
-					$(".cha_yin .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+					var now_href = document.createElement("a");//创建a标签
+					now_href.setAttribute("href","http://127.0.0.1:8020/A_sfbest.com/details.html?pid="+ele.product_id+"");//设置跳转地址
+					now_href.setAttribute("target","_blank");//设置另外开页打开
+					
+					$(now_href).append('<li><div class="main_class_bottom_middle_goodspic"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+					$(".cha_yin .main_class_bottom_middle ul").append(now_href);
 				});
 				$(".lazy").lazyload();//图片懒加载
 				$(".main_class_bottom_middle ul li").hover(function(){
@@ -575,11 +624,13 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 				});
 				
 				//点击加入购物车按键
-				$(".cha_yin .main_class_bottom_middle_goodspic_btn").click(function(){
+				$(".cha_yin .main_class_bottom_middle_goodspic_btn").click(function(e){
+					
+					e.preventDefault();
 					
 					var that = this;
-					var pid = $(that).siblings("a").children().eq(0).attr("pid");
-					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
+					var pid = $(that).siblings("img").eq(0).attr("pid");
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").eq(0).attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
 					$(".append").animate({
 						top: need_top,
@@ -615,7 +666,12 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			},
 			success:function(data){
 				$.each(data,function(index,ele){
-					$(".jiu_shui .main_class_bottom_middle ul").append('<li><div class="main_class_bottom_middle_goodspic"><a href="#"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/></a><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+					var now_href = document.createElement("a");//创建a标签
+					now_href.setAttribute("href","http://127.0.0.1:8020/A_sfbest.com/details.html?pid="+ele.product_id+"");//设置跳转地址
+					now_href.setAttribute("target","_blank");//设置另外开页打开
+					
+					$(now_href).append('<li><div class="main_class_bottom_middle_goodspic"><img class="lazy" pid="'+ele.product_id+'" data-original="'+ele.img+'"/><div class="main_class_bottom_middle_goodspic_btn"><b></b><span>加入购物车</span></div></div><p>'+ele.name+'</p><span><b>￥</b>'+ele.price+'</span></li>')
+					$(".jiu_shui .main_class_bottom_middle ul").append(now_href);
 				});
 				$(".lazy").lazyload();//图片懒加载
 				$(".main_class_bottom_middle ul li").hover(function(){
@@ -633,11 +689,13 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 				});
 				
 				//点击加入购物车按键
-				$(".jiu_shui .main_class_bottom_middle_goodspic_btn").click(function(){
+				$(".jiu_shui .main_class_bottom_middle_goodspic_btn").click(function(e){
+					
+					e.preventDefault();
 					
 					var that = this;
-					var pid = $(that).siblings("a").children().eq(0).attr("pid");
-					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("a").children().eq(0).attr("src")+'"/>');
+					var pid = $(that).siblings("img").eq(0).attr("pid");
+					$("body").append('<img class="append" width="50" height="50" style="position:absolute;z-index:9999;top:'+parseInt($(that).offset().top)+'px;left:'+(parseInt($(that).offset().left)+parseInt(56))+'px " src="'+$(that).siblings("img").eq(0).attr("src")+'"/>');
 					var need_top = parseInt($(that).offset().top)-parseInt(50);
 					$(".append").animate({
 						top: need_top,
@@ -676,7 +734,12 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			
 			success:function(data){
 				$.each(data.data,function(index,ele){
-					$(".tui_jian_goods").append('<li><div class="tui_jian_goods_pic"><img class="lazy" pid="'+ele.proudct_id+'" data-original= "'+ele.img+'"/><div class="tui_jian_goods_pic_btn1"><b></b>加入购物车</div></div><div class="tui_jian_goods_title">'+ele.name+'</div><div class="tui_jian_goods_price">￥<span>'+ele.sfbestPrice+'</span></div></li>');
+					var now_href = document.createElement("a");//创建a标签
+					now_href.setAttribute("href","http://127.0.0.1:8020/A_sfbest.com/details.html?pid="+ele.proudct_id+"");//设置跳转地址
+					now_href.setAttribute("target","_blank");//设置另外开页打开
+					
+					$(now_href).append('<li><div class="tui_jian_goods_pic"><img class="lazy" pid="'+ele.proudct_id+'" data-original= "'+ele.img+'"/><div class="tui_jian_goods_pic_btn1"><b></b>加入购物车</div></div><div class="tui_jian_goods_title">'+ele.name+'</div><div class="tui_jian_goods_price">￥<span>'+ele.sfbestPrice+'</span></div></li>');
+					$(".tui_jian_goods").append(now_href);
 				});
 				$(".lazy").lazyload();//图片懒加载
 				$(".tui_jian_goods li").hover(function(){
@@ -693,8 +756,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					});
 				});
 				//点击加入购物车按键
-				$(".tui_jian_goods_pic_btn1").click(function(){
-					
+				$(".tui_jian_goods_pic_btn1").click(function(e){
+					e.preventDefault();
 					var that = this;
 					var pid = $(that).siblings("img").attr("pid");
 					
@@ -734,7 +797,12 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			
 			success:function(data){
 				$.each(data.data,function(index,ele){
-					$(".tui_jian_goods").append('<li><div class="tui_jian_goods_pic"><img class="lazy" pid="'+ele.proudct_id+'" data-original= "'+ele.img+'"/><div class="tui_jian_goods_pic_btn2"><b></b>加入购物车</div></div><div class="tui_jian_goods_title">'+ele.name+'</div><div class="tui_jian_goods_price">￥<span>'+ele.sfbestPrice+'</span></div></li>');
+					var now_href = document.createElement("a");//创建a标签
+					now_href.setAttribute("href","http://127.0.0.1:8020/A_sfbest.com/details.html?pid="+ele.proudct_id+"");//设置跳转地址
+					now_href.setAttribute("target","_blank");//设置另外开页打开
+					
+					$(now_href).append('<li><div class="tui_jian_goods_pic"><img class="lazy" pid="'+ele.proudct_id+'" data-original= "'+ele.img+'"/><div class="tui_jian_goods_pic_btn2"><b></b>加入购物车</div></div><div class="tui_jian_goods_title">'+ele.name+'</div><div class="tui_jian_goods_price">￥<span>'+ele.sfbestPrice+'</span></div></li>');
+					$(".tui_jian_goods").append(now_href);
 				});
 				$(".lazy").lazyload();//图片懒加载
 				$(".tui_jian_goods li").hover(function(){
@@ -751,8 +819,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 					});
 				});
 				//点击加入购物车按键
-				$(".tui_jian_goods_pic_btn2").click(function(){
-					
+				$(".tui_jian_goods_pic_btn2").click(function(e){
+					e.preventDefault();
 					var that = this;
 					var pid = $(that).siblings("img").attr("pid");
 					
@@ -792,7 +860,12 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			
 			success:function(data){
 				$.each(data.data,function(index,ele){
-					$(".tui_jian_goods").append('<li><div class="tui_jian_goods_pic"><img class="lazy" pid="'+ele.proudct_id+'" data-original= "'+ele.img+'"/><div class="tui_jian_goods_pic_btn3"><b></b>加入购物车</div></div><div class="tui_jian_goods_title">'+ele.name+'</div><div class="tui_jian_goods_price">￥<span>'+ele.sfbestPrice+'</span></div></li>');
+					var now_href = document.createElement("a");//创建a标签
+					now_href.setAttribute("href","http://127.0.0.1:8020/A_sfbest.com/details.html?pid="+ele.proudct_id+"");//设置跳转地址
+					now_href.setAttribute("target","_blank");//设置另外开页打开
+					
+					$(now_href).append('<li><div class="tui_jian_goods_pic"><img class="lazy" pid="'+ele.proudct_id+'" data-original= "'+ele.img+'"/><div class="tui_jian_goods_pic_btn3"><b></b>加入购物车</div></div><div class="tui_jian_goods_title">'+ele.name+'</div><div class="tui_jian_goods_price">￥<span>'+ele.sfbestPrice+'</span></div></li>');
+					$(".tui_jian_goods").append(now_href)
 				});
 				$(".lazy").lazyload();//图片懒加载
 				$(".tui_jian_goods li").hover(function(){
@@ -810,8 +883,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 				});
 				
 				//点击加入购物车按键
-				$(".tui_jian_goods_pic_btn3").click(function(){
-					
+				$(".tui_jian_goods_pic_btn3").click(function(e){
+					e.preventDefault();
 					var that = this;
 					var pid = $(that).siblings("img").attr("pid");
 					
