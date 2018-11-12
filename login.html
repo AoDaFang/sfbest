@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>My顺丰优选 SF-best</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="shortcut icon" href="favicon.ico">
+		<style type="text/css">
+			.head{
+				width: 1000px;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			.head img{
+				margin: 10px 0;
+				float: left;
+				cursor: pointer;
+			}
+			.head span{
+				margin: 10px 0;
+				float: left;
+				line-height: 70px;
+				font-size: 24px;
+				padding-left: 3px;
+				font-family: "微软雅黑";
+			}
+			
+			.bottom{
+				width: 1000px;
+				padding-top: 20px;
+				margin: 0 auto;
+				height: 104px;
+			}
+			.bottom>span{
+				display: block;
+				height: 26px;
+				line-height: 26px;
+				text-align: center;
+			}
+			.bottom span a{
+				margin: 5px;
+				color: #666;
+			}
+			.bottom span a:hover{
+				text-decoration: underline;
+			}
+			.bottom>p{
+				text-align: center;
+				margin: 0 auto;
+				line-height: 26px;
+			}
+			
+			
+			
+			.main{
+				width: 1000px;
+				height: 500px;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			.main_left{
+				width: 540px;
+				height: 390px;
+				padding-top: 14px;
+				float: left;
+			}
+			.main_right{
+				width: 400px;
+				min-height: 100px;
+				float: left;
+			}
+			.main_right_head{
+				width: 400px;
+				height: 50px;
+				line-height: 50px;
+				float: left;
+			}
+			.main_right_head span{
+				display: inline-block;
+				color: #000;
+				font-size: 20px;
+				float: left;
+				position: relative;
+				top: 14px;
+				left: 0;
+				height: 26px;
+				line-height: 26px;
+			}
+			.main_right_head a{
+				display: inline-block;
+				float: right;
+				font-size: 14px;
+				color: #666;
+				width: 80px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				margin-top: 12px;
+				border-radius: 3px;
+			}
+			
+			
+			.main_tab .tab{
+				width:420px;
+				height: 421px;
+			}
+			.main_tab .btns{
+				overflow: hidden;
+				margin: 0 -5px;
+			}
+			.main_tab .btns button{
+				width: 133px;
+				height: 39px;
+				border: none;
+				float: left;
+				margin: 0 5px;
+				color: #FFF;
+				background: #03ccbb;
+				outline: none;
+				cursor: pointer;
+			}
+			.main_tab .btns button.active{
+				background: #F90;
+			}
+			.main_tab .shows p{
+				width: 400px;
+				height: 300px;
+				background: deepskyblue;
+				display: none;
+			}
+			.main_tab .shows p.active{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<img src="images/register_img/logo.png"/>
+			<span>欢迎登录</span>
+		</div>
+		
+		<div class="main">
+			<div class="main_left">
+				<img src="https://passport.sfbest.com//image/a1ffb0ee/a1ffb0ee1e0849f4207db0c0df37bbf0.png"/>
+			</div>
+			<div class="main_right">
+				<div class="main_right_head">
+					<span>登录</span>
+					<a href="register.html" target="_blank">免费注册</a>
+				</div>
+				<div class="main_tab">
+					<div class="tab">
+						<div class="btns">
+							<button class="active">按钮1</button>
+							<button>按钮2</button>
+							<button>按钮3</button>
+							<button>按钮4</button>
+							<button>按钮5</button>
+						</div>
+						<div class="shows">
+							<p class="active">内容1</p>
+							<p>内容2</p>
+							<p>内容3</p>
+							<p>内容4</p>
+							<p>内容5</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+
+		<div class="bottom">
+			<span>
+				<a href="javascript:;">关于我们</a>|
+				<a href="javascript:;">联系我们</a>|
+				<a href="javascript:;">加入我们</a>|
+				<a href="javascript:;">友情链接</a>
+			</span>
+			<p>
+				北京顺丰电子商务有限公司<br />
+				北京市公安局顺义分局备案11011302000890号|
+				<a href="javascript:;">京ICP备12011349号</a>|
+				<a href="javascript:;">企业营业执照</a><br />
+				Copyright© 顺丰优选 sfbest.com 版权所有
+			</p>
+		</div>
+		<script src="js/lib/require.min.js" data-main="js/login.js"></script>
+	</body>
+</html>

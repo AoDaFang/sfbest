@@ -151,6 +151,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			setWrapperSize:true,//增加对不支持弹性盒子浏览器的兼容性
 			on: {
 					init: function(){
+						//render方法	
+					
 //				      //Swiper初始化了
 //				      console.log($(".swiper-pagination-bullet"))
 //				      $(".swiper-pagination-bullet").each(function(index,ele){
