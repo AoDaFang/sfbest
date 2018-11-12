@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>My顺丰优选 SF-best</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="shortcut icon" href="favicon.ico">
+		<style type="text/css">
+			body{
+				background-color: #f5f5f5;
+			}
+			.head{
+				width: 1000px;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			.head img{
+				margin: 10px 0;
+				float: left;
+				cursor: pointer;
+			}
+			.head span{
+				margin: 10px 0;
+				float: left;
+				line-height: 70px;
+				font-size: 24px;
+				padding-left: 3px;
+				font-family: "微软雅黑";
+			}
+			
+			.main{
+				width: 1000px;
+				margin: 0 auto;
+			}
+			.main_top{
+				overflow: hidden;
+			}
+			.main .main_top >span{
+				display: block;
+				margin-left: 336px;
+				height: 37px;
+				width: 160px;
+				font-size: 16px;
+				text-align: center;
+				line-height: 38px;
+				background-color: #fff;
+				border: 1px solid #d6d5d5;
+				border-bottom: none;
+				float: left;
+			}
+			.main .main_top>p{
+				float: right;
+				margin-top: 15px;
+			}
+			.main .main_top>p a{
+				margin-left: 10px;
+				color: #6e9b0c;
+			}
+			.main_middle{
+				width: 960px;
+				padding: 45px 0 0 40px;
+				background-color: #fff;
+				height: 465px;
+			}
+			.main_middle ul{
+				width: 960px;
+				height: 404px;
+				background: url(images/register_img/pic10.jpg) 460px 0px no-repeat;
+			}
+			.main_middle ul li{
+				width: 960px;
+				height: 38px;
+				margin-bottom: 30px;
+			}
+			.main_middle ul li>*{
+				display: block;
+				float: left;
+			}
+			.main_middle ul li label{
+				width: 118px;
+				height: 38px;
+				line-height: 38px;
+				font-size: 14px;
+				text-align: right;
+			}
+			.main_middle ul li label span{
+				line-height: 38px;
+				color: #ff4800;
+			}
+			.main_middle_inputs{
+				position: relative;
+				margin-left: 0px;
+			}
+			.main_middle_inputs input{
+				width: 228px;
+				height: 36px;
+				line-height: 38px;
+				border: 1px solid #cdcdcd;
+				outline: none;
+				color: #515151;
+				padding: 0 5px;
+			}
+			.main_middle .main_middle_inputs b{
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 211px;
+				background: url(images/register_img/icon4.jpg) center no-repeat;
+				width: 23px;
+				height: 36px;
+			}
+			.main_middle .main_middle_tips{
+				display: none;
+				line-height: 38px;
+				margin-left: 10px;
+			}
+			.yz_cood_all_img>*{
+				float: left;
+			}
+			.yz_cood_all_img img{
+				margin-left: 5px;
+			}
+			.yz_cood_all_img p{
+				margin-left: 5px;
+				line-height: 38px;
+			}
+			.yz_cood_all_img span{
+				color: #6e9b0c;	
+				cursor: pointer;
+			}
+			.main_middle_zhuce_xieyi p span{
+				color: #6e9b0c;
+				cursor: pointer;
+			}
+			.main_middle_zhuce_xieyi input{
+				vertical-align: middle;
+			}
+			.main_middle_zhuce_xieyi p:hover{
+				text-decoration: underline;
+			}
+			.main_middle_zhuce_btn span{
+				cursor: pointer;
+				font-size: 16px;
+				text-align: center;
+				line-height: 38px;
+				color: #fff;
+				border-radius: 3px;
+				width: 271px;
+				height: 38px;
+				background-color: #6E9B0C;
+			}
+			.main_middle_zhuce_btn span:hover{
+				background-color: #6AAF06;
+			}
+			.main_middle_bottom{
+				cursor: pointer;
+				color: #669900;
+				padding: 15px 10px 10px 45px;
+				border-top: 1px dotted #dcdcdc;
+				position: relative;
+				left: -30px;
+				width: 930px;
+				height: 20px;
+				background: url(images/register_img/reg_tip.png) no-repeat 25px 16px;
+			}
+			
+			.bottom{
+				width: 1000px;
+				padding-top: 20px;
+				margin: 0 auto;
+				height: 104px;
+			}
+			.bottom>span{
+				display: block;
+				height: 26px;
+				line-height: 26px;
+				text-align: center;
+			}
+			.bottom span a{
+				margin: 5px;
+				color: #666;
+			}
+			.bottom span a:hover{
+				text-decoration: underline;
+			}
+			.bottom>p{
+				text-align: center;
+				margin: 0 auto;
+				line-height: 26px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<img src="images/register_img/logo.png"/>
+			<span>欢迎注册</span>
+		</div>
+		<div class="main">
+			<div class="main_top">
+				<span>个人用户</span>
+				<p>已有账号，立即<a href="login.html">登录</a></p>
+			</div>
+			<div class="main_middle">
+				<ul>
+					<li class="username_all">
+						<label for=""><span>*</span>&nbsp;&nbsp;账户名：</label>
+						<span class="main_middle_inputs">
+							<input id="userMam" name="userMam" class="regInput" type="text" autocomplete="off" maxlength="80">
+							<b></b>
+						</span>
+						<p class="main_middle_tips">请输入您的手机号</p>
+					</li>
+					
+					<li class="password_all">
+						<label for=""><span>*</span>&nbsp;&nbsp;登录密码：</label>
+						<span class="main_middle_inputs">
+							<input id="userMam" name="userMam" class="regInput" type="text" autocomplete="off" maxlength="80">
+							<b></b>
+						</span>
+						<p style="width: 214px;line-height: 18px;" class="main_middle_tips">6-20位字符，可使用数字字母下划线。不建议使用纯数字和字母组合。</p>
+					</li>
+					
+					<li class="re_password_all">
+						<label for=""><span>*</span>&nbsp;&nbsp;确认密码：</label>
+						<span class="main_middle_inputs">
+							<input id="userMam" name="userMam" class="regInput" type="text" autocomplete="off" maxlength="80">
+							<b></b>
+						</span>
+						<p class="main_middle_tips">请再次输入密码</p>
+					</li>
+					
+					<li class="yz_cood_all">
+						<label for=""><span>*</span>&nbsp;&nbsp;验证码：</label>
+						<span class="main_middle_inputs">
+							<input style="width: 58px; height: 36px;" id="userMam" name="userMam" class="regInput" type="text" autocomplete="off" maxlength="80">
+							<b style="left: 40px;"></b>
+						</span>
+						<div class="yz_cood_all_img">
+							<img src="images/register_img/validate.png"/>
+							<p>看不清？<span>换一换</span></p>
+						</div>
+						<p class="main_middle_tips">请输入验证码</p>
+					</li>
+					
+					<li class="main_middle_zhuce_xieyi">
+						<label for=""></label>
+						<p><input type="checkbox" checked="checked" name="" id="" value="" />	我已阅读并同意<span>《顺丰优选用户注册协议》</span></p>
+					</li>
+					<li class="main_middle_zhuce_btn">
+						<label for=""></label>
+						<span>立即注册</span>
+					</li>
+				</ul>
+			
+				<div class="main_middle_bottom">
+					了解更多>>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+			<span>
+				<a href="javascript:;">关于我们</a>|
+				<a href="javascript:;">联系我们</a>|
+				<a href="javascript:;">加入我们</a>|
+				<a href="javascript:;">友情链接</a>
+			</span>
+			<p>
+				北京顺丰电子商务有限公司<br />
+				北京市公安局顺义分局备案11011302000890号|
+				<a href="javascript:;">京ICP备12011349号</a>|
+				<a href="javascript:;">企业营业执照</a><br />
+				Copyright© 顺丰优选 sfbest.com 版权所有
+			</p>
+		</div>
+		<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+		<script type="text/javascript" src="js/register.js"></script>
+	</body>
+</html>
