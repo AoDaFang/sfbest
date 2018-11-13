@@ -30,5 +30,7 @@ requirejs.config({
 });
 
 requirejs(["jquery","do_cookie", "cookie", "delete_cookie", "set_cookie_amount","tab"], function($, do_cookie) {
-	
+	var oTab = document.querySelector(".main_tab .tab");
+	var tab1 = new Tab(oTab);
+	tab1.init();
 });

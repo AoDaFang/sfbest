@@ -101,35 +101,280 @@
 			
 			
 			.main_tab .tab{
-				width:420px;
+				width:400px;
 				height: 421px;
 			}
 			.main_tab .btns{
-				overflow: hidden;
-				margin: 0 -5px;
-			}
-			.main_tab .btns button{
-				width: 133px;
+				width: 400px;
 				height: 39px;
-				border: none;
+				clear: left;
+				border-top: 1px solid #ededed;
+				border-left: 1px solid #ededed;
+			}
+			.main_tab .btns div{
+				width: 133px;
+				height: 38px;
+				border:none;
+				border-bottom: 1px solid #ededed;
+				border-right: 1px solid #ededed;
 				float: left;
-				margin: 0 5px;
-				color: #FFF;
-				background: #03ccbb;
 				outline: none;
 				cursor: pointer;
+				background-color: #fff;
+				text-align: center;
+				line-height: 38px;
+				box-sizing: border-box;
 			}
-			.main_tab .btns button.active{
-				background: #F90;
+			.main_tab .btns div:nth-child(1) em{
+				float: left;
+				margin: 10px -31px 0 24px;
+				background: url(images/login_img/loginicon.png) no-repeat;
+				width: 15px;
+				height: 15px;
 			}
-			.main_tab .shows p{
+			.main_tab .btns div:nth-child(2) em{
+				float: left;
+				margin: 10px -17px 0 24px;
+				background: url(images/login_img/loginicon.png) no-repeat;
+				background-position: 0 -25px;
+				width: 15px;
+				height: 15px;
+			}
+			.main_tab .btns div:nth-child(3) em{
+				float: left;
+				margin: 10px -31px 0 24px;
+				background: url(images/login_img/loginicon.png) no-repeat;
+				background-position: 0 -48px;
+				width: 15px;
+				height: 15px;
+			}
+			.main_tab .btns div.active{
+				border-top: 2px solid #69af05;
+				border-bottom: 1px solid #fff;
+				margin-top: -2px;
+			}
+			.main_tab .shows>div{
 				width: 400px;
-				height: 300px;
-				background: deepskyblue;
+				height: 330px;
 				display: none;
 			}
-			.main_tab .shows p.active{
+			.main_tab .shows>div.active{
 				display: block;
+			}
+			.shows ul li{
+				width: 346px;
+				height: 40px;
+				border: 1px solid #BDBDBD;
+				margin-left: 25px;
+			}
+			.account_num{
+				margin-top: 40px;
+			}
+			.account_password{
+				margin-top: 14px;
+			}
+			.account_yzcode{
+				margin-top: 14px;
+			}
+			.account_btn{
+				margin-top: 45px;
+			}
+			.account_num_pic{
+				width: 41px;
+				height: 40px;
+				float: left;
+				border-right: 1px solid #BDBDBD;
+				background: #f0f0f0;
+			}
+			.account_num_pic.active{
+				border-right: 1px solid #69af04;
+				background: #8dc63f;
+			}
+			.account_num_pic span{
+				display: block;
+				background: url(images/login_img/login-icon24.png) no-repeat;
+				width: 18px;
+				height: 18px;
+				margin-left: 12px;
+				position: relative;
+				top: 12px;
+			}
+			.account_num_pic span.active{
+				background: url(images/login_img/login-icon25.png) no-repeat;
+			}
+			.account_num_input{
+				width: 304px;
+				float: left;
+				height: 40px;
+				line-height: 40px;
+			}
+			.account_num_input input{
+				width: 288px;
+				height: 40px;
+				line-height: 40px;
+				padding: 0 8px;
+				float: left;
+				border: none;
+				outline: none;
+			}
+			
+			
+			.account_password_pic{
+				width: 41px;
+				height: 40px;
+				float: left;
+				border-right: 1px solid #BDBDBD;
+				background: #f0f0f0;
+			}
+			.account_password_pic.active{
+				border-right: 1px solid #69af04;
+				background: #8dc63f;
+			}
+			.account_password_pic span{
+				display: block;
+				background: url(images/login_img/login-icon7.png) no-repeat;
+				width: 18px;
+				height: 18px;
+				margin-left: 12px;
+				position: relative;
+				top: 12px;
+			}
+			.account_password_pic span.active{
+				background: url(images/login_img/login-icon25.png) no-repeat;
+			}
+			.account_password_input{
+				width: 304px;
+				float: left;
+				height: 40px;
+				line-height: 40px;
+			}
+			.account_password_input input{
+				width: 288px;
+				height: 40px;
+				line-height: 40px;
+				padding: 0 8px;
+				float: left;
+				border: none;
+				outline: none;
+			}
+			
+			
+			.account_yzcode_pic{
+				width: 41px;
+				height: 40px;
+				float: left;
+				border-right: 1px solid #BDBDBD;
+				background: #f0f0f0;
+			}
+			.account_yzcode_pic.active{
+				border-right: 1px solid #69af04;
+				background: #8dc63f;
+			}
+			.account_yzcode_pic span{
+				display: block;
+				background: url(images/login_img/login-icon20.png) no-repeat;
+				width: 18px;
+				height: 18px;
+				margin-left: 12px;
+				position: relative;
+				top: 12px;
+			}
+			.account_yzcode_pic span.active{
+				background: url(images/login_img/login-icon25.png) no-repeat;
+			}
+			.account_yzcode_input{
+				width: 195px;
+				float: left;
+				height: 40px;
+				line-height: 40px;
+			}
+			.account_yzcode_input input{
+				width: 179px;
+				height: 40px;
+				line-height: 40px;
+				padding: 0 8px;
+				float: left;
+				border: none;
+				outline: none;
+			}
+			.account_yzcode_yzcode_pic{
+				float: left;
+				margin-top: 5px;
+			}
+			.account_btn{
+				background-color: #8DC63F;
+				border-radius: 4px;
+				cursor: pointer;
+				font-size: 16px;
+				color: #fff;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.account_num_xieyi{
+				
+			}
+			.account_num_xieyi span{
+				float: left;
+				cursor: pointer;
+			}
+			.account_num_xieyi b{
+				font-weight: normal;
+				float: right;
+				cursor: pointer;
+			}
+			.account_num_xieyi{
+				margin-top: 14px;
+			}
+			.three_login{
+				width: 356px;
+				margin: 0 auto;
+				height: 48px;
+				border-top: 1px solid #EDEDED;
+			}
+			.three_login ul li{
+				width: 86px;
+				height: 20px;
+				border-right: 1px solid #ededed;
+				margin: 10px 0;
+				float: left;
+			}
+			.three_login ul li>div{
+				margin-left: 10px;
+				text-align: left;
+			}
+			.three_login ul li>div>span{
+				height: 20px;
+			}
+			.three_login ul li>div>span>i{
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+			}
+			.three_login ul li>div>a{
+				color: #515151;
+				height: 26px;
+				line-height: 26px;
+				text-decoration: none;
+			}
+			.three_login ul li>div>a>span{
+				position: relative;
+				top: -3px;
+			}
+			.qq i{
+				background: url(images/login_img/logo-icon.jpg) no-repeat;
+			}
+			.sina i{
+				background: url(images/login_img/logo-icon.jpg) -21px 0 no-repeat;
+			}
+			.alipay i{
+				background: url(images/login_img/logo-icon.jpg) -63px 0 no-repeat;
+			}
+			.wechat i{
+				background: url(images/login_img/logo-icon.jpg) -84px 0 no-repeat;
+			}
+			.wechat{
+				border: none!important;
 			}
 		</style>
 	</head>
@@ -151,21 +396,168 @@
 				<div class="main_tab">
 					<div class="tab">
 						<div class="btns">
-							<button class="active">按钮1</button>
-							<button>按钮2</button>
-							<button>按钮3</button>
-							<button>按钮4</button>
-							<button>按钮5</button>
+							<div class="active"><em></em>优选账号</div>
+							<div><em></em>顺手付账号</div>
+							<div><em></em>速运账号</div>
 						</div>
 						<div class="shows">
-							<p class="active">内容1</p>
-							<p>内容2</p>
-							<p>内容3</p>
-							<p>内容4</p>
-							<p>内容5</p>
+							<!--第一部分开始-->
+							<div class="active sfbest_account">
+								<ul>
+									<li class="account_num">
+										<div class="account_num_pic">
+											<span></span>
+										</div>
+										<div class="account_num_input">
+											<input type="text" placeholder="手机号" />
+										</div>
+									</li>
+									<li class="account_password">
+										<div class="account_password_pic">
+											<span></span>
+										</div>
+										<div class="account_password_input">
+											<input type="text" placeholder="请输入密码" />
+										</div>
+									</li>
+									<li class="account_yzcode">
+										<div class="account_yzcode_pic">
+											<span></span>
+										</div>
+										<div class="account_yzcode_input">
+											<input type="text" placeholder="请输入验证码" />
+										</div>
+										<div class="account_yzcode_yzcode_pic">
+											<img src="images/login_img/vcode.jpg"/>
+										</div>
+									</li>
+									<li class="account_btn">
+										立即登录
+									</li>
+									<li style="border: none;" class="account_num_xieyi">
+										<span>手机验证登录</span>
+										<b>忘记密码？</b>
+									</li>
+								</ul>
+							</div>
+							<!--第一部分结束-->
+							
+							
+							<!--第二部分开始-->
+							<div>
+								<ul>
+									<li class="account_num">
+										<div class="account_num_pic">
+											<span></span>
+										</div>
+										<div class="account_num_input">
+											<input type="text" placeholder="手机号" />
+										</div>
+									</li>
+									<li class="account_password">
+										<div class="account_password_pic">
+											<span></span>
+										</div>
+										<div class="account_password_input">
+											<input type="text" placeholder="请输入密码" />
+										</div>
+									</li>
+									<li class="account_yzcode">
+										<div class="account_yzcode_pic">
+											<span></span>
+										</div>
+										<div class="account_yzcode_input">
+											<input type="text" placeholder="请输入验证码" />
+										</div>
+										<div class="account_yzcode_yzcode_pic">
+											<img src="images/login_img/vcode.jpg"/>
+										</div>
+									</li>
+									<li class="account_btn">
+										立即登录
+									</li>
+									<li style="border: none;" class="account_num_xieyi">
+										<span> 登录即视为同意《联合登录授权协议》</span>
+									</li>
+								</ul>
+							</div>
+							<!--第二部分结束-->
+							
+							
+							<!--第三部分开始-->
+							<div>
+								<ul>
+									<li class="account_num">
+										<div class="account_num_pic">
+											<span></span>
+										</div>
+										<div class="account_num_input">
+											<input type="text" placeholder="手机号" />
+										</div>
+									</li>
+									<li class="account_password">
+										<div class="account_password_pic">
+											<span></span>
+										</div>
+										<div class="account_password_input">
+											<input type="text" placeholder="请输入密码" />
+										</div>
+									</li>
+									<li class="account_yzcode">
+										<div class="account_yzcode_pic">
+											<span></span>
+										</div>
+										<div class="account_yzcode_input">
+											<input type="text" placeholder="请输入验证码" />
+										</div>
+										<div class="account_yzcode_yzcode_pic">
+											<img src="images/login_img/vcode.jpg"/>
+										</div>
+									</li>
+									<li class="account_btn">
+										立即登录
+									</li>
+									<li style="border: none;" class="account_num_xieyi">
+										<span> 登录即视为同意《联合登录授权协议》</span>
+									</li>
+								</ul>
+							</div>
+							<!--第三部分结束-->
+						
 						</div>
 					</div>
 				</div>
+			
+				<!--第三方登录-->
+				<div class="three_login">
+					<ul>
+						<li class="qq">
+							<div>
+								<span><i></i></span>
+								<a href="javascript:;"><span>QQ</span></a>
+							</div>
+						</li>
+						<li class="sina">
+							<div>
+								<span><i></i></span>
+								<a href="javascript:;"><span>新浪微博</span></a>
+							</div>
+						</li>
+						<li class="alipay">
+							<div>
+								<span><i></i></span>
+								<a href="javascript:;"><span>支付宝</span></a>
+							</div>
+						</li>
+						<li class="wechat">
+							<div>
+								<span><i></i></span>
+								<a href="javascript:;"><span>微信</span></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!--第三方登录-->
 			</div>
 		</div>
 		
