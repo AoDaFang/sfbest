@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>My枣类价格表|枣类报价【原装进口 品牌 行情 评价 图片】-顺丰优选</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.css" />
+		<link rel="stylesheet" type="text/css" href="css/top.css" />
+		<link rel="stylesheet" type="text/css" href="css/head.css" />
+		<link rel="stylesheet" type="text/css" href="css/er_ji.css" />
+		<link rel="stylesheet" type="text/css" href="css/nav.css" />
+		<link rel="stylesheet" type="text/css" href="css/foot.css" />
+		<link rel="stylesheet" type="text/css" href="css/xuan_fu.css" />
+		<link rel="stylesheet" type="text/css" href="css/fang_da_jing.css" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<style type="text/css">
+			#top {
+				width: 100%;
+				height: 34px;
+				background-color: #f7f7f7;
+				min-width: 1200px;
+			}
+			/*通用head开始*/
+			
+			#head {
+				width: 100%;
+				height: 104px;
+			}
+			/*通用head结束*/
+			
+			.er_ji {
+				position: absolute;
+				top: 34px;
+				left: 0px;
+				display: none;
+			}
+			/*通用nav开始*/
+			
+			.nav {
+				width: 100%;
+				height: 32px;
+				border-bottom: 2px solid #679800;
+			}
+			
+			.nav_in {
+				position: relative;
+			}
+			/*通用nav结束*/
+			
+			
+			/*list主体开始*/
+			.mian{
+				width: 1200px;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			.main_top{
+				width: 1200px;
+				height: 40px;
+			}
+			.main_top>*{
+				line-height: 40px;
+			}
+			.main_top p>*{
+				margin: 0 12px;
+			}
+			.main_top p b{
+				font-size: 16px;
+			}
+			.main_main{
+				width: 1200px;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			.main_left{
+				float: left;
+				width: 184px;
+				border: 1px solid  #dadada;
+				border-top: none;
+			}
+			.main_left h2{
+				width: 184px;
+				height: 39px;
+				border-top: 2px solid #999999;
+				border-bottom:1px solid #dfdfdf;
+				background-color: #f5f5f5;
+				font-size: 16px;
+				text-align: center;
+				line-height: 39px;
+				font-weight: bold;
+			}
+			.main_left dl{
+				width: 184px;
+				
+			}
+			.main_left dl dt{
+				width: 184px;
+				height: 35px;
+				font-size: 14px;
+				line-height: 35px;
+				
+			}
+			.main_left dl dt b{
+				font-weight: normal;
+				line-height: 35px;
+				vertical-align: middle;
+			}
+			.main_left dl dt i{
+				cursor: pointer;
+				margin-left: 10px;
+				vertical-align: middle;
+				margin-right: 5px;
+				display: inline-block;
+				line-height: 35px;
+				width: 14px;
+				height: 14px;
+				background: url(images/login_img/productList.png) no-repeat;
+			}
+			.main_left dl dt i.active{
+				background-position: -14px 0;
+			}
+			.main_left dl dd{
+				width: 184px;
+				display: none;
+			}
+			.main_left dl dd span{
+				display: block;
+				width: 184px;
+				height: 26px;
+				line-height: 26px;
+				margin-left: 31px;
+			}
+			.main_right{
+				width: 1000px;
+				float: right;
+			}
+			.main_right_top{
+				width: 998px;
+				height: 37px;
+				border: 1px solid #dadada;
+				/*display: none;*/
+			}
+			.main_right_top>*{
+				line-height: 37px;
+				float: left;
+			}
+			.main_right_top p{
+				margin-left: 60px;
+				font-weight: bold;
+				color: #6c9c0a;
+			}
+			.pp_fang_jia,.pp_uxuan,.pp_shimo{
+				cursor: pointer;
+				margin-right: 107px;
+			}
+			.pp_fang_jia b,.pp_uxuan b ,.pp_shimo b {
+				font-weight: normal;
+				color: #999999;
+			}
+			
+			
+			.main_right_top_active{
+				width: 998px;
+				height: 37px;
+				border: 1px solid #dadada;
+				display: none;
+			}
+			.main_right_top_active>*{
+				line-height: 37px;
+				float: left;
+			}
+			.main_right_top_active b{
+				margin-left: 60px;
+				font-weight: bold;
+				color: #6c9c0a;
+			}
+			.main_right_top_active>div{
+				display: block;
+				height: 20px;
+				line-height: 20px;
+				border: 1px solid #dadada;
+				margin-top: 8px;
+				padding: 0 5px 0 7px;
+			}
+			.main_right_top_active>div>span{
+				vertical-align: middle;
+			}
+			.main_right_top_active>div>i{
+				position: relative;
+				top: 2px;
+				display: inline-block;
+				vertical-align: middle;
+				width: 18px;
+				height: 18px;
+				cursor: pointer;
+				background: url(images/login_img/productList.png) no-repeat -96px -90px;
+			}
+			.main_right_middle{
+				width: 998px;
+				height: 70px;
+				background-color: #f5f5f5;
+				margin-top: 10px;
+				border:1px solid #dadada;
+			}
+			.main_right_middle>div{
+				width: 998px;
+				height: 35px;
+			}
+			.main_right_middle_box1{
+				height: 34px;
+				border-bottom: 1px solid #dadada;
+			}
+			.main_right_middle_box1_left{
+				float: left;
+				width: 259px;
+				height: 23px;
+				margin-top: 5px;
+				margin-left: 15px;
+			}
+			.main_right_middle_box1_left ul li{
+				float: left;
+				width: 64px;
+				height: 22px;
+				background-color: #fff;
+				text-align: center;
+				line-height: 22px;
+				cursor: pointer;
+			}
+			.main_right_middle_box1_left ul li.active{
+				background-color: #6c9c0a;
+			}
+			.main_right_middle_box1_right{
+				float: right;
+				width: 189px;
+				height: 35px;
+			}
+			.main_right_middle_box1_right p{
+				line-height: 35px;
+				float: left;
+			}
+			.main_right_middle_box1_right p>span{
+				color: #bb3271;
+				font-weight: bold;
+			}
+			.main_right_middle_box1_right p>b{
+				color: #bb3271;
+				margin-left: 30px;
+			}
+			.main_right_middle_box1_right em{
+				display: block;
+				margin-left: 7px;
+				margin-top: 7px ;
+				width: 18px;
+				height: 18px;
+				border: 1px solid #cccccc;
+				text-indent: -9999px;
+				float: left;
+				overflow: hidden;
+				background: url(images/login_img/productList.png) no-repeat -36px -124px;
+			}
+			.main_right_middle_box1_right i{
+				display: block;
+				margin-left: 7px;
+				margin-top: 7px ;
+				width: 18px;
+				height: 18px;
+				border: 1px solid #cccccc;
+				text-indent: -9999px;
+				float: left;
+				overflow: hidden;
+				background: url(images/login_img/productList.png) no-repeat -54px -124px;
+			}
+			.main_right_middle_box2>*{
+				float: left;
+				line-height: 35px;
+			}
+			.main_right_middle_box2>input{
+				margin-top: 12px;
+			}
+			.main_right_middle_box2>p{
+				margin-left: 14px;
+				color: black;
+			}
+			.main_right_middle_box2_local{
+				width: 100px;
+				height: 20px;
+				background-color: #fff;
+				line-height: 20px;
+				border: 1px solid #dadada;
+				margin-top: 7px;
+
+			}
+			.main_right_middle_box2_local b{
+				width: 17px;
+				height: 15px;
+				display: inline-block;
+				background:url(images/login_img/indexImg20130307.png?v=1.4) no-repeat -386px -2px;
+			}
+			.main_right_middle_box2 input{
+				margin-left: 9px;
+				margin-right: 5px;
+			}
+			.main_right_goods{
+				margin-top: 15px;
+			}
+			.main_right_goods ul{
+				width: 1000px;
+				height: 1194px;
+			}
+			.main_right_goods ul li{
+				float: left;
+				width: 241px;
+				height: 388px;
+				padding: 5px;
+				font-family: 微软雅黑;
+			}
+			.main_right_goods ul li:hover{
+				padding: 0;
+				border: 5px solid #f5f5f5;
+				border-radius: 6px;
+			}
+			.main_right_goods ul li>div{
+				width: 219px;
+				height: 366px;
+				padding: 11px;
+				position: relative;
+				z-index: 1;
+			}
+			.main_right_goods ul li>div:hover{
+				border:1px solid #d7d7d7;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--通用top开始-->
+		<div id="top">
+
+		</div>
+		<!--通用top结束-->
+		<!--通用head开始-->
+		<div id="head">
+
+		</div>
+		<!--通用head结束-->
+
+		<!--通用nav开始-->
+		<div class="nav">
+			<div class="er_ji">
+				<!--二级列表内容-->
+			</div>
+		</div>
+		<!--通用nav结束-->
+		
+		<div class="mian">
+			<div class="main_top">
+				<p>
+					<b>干货杂粮</b>&gt;
+					<span>南北干货</span>&gt;
+					<span>枣类</span>
+				</p>
+			</div>
+			<div class="main_main">
+				<div class="main_left">
+					<h2>干货杂粮</h2>
+					<dl>
+						<dt><i></i><b>南北干货</b></dt>
+						<dd>
+							<span>菌菇类</span>
+							<span>桂圆</span>
+							<span>枣类</span>
+							<span>枸杞/莲子</span>
+							<span>木耳/银耳</span>
+							<span>海产干货</span>
+							<span>菜干/粉丝</span>
+							<span>干货礼盒</span>
+							<span>滋补品</span>
+							<span>汤料</span>
+							<span>其他干货</span>
+						</dd>
+						
+						<dt style="border-top: 1px dashed #dadada;"><i></i><b>五谷杂粮</b></dt>
+						<dd>
+							<span>粗粮米类</span>
+							<span>杂粮豆类</span>
+							<span>杂粮礼盒</span>
+							<span>其他种籽类</span>
+						</dd>
+					</dl>
+				</div>
+			
+				<div class="main_right">
+					<div class="main_right_top">
+						<p>品牌：</p>
+						<span class="pp_fang_jia">方家铺子<b>(4)</b></span>
+						<span class="pp_uxuan">U选一品<b>(3)</b></span>
+						<span class="pp_shimo">什漠果<b>(3)</b></span>
+					</div>
+					
+					<div class="main_right_top_active">
+						<b>已选条件：</b>
+						<div>品牌：<span>U选一品</span><i></i></div>
+					</div>
+					
+					<div class="main_right_middle">
+						<div class="main_right_middle_box1">
+							<div class="main_right_middle_box1_left">
+								<ul>
+									<li>销量</li>
+									<li>价格</li>
+									<li>评论</li>
+									<li>新品</li>
+								</ul>
+							</div>
+							<div class="main_right_middle_box1_right">
+								<p>共<span>10</span>个商品     <b>1</b>/1</p>
+								<em></em>
+								<i></i>
+							</div>
+						</div>
+						<div class="main_right_middle_box2">
+							<p>库存</p>
+							<p class="main_right_middle_box2_local">北京门头沟区<b></b></p>
+							<input type="checkbox" id="you_huo_check" /><span>仅显示有货</span>
+							<input type="checkbox" id="zi_ying_check" /><span>仅显示优选自营商品</span>
+							<input type="checkbox" id="guo_ji_check" /><span>优选国际</span>
+							<input type="checkbox" id="cu_xiao_check" /><span>有促销</span>
+						</div>
+					</div>
+				
+					<div class="main_right_goods">
+						<ul>
+							<li>
+								<div class="">
+									
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		<!--通用底部开始-->
+		<div class="foot">
+
+		</div>
+		<!--通用底部开始-->
+		<script src="js/lib/require.min.js" data-main="js/list.js"></script>
+	</body>
+</html>
