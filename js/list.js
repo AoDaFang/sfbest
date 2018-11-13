@@ -83,7 +83,8 @@ requirejs(["jquery", "swiper", "baiduT", "do_cookie", "extend", "lazy", "page", 
 		async:true,
 		dataType:"json",
 		success:function(data){
-			console.log(data);
+			console.log(data)
+			$(".main_right_goods ul").html(baidu.template("temp",data));
 		},
 		error:function(){
 			console.log(123)
@@ -91,21 +92,6 @@ requirejs(["jquery", "swiper", "baiduT", "do_cookie", "extend", "lazy", "page", 
 	});
 	
 	
-	/*$.ajax({
-		type:"post",
-			url:"http://192.168.30.103/shopping/api/register.php",
-			async:true,
-			timeout:3000,
-			data:{
-				uname:"fmw",
-				password:"123456",
-				uface:""
-			},
-			success:function(data){
-				console.log(data);
-			},
-			error:function(){
-				console.log("error");
-			}
-	})*/
+	
+	
 });

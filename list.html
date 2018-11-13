@@ -309,10 +309,11 @@
 			}
 			.main_right_goods ul li{
 				float: left;
-				width: 241px;
+				width: 240px;
 				height: 388px;
 				padding: 5px;
 				font-family: 微软雅黑;
+				cursor: pointer;
 			}
 			.main_right_goods ul li:hover{
 				padding: 0;
@@ -329,6 +330,87 @@
 			.main_right_goods ul li>div:hover{
 				border:1px solid #d7d7d7;
 				padding: 10px;
+			}
+			.main_right_goods_one_pic{
+				width: 219px;
+				height: 210px;
+				margin: 0 auto;
+			}
+			.main_right_goods_one_price{
+				font-size: 16px;
+				color: #BB3221;
+				font-weight: bold;
+				margin-top: 10px;
+			}
+			.main_right_goods_one_name{
+				display: block;
+			}
+			.main_right_goods_one_pingjia{
+				color: #195f45;
+				margin-top: 43px;
+			}
+			.main_right_goods_one_pingjia b{
+				display: inline-block;
+				width: 37px;
+				height: 18px;
+				color: #fff;
+				border-radius: 3px;
+				background-color: #6f9a09;
+				font-weight: normal;
+				text-align: center;
+				
+			}
+			.main_right_goods_one_btns>*{
+				display: block;
+				float: left;
+				margin-top: 5px;
+			}
+			
+			.main_right_goods_one_btns_add,.main_right_goods_one_btns_sub{
+				width: 18px;
+				height: 28px;
+				border: 1px solid #dadada;
+				text-align: center;
+				line-height: 28px;
+				color: #dadada;
+				background-color: #fff;
+				outline: none;
+			}
+			.main_right_goods_one_btns_add{
+				border-left: none;
+			}
+			.main_right_goods_one_btns_sub{
+				border-right: none;
+			}
+			.main_right_goods_one_btns_num{
+				width: 28px;
+				height: 26px;
+				border: 1px solid #dadada;
+				text-align: center;
+				outline: none;
+			}
+			.main_right_goods_one_btns_cart{
+				background: url(images/list_img/productlist_cart.png) no-repeat scroll 20px -21px;
+				font-family: "微软雅黑";
+				text-align: center;
+				border: 1px solid #dadada;
+				border-radius: 2px;
+				cursor: pointer;
+				display: block;
+				font-size: 14px;
+				height: 28px;
+				line-height: 28px;
+				padding: 0 0 0 25px;
+				text-decoration: none;
+				width: 103px;
+				color: #557e00;
+				margin-left: 14px;
+			}
+			.main_right_goods ul li:hover .main_right_goods_one_btns_cart{
+				background: url(images/list_img/productlist_cart.png) no-repeat scroll 20px 10px;
+				color: #fff;
+				font-weight: normal;
+				background-color: #6b9c05;
 			}
 		</style>
 	</head>
@@ -430,20 +512,63 @@
 				
 					<div class="main_right_goods">
 						<ul>
-							<li>
-								<div class="">
-									
+							<!--<li>
+								<div class="main_right_goods_one">
+									<div class="main_right_goods_one_pic">
+										<img src="http://p02.sfimg.cn/2015/1300174051/210x210_1300174051_7_2.jpg"/>
+									</div>
+									<p class="main_right_goods_one_price">￥<span>19.9</span></p>
+									<span class="main_right_goods_one_name">方家铺子 新疆红枣灰枣250g</span>
+									<div class="main_right_goods_one_pingjia">
+										已有<span>1527</span>人评价
+										<b>自营</b>
+									</div>
+									<div class="main_right_goods_one_btns">
+										<input type="button" class="main_right_goods_one_btns_sub" value="-" />
+										<input type="text" class="main_right_goods_one_btns_num" name="" id="" value="1" />
+										<input type="button" class="main_right_goods_one_btns_add" value="+" />
+										<b class="main_right_goods_one_btns_cart">加入购物车</b>
+									</div>
 								</div>
-							</li>
+							</li>-->
+							
+							<script id="temp" type="text/html">
+								<% for(var i = 0; i<data.length; i++){ %>
+									<a target="_blank" href="details.html"+<%=data[i].product_id%>+"">
+										<li>
+											<div class="main_right_goods_one">
+												<div class="main_right_goods_one_pic">
+													<img src=<%=data[i].img%>>
+												</div>
+												<p class="main_right_goods_one_price">￥<span>19.9</span></p>
+												<span class="main_right_goods_one_name"><%=data[i].name%></span>
+												<div class="main_right_goods_one_pingjia">
+													已有<span><%=data[i].PingLunShu%></span>人评价
+													<b>自营</b>
+												</div>
+												<div class="main_right_goods_one_btns">
+													<input type="button" class="main_right_goods_one_btns_sub" value="-" />
+													<input type="text" class="main_right_goods_one_btns_num" name="" id="" value="1" />
+													<input type="button" class="main_right_goods_one_btns_add" value="+" />
+													<b class="main_right_goods_one_btns_cart">加入购物车</b>
+												</div>
+											</div>
+										</li>
+									</a>
+								<%}%>
+							</script>
+							
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 		
-		
-		
-		
+		<!--悬浮-->
+		<div class="xuan_fu">
+			
+		</div>
+		<!--悬浮-->
 		
 		<!--通用底部开始-->
 		<div class="foot">
