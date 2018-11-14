@@ -30,10 +30,10 @@ requirejs.config({
 
 requirejs(["jquery","do_cookie", "cookie", "delete_cookie", "set_cookie_amount"], function($, do_cookie) {
 
-var flag1 = true;
-var flag2 = true;
-var flag3 = true;
-var flag4 = true;
+var flag1 = false;
+var flag2 = false;
+var flag3 = false;
+var flag4 = false;
 var flag5 = true;
 
 //手机号

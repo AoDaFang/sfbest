@@ -58,11 +58,12 @@ requirejs(["jquery","do_cookie", "cookie", "delete_cookie", "set_cookie_amount",
 				},
 				dataType:"json",
 				success:function(data){
-					if(data.errorCode == 0){
+					console.log(data)
+					if(data.errorCode == 0 && $(".account_num_input input").val()!=""  &&  $(".account_password_input input").val()!=""   ){
 						setCookie("login",$(".account_num_input input").val());
 						window.location.href='index.html';
 					}else{
-						alert("发送错误");
+						alert("请填写正确的账号密码");
 					}
 				}
 			});
