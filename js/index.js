@@ -88,7 +88,7 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 						}
 					});
 				});
-			},1000);
+			},5000);
 			
 		//倒计时处理开始
 		setInterval(function(){
@@ -178,17 +178,18 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 			loop: true, // 循环模式选项
 			setWrapperSize:true,//增加对不支持弹性盒子浏览器的兼容性
 			on: {
-					init: function(){
-						//render方法	
+					/*init: function(){
+						//render方法	 可以给给按钮加入数字
 					
-//				      //Swiper初始化了
-//				      console.log($(".swiper-pagination-bullet"))
-//				      $(".swiper-pagination-bullet").each(function(index,ele){
-//				      	console.log(index)
-//				      })
-//				      alert('当前的slide序号是'+this.activeIndex);
-//				      this.emit('transitionEnd');//在初始化时触发一次transitionEnd事件
-				    }, 
+				      //Swiper初始化了
+				      console.log("初始化成功")
+				      console.log($(".swiper-pagination-bullet").length)
+				      $(".swiper-pagination-bullet").each(function(index,ele){
+				      	console.log(index)
+				      })
+				      alert('当前的slide序号是'+this.activeIndex);
+				      this.emit('transitionEnd');//在初始化时触发一次transitionEnd事件
+				    }, */
 			   		 slideChangeTransitionEnd: function(){
 			   		 	$(".slide_main").css("background",colors[this.activeIndex-1]);
 //				      alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
@@ -199,6 +200,11 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 	       		clickable:true,
 	     	 }
 		});
+		
+		$(".swiper-pagination-bullet").each(function(index,ele){//给swiper中的按钮添加文字
+	      	$(ele).html(index+1);
+	    })
+		
 		
 		$(".swiper-pagination-bullet").hover(function() {
 		    $(this).click(); //鼠标划上去之后，自动触发点击事件来模仿鼠标划上去的事件
@@ -276,7 +282,8 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 							},{
 								queue:false,//是否进行排队
 								complete:function(){
-									$(".append").css("display","none");
+//									$(".append").css("display","none");
+									$("body").find(".append").remove();//这是正确的删除图片的处理方式，其余的没改
 //									$("body").remove(".append");
 								}
 							});
@@ -544,7 +551,6 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 								queue:false,//是否进行排队
 								complete:function(){
 									$(".append").css("display","none");
-//									$("body").remove(".append");
 								}
 							});
 						}
