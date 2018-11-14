@@ -123,6 +123,9 @@
 				width: 184px;
 				display: none;
 			}
+			.main_left dl dd.active{
+				display: block;
+			}
 			.main_left dl dd span{
 				display: block;
 				width: 184px;
@@ -228,6 +231,7 @@
 			}
 			.main_right_middle_box1_left ul li.active{
 				background-color: #6c9c0a;
+				color: #fff;
 			}
 			.main_right_middle_box1_right{
 				float: right;
@@ -412,6 +416,25 @@
 				font-weight: normal;
 				background-color: #6b9c05;
 			}
+			.jia_ge{
+				position: relative;
+			}
+			.jia_ge b{
+				display: block;
+				position: absolute;
+				right: 9px;
+				height: 8px;
+				width: 7px;
+				background: url(images/login_img/productList.png) no-repeat -52px 0;
+				top: 8px;
+				overflow: hidden;
+			}
+			.jia_ge b.up{
+				background: url(images/login_img/productList.png) no-repeat -95px -80px;
+			}
+			.jia_ge b.down{
+				background: url(images/login_img/productList.png) no-repeat -88px -80px;
+			}
 		</style>
 	</head>
 	<body>
@@ -450,7 +473,7 @@
 						<dd>
 							<span>菌菇类</span>
 							<span>桂圆</span>
-							<span>枣类</span>
+							<span style="color: #6c9c0a;">枣类</span>
 							<span>枸杞/莲子</span>
 							<span>木耳/银耳</span>
 							<span>海产干货</span>
@@ -488,10 +511,10 @@
 						<div class="main_right_middle_box1">
 							<div class="main_right_middle_box1_left">
 								<ul>
-									<li>销量</li>
-									<li>价格</li>
-									<li>评论</li>
-									<li>新品</li>
+									<li class="active xiao_liang">销量</li>
+									<li class="jia_ge">价格<b></b></li>
+									<li class="ping_lun">评论</li>
+									<li class="xin_pin">新品</li>
 								</ul>
 							</div>
 							<div class="main_right_middle_box1_right">
@@ -503,10 +526,10 @@
 						<div class="main_right_middle_box2">
 							<p>库存</p>
 							<p class="main_right_middle_box2_local">北京门头沟区<b></b></p>
-							<input type="checkbox" id="you_huo_check" /><span>仅显示有货</span>
+							<!--<input type="checkbox" id="you_huo_check" /><span>仅显示有货</span>
 							<input type="checkbox" id="zi_ying_check" /><span>仅显示优选自营商品</span>
 							<input type="checkbox" id="guo_ji_check" /><span>优选国际</span>
-							<input type="checkbox" id="cu_xiao_check" /><span>有促销</span>
+							<input type="checkbox" id="cu_xiao_check" /><span>有促销</span>-->
 						</div>
 					</div>
 				
@@ -532,15 +555,17 @@
 								</div>
 							</li>-->
 							
-							<script id="temp" type="text/html">
+						</ul>
+						
+						<script id="temp" type="text/html">
 								<% for(var i = 0; i<data.length; i++){ %>
-									<a target="_blank" href="details.html"+<%=data[i].product_id%>+"">
+									<a target="_blank" href="details.html?pid=<%=data[i].product_id%>">
 										<li>
 											<div class="main_right_goods_one">
 												<div class="main_right_goods_one_pic">
 													<img src=<%=data[i].img%>>
 												</div>
-												<p class="main_right_goods_one_price">￥<span>19.9</span></p>
+												<p class="main_right_goods_one_price">￥<span><%=data[i].sfbestPrice%></span></p>
 												<span class="main_right_goods_one_name"><%=data[i].name%></span>
 												<div class="main_right_goods_one_pingjia">
 													已有<span><%=data[i].PingLunShu%></span>人评价
@@ -556,9 +581,9 @@
 										</li>
 									</a>
 								<%}%>
-							</script>
-							
-						</ul>
+						</script>
+						
+						
 					</div>
 				</div>
 			</div>
