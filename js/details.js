@@ -94,6 +94,8 @@ requirejs(["jquery", "swiper", "baiduT", "do_cookie", "extend", "lazy", "page", 
 	(function(){//判定是否有pid
 		if(!page_pid){
 			return;
+		}else if(page_pid == 278087){
+			return;
 		}else{
 			$.ajax({
 				type:"get",
@@ -109,6 +111,7 @@ requirejs(["jquery", "swiper", "baiduT", "do_cookie", "extend", "lazy", "page", 
 							
 							$(".imgdet .imglist ul li img").attr("src",ele.img);
 							$(".imgdet .imgpart .pic img").attr("src",ele.img);
+							$(".bigpic img").attr("src",ele.img);
 							$(".details_main_goods_price_num3").html(ele.price || ele.sfbestPrice);
 							$(".details_main_goods_caozuo_chose label").eq(0).html("套餐1");
 							$(".details_main_goods_caozuo_chose label").eq(1).html("套餐2");

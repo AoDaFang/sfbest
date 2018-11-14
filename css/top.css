@@ -171,6 +171,23 @@
 			.login>*{
 				float: left;
 			}
+			.login{
+				/*display: none;*/
+			}
+			.login_active{
+				display: none;
+			}
+			.login_active>*{
+				float: left;
+				font-weight:normal;
+			}
+			.login_active p{
+				color: #969696;
+				cursor: pointer;
+			}
+			.login_active p:hover{
+				color: #76ac25;
+			}
 			.ding_dan{
 				padding: 0 10px;
 			}

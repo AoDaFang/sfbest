@@ -90,6 +90,34 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 				});
 			},1000);
 			
+		//倒计时处理开始
+		setInterval(function(){
+			var now_second_str = $(".sheng_yv_time_s1").html()+$(".sheng_yv_time_s2").html();
+			var now_second_num = parseInt(now_second_str);
+			now_second_num--;
+			
+			var next_second_str = String(now_second_num);
+			if(now_second_num<10){
+				next_second_str = "0" + next_second_str;
+			}
+//			var next_second_str = String(now_second_num);
+			$(".sheng_yv_time_s1").html(next_second_str.charAt(0));
+			$(".sheng_yv_time_s2").html(next_second_str.charAt(1));
+			if(now_second_num == 0){
+				
+				var now_min_str = $(".sheng_yv_time_m1").html()+$(".sheng_yv_time_m2").html();
+				var now_min_num = parseInt(now_min_str);
+				now_min_num--;
+				var next_min_str = String(now_min_num);
+				$(".sheng_yv_time_m1").html(next_min_str.charAt(0));
+				$(".sheng_yv_time_m2").html(next_min_str.charAt(1));
+				
+				setTimeout(function(){
+					$(".sheng_yv_time_s1").html("5");
+					$(".sheng_yv_time_s2").html("9");
+				},1000)
+			}
+		},1000)
 			
 		//城市选择遮罩处理开始
 			if(!getCookie("city")){//打开页面时，检测城市cookie是否存在若不存在，显示遮罩层
@@ -918,17 +946,6 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 		
 		//为你推荐结束
 		
-		$.ajax({
-			type:"get",
-			url:"data/all_goods.json",
-			dataType:'json',
-			data:{
-			},
-			
-			success:function(data){
-				console.log(data);
-			}
-		});
 		
 		
 		$(".foot").load('html/foot.html');

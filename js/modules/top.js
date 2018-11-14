@@ -28,7 +28,26 @@
 
 				$(this).parent().siblings("ul").children().removeClass("active"); //清除除了本行按钮之外的所有按钮的活动样式
 			}
-		)
+		);
+		
+		//检测当前的cookie，若有login cookie则改变相应的值
+		   //setCookie("login","123456");//测试代码
+		
+		if(!getCookie("login") == ""){
+			$(".login").css("display","none");
+			$(".login_active").css("display","block");
+			$(".login_active span").html(getCookie("login"));
+		}
+		
+		//退出按钮
+		$(".login_active p").click(function(){
+//			$(".login").css("display","block");
+//			$(".login_active").css("display","none");
+			setCookie("login","");//设置登录cookie为空
+			location.reload();
+			
+		})
+		
 	});
 
 	function click_city() {
