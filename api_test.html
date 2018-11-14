@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+		<script type="text/javascript">
+			$.ajax({
+				type:"post",
+				url:"http://localhost/sfbest/api/register.php",
+				async:true,
+				data:{
+					uname:"fmw",
+					password:"123456",
+					uface:""
+				},
+				dataType:"json",
+				success:function(data){
+					console.log(data)
+				}
+			});
+			
+			$.ajax({
+				type:"get",
+				url:"http://localhost/sfbest/api/login.php",
+				async:true,
+				data:{
+					uname:"fmw",
+					password:"123456"
+				},
+				dataType:"json",
+				success:function(data){
+					console.log(data)
+				}
+			});
+		</script>
+	</body>
+</html>

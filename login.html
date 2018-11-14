@@ -376,6 +376,18 @@
 			.wechat{
 				border: none!important;
 			}
+			.account_yzcode_input{
+				position: relative;
+			}
+			.account_yzcode_input b{
+				display: none;
+				position: absolute;
+				top:2px;
+				left: 166px;
+				background: url(images/register_img/icon4.jpg) center no-repeat;
+				width: 23px;
+				height: 36px;
+			}
 		</style>
 	</head>
 	<body>
@@ -417,7 +429,7 @@
 											<span></span>
 										</div>
 										<div class="account_password_input">
-											<input type="text" placeholder="请输入密码" />
+											<input type="password" placeholder="请输入密码" />
 										</div>
 									</li>
 									<li class="account_yzcode">
@@ -426,6 +438,7 @@
 										</div>
 										<div class="account_yzcode_input">
 											<input type="text" placeholder="请输入验证码" />
+											<b></b>
 										</div>
 										<div class="account_yzcode_yzcode_pic">
 											<img src="images/login_img/vcode.jpg"/>

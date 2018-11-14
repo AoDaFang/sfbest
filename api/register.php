@@ -41,7 +41,7 @@ $password = trim($_POST['password']);
 
 //初始化数据库工具
 try {
-    $pdo = new PDO("mysql:host=localhost;dbname=shop;charset=utf8;", "root", "", [
+    $pdo = new PDO("mysql:host=localhost;dbname=shop;charset=utf8;", "root", "root", [
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
     ]);
 } catch (PDOException $ex) {

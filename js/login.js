@@ -33,4 +33,43 @@ requirejs(["jquery","do_cookie", "cookie", "delete_cookie", "set_cookie_amount",
 	var oTab = document.querySelector(".main_tab .tab");
 	var tab1 = new Tab(oTab);
 	tab1.init();
+	
+	
+	var flag1 = true;
+	$(".account_yzcode_input input").blur(function(){
+		if($(".account_yzcode_input input").val() == "qi2b"){
+			$(".account_yzcode_input b").css("display","block");
+			flag1 = true;
+		}else{
+			$(".account_yzcode_input b").css("display","none");
+			flag1 = false;
+		}
+	});
+	
+	$(".account_btn").click(function(){
+		if(flag1){
+			$.ajax({
+				type:"get",
+				url:"http://localhost/sfbest/api/login.php",
+				async:true,
+				data:{
+					uname:$(".account_num_input input").val(),
+					password:$(".account_password_input input").val()
+				},
+				dataType:"json",
+				success:function(data){
+					if(data.errorCode == 0){
+						setCookie("login",$(".account_num_input input").val());
+						window.location.href='index.html';
+					}else{
+						alert("发送错误");
+					}
+				}
+			});
+		}else{
+			alert("请正确填写验证码");
+		}
+	})
+	
+	
 });
