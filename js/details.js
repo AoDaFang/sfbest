@@ -106,7 +106,7 @@ requirejs(["jquery", "swiper", "baiduT", "do_cookie", "extend", "lazy", "page", 
 						var now_id = ele.product_id || ele.proudct_id;
 						if(now_id == page_pid){
 							console.log(ele);//当前的对象
-							
+							$(".page_pid_input").attr("pid",page_pid);
 							$(".details_main_goods_title h1").html(ele.name);
 							
 							$(".imgdet .imglist ul li img").attr("src",ele.img);

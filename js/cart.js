@@ -111,7 +111,7 @@ requirejs(["jquery","swiper","baiduT","do_cookie","lazy","cookie","top","delete_
 //				$(".swiper-wrapper").append('<div class="swiper-slide"></div>');
 			
 			if(index_a<5){//如果还没加满五个执行此处
-				var slide_ins = '<div class="cart_slider_goods"><div class="cart_slider_goods_pic"><img src="'+ele.img+'" pid="'+ele.product_id || ele.proudct_id+'"/><div class="cart_slider_goods_pic_btn"><a href="javascript:;">加入购物车</a></div></div><div class="cart_slider_goods_title">'+ele.name+'</div><div class="cart_slider_goods_price">￥<span>'+(ele.sfbestPrice||ele.price)+'</span></div></div>';
+				var slide_ins = '<div class="cart_slider_goods"><div class="cart_slider_goods_pic"><img src="'+ele.img+'" pid="'+(ele.product_id || ele.proudct_id)+'"/><div class="cart_slider_goods_pic_btn"><a href="javascript:;">加入购物车</a></div></div><div class="cart_slider_goods_title">'+ele.name+'</div><div class="cart_slider_goods_price">￥<span>'+(ele.sfbestPrice||ele.price)+'</span></div></div>';
 				//var test_div = '<div class="test_div"></div>';
 				$(".swiper-slide").eq(slide_index).append(slide_ins);
 				index_a++;
@@ -136,7 +136,7 @@ requirejs(["jquery","swiper","baiduT","do_cookie","lazy","cookie","top","delete_
 				})
 			});
 			})
-		}
+		},
 	});
 	
 	//为你推荐内容

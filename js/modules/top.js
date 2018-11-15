@@ -44,7 +44,8 @@
 //			$(".login").css("display","block");
 //			$(".login_active").css("display","none");
 			setCookie("login","");//设置登录cookie为空
-			location.reload();
+			window.location.href='index.html';//退出后跳转到首页
+			//location.reload();
 			
 		})
 		

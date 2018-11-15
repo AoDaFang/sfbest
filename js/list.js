@@ -18,7 +18,9 @@ requirejs.config({
 		delete_cookie: "plugins/delete_cookie",
 		fang_da_jing: "modules/fang_da_jing",
 		tab:"plugins/Tab",
-		set_cookie_amount : "plugins/set_cookie_amount"
+		set_cookie_amount : "plugins/set_cookie_amount",
+//		location_tree:"modules/location_tree",
+//		location_tree_jq:"lib/location_tree_jq"
 	},
 	shim: {
 		baiduT: {
@@ -70,12 +72,18 @@ requirejs.config({
 		},
 		set_cookie_amount:{
 			deps: ["cookie"]
-		}
+		},
+//		location_tree:{
+//			deps: ["location_tree_jq"]
+//		}
 	}
 });
 
 requirejs(["jquery", "swiper", "baiduT", "do_cookie", "extend", "lazy", "page", "cookie", "top", "head", "nav_s", "er_ji", "xuan_fu", "do_index_cart", "delete_cookie", "fang_da_jing","tab","set_cookie_amount"], function($, Swiper, baidu, do_cookie) {
-	$(".foot").load('html/foot.html');
+	$(".foot").load('html/foot.html');//加载脚部
+	/*$(".main_right_middle_box2_local").load("html/location_tree.html",function(){
+		doLocationTree();
+	});*/
 //	console.log($(".main_right_middle").offset().top);
 	window.onscroll = function(){//吸顶
 		if($(document).scrollTop() > 261){
