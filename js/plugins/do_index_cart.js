@@ -47,7 +47,7 @@ function do_index_cart(place) {
 				all_weight += 6 * now_amount;
 				$(now_data).each(function(index, ele) {
 					if(ele.product_id == now_id) {
-						all_money =  Number(all_money) + (ele.sfbestPrice || ele.price) * now_amount; //计算总价钱
+						all_money = (Number(all_money) + Number((ele.sfbestPrice || ele.price) * now_amount)).toFixed(1);
 						$(place + " .goods_s").append(' <div class="goods"><input type="hidden" class="pid" pid="' + now_id + '"/><div class="goods_pic"><img width="40" height="40" src="' + ele.img + '"/></div><div class="goods_msg"><p class="goods_title">' + ele.name + '</p><span>6kg</span></div><div class="good_price"><p><i>￥</i><span>' + (ele.sfbestPrice || ele.price) + '</span>×<b>' + now_amount + '</b></p><div>删除</div></div></div> ');
 					}
 				})
@@ -73,33 +73,44 @@ function do_index_cart(place) {
 
 			//给删除按钮添加事件,给定一个pid删除cookie的方法
 			$(place + " .good_price div").click(function() {
-				var pid = $(this).parent().siblings("input").attr("pid");
-				delete_cookie(pid);
-				$(this).parent().parent().remove();
-				do_index_cart("#head"); //渲染head中，购物车部分
-				do_index_cart(".xuan_fu_cart_show"); //渲染悬浮按钮中的，购物车部分
-
-				setTimeout(function() {
-					if(!getCookie("cart")) { //判断cookie
-						$(".xuan_fu_cart_noneshow_over").css("display", "block");
-						$(".xuan_fu_cart_noneshow").animate({
-							right: "0"
-						}, { //第二个参数
-							queue: false, //是否进行排队
-						})
-					} else {
-
-						$(".xuan_fu_cart_show_over").css("display", "block");
-						$(".xuan_fu_cart_show").animate({
-							right: "0"
-						}, { //第二个参数
-							queue: false, //是否进行排队
-							complete: function() {
-								do_index_cart("#head"); //渲染head中，购物车部分
-							}
-						})
-					}
-				}, 2000)
+				if(place == ".xuan_fu_cart_show"){  //悬浮中
+					console.log(123)
+					var pid = $(this).parent().siblings("input").attr("pid");
+					delete_cookie(pid);
+					$(this).parent().parent().remove();
+					do_index_cart("#head"); //渲染head中，购物车部分
+					do_index_cart(".xuan_fu_cart_show"); //渲染悬浮按钮中的，购物车部分
+	
+					setTimeout(function() {
+						if(!getCookie("cart")) { //判断cookie
+							$(".xuan_fu_cart_noneshow_over").css("display", "block");
+							$(".xuan_fu_cart_noneshow").animate({
+								right: "0"
+							}, { //第二个参数
+								queue: false, //是否进行排队
+							})
+						} else {
+	
+							$(".xuan_fu_cart_show_over").css("display", "block");
+							$(".xuan_fu_cart_show").animate({
+								right: "0"
+							}, { //第二个参数
+								queue: false, //是否进行排队
+								complete: function() {
+									do_index_cart("#head"); //渲染head中，购物车部分
+								}
+							})
+						}
+					}, 2000)
+				}else{  //头部中的
+					console.log(456)
+					var pid = $(this).parent().siblings("input").attr("pid");
+					delete_cookie(pid);
+					$(this).parent().parent().remove();
+					do_index_cart("#head"); //渲染head中，购物车部分
+					do_index_cart(".xuan_fu_cart_show"); //渲染悬浮按钮中的，购物车部分
+					//传参，确定用不用弹出
+				}
 			});
 		}
 	})

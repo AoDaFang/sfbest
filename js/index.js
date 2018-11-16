@@ -88,7 +88,7 @@ requirejs(["jquery","swiper","baiduT","do_cookie","extend","lazy","page","cookie
 						}
 					});
 				});
-			},5000);
+			},1000);
 			
 		//倒计时处理开始
 		setInterval(function(){

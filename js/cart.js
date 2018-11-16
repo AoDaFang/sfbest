@@ -57,7 +57,7 @@ requirejs.config({
 
 requirejs(["jquery","swiper","baiduT","do_cookie","lazy","cookie","top","delete_cookie","cart_inner","step_delete_cookie","set_cookie_amount","tab"],function($,Swiper,baidu,dc){
 	reloadCartInner();//初始化购物车
-	
+	console.log(456)
 	//清空购物车按钮
 	$(".cart_caozuo_qingkong").click(function(){
 		setCookie("cart","");//清空cookie
